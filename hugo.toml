@@ -1,0 +1,41 @@
+baseURL = "https://example.org/"
+languageCode = "en-us"
+title = "Alex Haslam"
+theme = "PaperMod"
+enableEmoji = true
+
+[params.profileMode]
+enabled = true
+title = "Alex Haslam"
+subtitle = "Engineer"
+imageUrl = "/images/profile.png"
+imageWidth = 120
+imageHeight = 120
+
+[[params.socialIcons]]
+name = "GitHub"
+url = "https://github.com/alxhslm"
+
+[[params.socialIcons]]
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/alexanderhaslam"
+
+[[params.socialIcons]]
+name = "GoogleScholar"
+url = "https://scholar.google.com/citations?user=XIvQ5NYAAAAJ&hl=en"
+
+[[params.socialIcons]]
+name = "CV"
+url = "/files/Alex Haslam CV.pdf"
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+
+[[menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 10
