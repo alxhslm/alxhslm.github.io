@@ -1,16 +1,11 @@
 +++
 title = 'About'
-draft = true
-ShowBreadCrumbs = true
 +++
 
 
 I’m an engineer based in London, with expertise in modelling, simulation and machine learning. I enjoy quickly mastering new skills to solve challenging problems.
 
 # Experience
-
-
-
 
 ##  [Optimal Agriculture](https://www.optimal.ag/)
 
