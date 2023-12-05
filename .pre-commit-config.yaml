@@ -1,0 +1,7 @@
+# Please update dev-requirements accordingly when updating black and ruff versions.
+repos:
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.16.8
+    hooks:
+      - id: typos
+        args: []
