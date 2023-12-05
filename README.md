@@ -1,4 +1,4 @@
-# Alex Haslam's Personal Website
+# [Alex Haslam's Personal Website](https://alxhslm.github.io/)
 
 ## Installation
 1. Install [Hugo](https://gohugo.io/) on your machine:
