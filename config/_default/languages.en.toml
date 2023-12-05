@@ -1,0 +1,21 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Alex Haslam"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "images/logo.png"
+
+[author]
+name = "Alex Haslam"
+image = "images/profile.png"
+headline = "Simulation and ML Engineer"
+bio = "I’m an engineer based in London, with expertise in modelling, simulation and machine learning. I enjoy quickly mastering new skills to solve challenging problems."
+links = [
+  { github = "https://github.com/alxhslm"},
+  { linkedin =  "https://www.linkedin.com/in/alexanderhaslam"},
+]

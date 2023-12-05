@@ -9,9 +9,9 @@ brew install hugo
 ```
 git clone git@github.com:alxhslm/alxhslm.github.io.git
 ```
-3. From the root of the repo, install the [PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme using: 
+3. From the root of the repo, install the [Blowfish](https://blowfish.page/) theme using: 
 ```
-git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
 ## Local development
