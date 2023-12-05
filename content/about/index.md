@@ -18,7 +18,7 @@ I’m an engineer based in London, with expertise in modelling, simulation and m
 | ![McLaren Racing](images/mclaren.png)         | **Simulation Engineer**                                                          |
 |-----------------------------------------------|----------------------------------------------------------------------------------|
 |                                               | *Woking UK - Aug 2012 to Nov 2016*                                               |
-|                                               | Deploying fully autonomous greenhouses using state-of-the-art control algorithms |
+|                                               | Developing models of components, simulator control algorithms and lap-time simulations |
 
 # Education
 
