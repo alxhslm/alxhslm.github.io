@@ -4,7 +4,10 @@ date = 2023-12-01T21:28:11Z
 katex = true
 +++
 
-This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model.
+This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model. The source code is available on GitHub.
+
+{{< github repo="alxhslm/hand-writing-generation" >}}
+
 
 ## Objective  
 The aim of this project is to: 
@@ -33,6 +36,3 @@ By varying how you draw, you can change the style of characters which the model 
 | Light       | ![Thin characters](images/light.jpg)    |
 | Bold        | ![Bold characters ]( images/bold.jpg )  |
 | Italic      | ![Italic characters](images/italic.jpg) |
-
-
-The source code is available on [GitHub](https://github.com/alxhslm/hand-writing-generation).
