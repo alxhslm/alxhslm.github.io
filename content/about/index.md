@@ -1,39 +1,49 @@
 +++
 title = 'About'
+showDate = false
+showWordCount = false
+showReadingTime = false
 +++
 
 
-I’m an engineer based in London, with expertise in modelling, simulation and machine learning. I enjoy quickly mastering new skills to solve challenging problems.
-
 # Experience
+{{< timeline >}}
 
-##  [Optimal Agriculture](https://www.optimal.ag/)
+{{< timelineItem icon="optimal" header="Optimal Agriculture" badge="Sept 2020 to Present" subheader="Senior Engineer" >}}
+Deploying fully autonomous greenhouses using state-of-the-art control algorithms
+{{< /timelineItem >}}
 
-| ![Optimal Agriculture](images/optimal.png) | **Senior Engineer**                                                              |
-|--------------------------------------------|----------------------------------------------------------------------------------|
-|                                            | *London UK - Sept 2020 to Present*                                               |
-|                                            | Deploying fully autonomous greenhouses using state-of-the-art control algorithms |
 
-## [McLaren Racing](https://www.mclaren.com/racing/)
-| ![McLaren Racing](images/mclaren.png)         | **Simulation Engineer**                                                          |
-|-----------------------------------------------|----------------------------------------------------------------------------------|
-|                                               | *Woking UK - Aug 2012 to Nov 2016*                                               |
-|                                               | Developing models of components, simulator control algorithms and lap-time simulations |
+{{< timelineItem icon="mclaren" header="McLaren Racing" badge="Aug 2012 to Nov 2016" subheader="Simulation Engineer" >}}
+Developing models of components, simulator control algorithms and lap-time simulations 
+{{< /timelineItem >}}
+
+
+{{< /timeline >}}
 
 # Education
 
-| ![Imperial College](images/imperial.png)         | **PhD Engineering**                                                                               |
-|--------------------------------------------------|---------------------------------------------------------------------------------------------------|
-|                                                  | *Imperial College London - Nov 2016 to Sept 2020*                                                 |
-|                                                  | Investigating transmission of vibrations through bearings in rotating machines, using modelling and advanced simulation techniques.                                                 |
-|                                                  | [Thesis](https://spiral.imperial.ac.uk/handle/10044/1/101592): *Non-linear vibration transmission through rolling-element bearings in rotating machines* |
+{{< timeline >}}
 
-| ![University of Cambridge](images/cambridge.png)         | **MEng Engineering**                                                                  |
-|----------------------------------------------------------|---------------------------------------------------------------------------------------|
-|                                                          | *University of Cambridge - Oct 2008 to Jun 2012*                                      |
-|                                                          | Specialising in modelling, dynamics & control.                                        |
-|                                                          | [Thesis](files/masters_thesis.pdf): *Stability and controllability of an F1 race car* with Renault F1             |      
+{{< timelineItem icon="graduation-cap" header="Imperial College London" badge="Nov 2016 to Sept 2020" subheader="PhD Engineering" >}}
+Investigating transmission of vibrations through bearings in rotating machines, using modelling and advanced simulation techniques.
+Sponsored by Rolls Royce.
+<p>Thesis: <em>Non-linear vibration transmission through rolling-element bearings in rotating machines</em></p>
+{{< button href="https://spiral.imperial.ac.uk/bitstream/10044/1/101592/1/Haslam-A-2020-PhD-Thesis.pdf" >}}
+Download
+{{< /button >}}
+{{< /timelineItem >}}
 
+
+{{< timelineItem icon="graduation-cap" header="University of Cambridge" badge="Oct 2008 to Jun 2012" subheader="MEng Engineering" >}}
+Specialising in modelling, dynamics & control. 
+<p>Thesis: <em>Stability and controllability of an F1 race car</em> with Renault F1</p>
+{{< button href="files/masters_thesis.pdf" >}}
+Download
+{{< /button >}}
+{{< /timelineItem >}}
+
+{{< /timeline >}}
 
 # Skills
 
