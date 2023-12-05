@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Alex Haslam</title>
-    <link>https://alxhlsm.github.io/authors/</link>
+    <link>https://alxhslm.github.io/authors/</link>
     <description>Recent content in Authors on Alex Haslam</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2023 Alex Haslam</copyright>
-    <atom:link href="https://alxhlsm.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alxhslm.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
