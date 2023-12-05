@@ -366,6 +366,16 @@
 
 
 
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
 
   
   <div class="relative flex flex-col grow">
@@ -384,14 +394,12 @@
       
       
         
-        
-        
         <img
           class="mb-2 rounded-full h-36 w-36"
           width="144"
           height="144"
           alt="Alex Haslam"
-          src="/images/profile_hu0cdf5b5b01981d45e004ef7a75dcf763_270031_288x288_fill_box_center_3.png"
+          src="/images/profile.png"
         />
       
     

@@ -374,6 +374,16 @@
 
 
 
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
 
   
   <div class="relative flex flex-col grow">
@@ -459,10 +469,8 @@
   
   
   
-  
-  
   <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-    alt="Alex Haslam" src="/images/profile_hu0cdf5b5b01981d45e004ef7a75dcf763_270031_192x192_fill_box_center_3.png" />
+    alt="Alex Haslam" src="/images/profile.png" />
   
   
   <div class="place-self-center">
@@ -546,7 +554,7 @@
           <p>This was my first personal ML project. The goal was to familiarise myself with <a href="https://xgboost.readthedocs.io/en/stable/"   target="_blank">
     XGBoost</a> and <a href="https://aws.amazon.com/lambda/"   target="_blank">
     AWS Lambda</a>. I enjoy drinking nice coffee, so I chose a topic which I hoped would help me buy better coffee in the future. The source code is available on GitHub.</p>
-<a id="github-0-1701786653484025000" target="_blank" href="https://github.com/alxhslm/coffee-rating-prediction" class="cursor-pointer">
+<a id="github-0-1701788686756135000" target="_blank" href="https://github.com/alxhslm/coffee-rating-prediction" class="cursor-pointer">
   <div
     class="w-full md:w-auto pt-3 p-5 border border-neutral-200 dark:border-neutral-700 border rounded-md backdrop-blur shadow-2xl">
 
@@ -562,13 +570,13 @@
 
       </span>
       <div
-        id="github-0-1701786653484025000-full_name"
+        id="github-0-1701788686756135000-full_name"
         class="m-0 font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
         alxhslm/coffee-rating-prediction
       </div>
     </div>
 
-    <p id="github-0-1701786653484025000-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
+    <p id="github-0-1701788686756135000-description" class="m-0 mt-2 text-md text-neutral-800 dark:text-neutral">
       A simple ML app to predict the rating of a given coffee
     </p>
 
@@ -589,7 +597,7 @@
 
 
       </span>
-      <div id="github-0-1701786653484025000-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+      <div id="github-0-1701788686756135000-stargazers" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
         0
       </div>
 
@@ -602,7 +610,7 @@
 
 
       </span>
-      <div id="github-0-1701786653484025000-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
+      <div id="github-0-1701788686756135000-forks" class="m-0 mr-5 text-md text-neutral-800 dark:text-neutral">
         0
       </div>
 
@@ -617,10 +625,10 @@
     })
       .then(response => response.json())
       .then(data => {
-        document.getElementById('github-0-1701786653484025000-full_name').innerHTML = data.full_name;
-        document.getElementById('github-0-1701786653484025000-description').innerHTML = data.description;
-        document.getElementById('github-0-1701786653484025000-stargazers').innerHTML = data.stargazers_count;
-        document.getElementById('github-0-1701786653484025000-forks').innerHTML = data.forks;
+        document.getElementById('github-0-1701788686756135000-full_name').innerHTML = data.full_name;
+        document.getElementById('github-0-1701788686756135000-description').innerHTML = data.description;
+        document.getElementById('github-0-1701788686756135000-stargazers').innerHTML = data.stargazers_count;
+        document.getElementById('github-0-1701788686756135000-forks').innerHTML = data.forks;
       })
       .catch(error => console.error(error))
   </script>
@@ -669,12 +677,7 @@
       
       <img
         class="my-0 rounded-md"
-        srcset="
-        /projects/coffee-rating-prediction/images/streamlit_app_hu049f732449726c256041cdd23e2c3cea_234230_330x0_resize_box_3.png 330w,
-        /projects/coffee-rating-prediction/images/streamlit_app_hu049f732449726c256041cdd23e2c3cea_234230_660x0_resize_box_3.png 660w,
-        /projects/coffee-rating-prediction/images/streamlit_app_hu049f732449726c256041cdd23e2c3cea_234230_1024x0_resize_box_3.png 1024w,
-        /projects/coffee-rating-prediction/images/streamlit_app_hu049f732449726c256041cdd23e2c3cea_234230_1320x0_resize_box_3.png 2x"
-        src="/projects/coffee-rating-prediction/images/streamlit_app_hu049f732449726c256041cdd23e2c3cea_234230_660x0_resize_box_3.png"
+        src="/projects/coffee-rating-prediction/images/streamlit_app.png"
         alt="Streamlit app"
       />
       
