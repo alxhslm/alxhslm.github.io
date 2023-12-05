@@ -11,15 +11,15 @@
 Objective The aim of this project is to:
 Train a model to classify hand-written alphanumeric characters Generate synthetic hand-written characters using the same model I decided to use a Variational autoencoder since it is one of the few widely used models uniting deep learning and Bayesian methods.">
 <meta name="author" content="">
-<link rel="canonical" href="https://example.org/projects/hand-writing-generation/">
+<link rel="canonical" href="https://alxhslm.github.io/projects/hand-writing-generation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.5cfc680b1eeaeef9efbced92d46c2a9e876b72ee14fba85846afc4cff9e6e6f8.css" integrity="sha256-XPxoCx7q7vnvvO2S1Gwqnodrcu4U&#43;6hYRq/Ez/nm5vg=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://example.org/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://example.org/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://example.org/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
-<link rel="mask-icon" href="https://example.org/safari-pinned-tab.svg">
+<link rel="icon" href="https://alxhslm.github.io/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://alxhslm.github.io/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://alxhslm.github.io/favicons/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://alxhslm.github.io/favicons/apple-touch-icon.png">
+<link rel="mask-icon" href="https://alxhslm.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -81,7 +81,7 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
 Objective The aim of this project is to:
 Train a model to classify hand-written alphanumeric characters Generate synthetic hand-written characters using the same model I decided to use a Variational autoencoder since it is one of the few widely used models uniting deep learning and Bayesian methods." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.org/projects/hand-writing-generation/" /><meta property="article:section" content="projects" />
+<meta property="og:url" content="https://alxhslm.github.io/projects/hand-writing-generation/" /><meta property="article:section" content="projects" />
 <meta property="article:published_time" content="2023-12-01T21:28:11+00:00" />
 <meta property="article:modified_time" content="2023-12-01T21:28:11+00:00" />
 
@@ -101,13 +101,13 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
       "@type": "ListItem",
       "position":  1 ,
       "name": "Projects",
-      "item": "https://example.org/projects/"
+      "item": "https://alxhslm.github.io/projects/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Hand Writing Generation",
-      "item": "https://example.org/projects/hand-writing-generation/"
+      "item": "https://alxhslm.github.io/projects/hand-writing-generation/"
     }
   ]
 }
@@ -122,21 +122,21 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
   "keywords": [
     
   ],
-  "articleBody": "This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model.\nObjective The aim of this project is to:\nTrain a model to classify hand-written alphanumeric characters Generate synthetic hand-written characters using the same model I decided to use a Variational autoencoder since it is one of the few widely used models uniting deep learning and Bayesian methods.\nInteractive dashboard In order to get a better feel for how the model works, and its stengths and weaknesses, I created a Streamlit dashboard (which you can access here to have a go yourself).\nThis dashboard goes through the following steps:\nYou being by by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively to allows the model to “learn” your writing style. You can then generate arbitrary hand-written characters by sampling the distribution $p(x) = p(x|z)p(z)$ where $p(z)=p(z|x_{t})$. By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:\nDescription Generated images Narrow Wide Light Bold Italic The source code is available on GitHub.\n",
-  "wordCount" : "226",
+  "articleBody": "This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model.\nObjective The aim of this project is to:\nTrain a model to classify hand-written alphanumeric characters Generate synthetic hand-written characters using the same model I decided to use a Variational autoencoder since it is one of the few widely used models uniting deep learning and Bayesian methods.\nInteractive dashboard In order to get a better feel for how the model works, and its stengths and weaknesses, I created a Streamlit dashboard (which you can access here to have a go yourself).\nThis dashboard goes through the following steps:\nYou being by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively allows the model to “learn” your writing style. You can then generate arbitrary hand-written characters by sampling the distribution $p(x) = p(x|z)p(z)$ where $p(z)=p(z|x_{t})$. By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:\nDescription Generated images Narrow Wide Light Bold Italic The source code is available on GitHub.\n",
+  "wordCount" : "224",
   "inLanguage": "en",
   "datePublished": "2023-12-01T21:28:11Z",
   "dateModified": "2023-12-01T21:28:11Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://example.org/projects/hand-writing-generation/"
+    "@id": "https://alxhslm.github.io/projects/hand-writing-generation/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Alex Haslam",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://example.org/favicon.ico"
+      "url": "https://alxhslm.github.io/favicons/favicon.ico"
     }
   }
 }
@@ -158,7 +158,7 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://example.org/" accesskey="h" title="Alex Haslam (Alt + H)">Alex Haslam</a>
+            <a href="https://alxhslm.github.io/" accesskey="h" title="Alex Haslam (Alt + H)">Alex Haslam</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -184,12 +184,12 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
         </div>
         <ul id="menu">
             <li>
-                <a href="https://example.org/about/" title="About">
+                <a href="https://alxhslm.github.io/about/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://example.org/projects/" title="Projects">
+                <a href="https://alxhslm.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
@@ -217,12 +217,12 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
 </ol>
 <p>I decided to use a <a href="https://en.wikipedia.org/wiki/Variational_autoencoder">Variational autoencoder</a> since it is one of the few widely used models uniting deep learning and Bayesian methods.</p>
 <h2 id="interactive-dashboard">Interactive dashboard<a hidden class="anchor" aria-hidden="true" href="#interactive-dashboard">#</a></h2>
-<p>In order to get a better feel for how the model works, and its stengths and weaknesses, I created a <a href="https://streamlit.io/">Streamlit</a> dashboard (which you can access <a href="https://hand-writing-generation.streamlit.app/">here</a> to have a go yourself).</p>
+<p>In order to get a better feel for how the model works, and its stengths and weaknesses, I created a Streamlit dashboard (which you can access <a href="https://hand-writing-generation.streamlit.app/">here</a> to have a go yourself).</p>
 <p><img loading="lazy" src="images/streamlit_app.png" alt="Streamlit app"  />
 </p>
 <p>This dashboard goes through the following steps:</p>
 <ol>
-<li>You being by by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively to allows the model to “learn” your writing style.</li>
+<li>You being by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively allows the model to “learn” your writing style.</li>
 <li>You can then generate arbitrary hand-written characters by sampling the distribution $p(x) = p(x|z)p(z)$ where $p(z)=p(z|x_{t})$.</li>
 </ol>
 <p>By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:</p>
@@ -274,7 +274,7 @@ Train a model to classify hand-written alphanumeric characters Generate syntheti
     </main>
     
 <footer class="footer">
-    <span>&copy; 2023 <a href="https://example.org/">Alex Haslam</a></span>
+    <span>&copy; 2023 <a href="https://alxhslm.github.io/">Alex Haslam</a></span>
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
