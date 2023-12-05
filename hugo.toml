@@ -24,10 +24,6 @@ url = "https://www.linkedin.com/in/alexanderhaslam"
 name = "GoogleScholar"
 url = "https://scholar.google.com/citations?user=XIvQ5NYAAAAJ&hl=en"
 
-[[params.socialIcons]]
-name = "CV"
-url = "/files/Alex Haslam CV.pdf"
-
 [[menu.main]]
 identifier = "about"
 name = "About"
