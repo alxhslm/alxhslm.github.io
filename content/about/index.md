@@ -3,10 +3,11 @@ title = 'About'
 showDate = false
 showWordCount = false
 showReadingTime = false
+showTableOfContents = true
 +++
 
 
-# Experience
+## Experience
 {{< timeline >}}
 
 {{< timelineItem icon="optimal" header="Optimal Agriculture" badge="Sept 2020 to Present" subheader="Senior Engineer" >}}
@@ -21,7 +22,7 @@ Developing models of components, simulator control algorithms and lap-time simul
 
 {{< /timeline >}}
 
-# Education
+## Education
 
 {{< timeline >}}
 
@@ -45,19 +46,19 @@ Download
 
 {{< /timeline >}}
 
-# Skills
+## Skills
 
 - Modelling, simulation and control
 - Machine learning
 - Software
 
-## Python
+### Python
 
 - **Scientific libraries:** numpy, pandas, scikit-learn
 - **Visualisation:** matplotlib, plotly, streamlit
 - **Deep learining:** PyTorch and JAX
 - Poetry
 
-## Technologies
+### Technologies
 
 Git, CircleCI, Docker, AWS/GCP.
