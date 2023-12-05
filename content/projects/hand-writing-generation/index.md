@@ -21,7 +21,7 @@ In order to get a better feel for how the model works, and its stengths and weak
 
 This dashboard goes through the following steps:
 
-1. You being by by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively to allows the model to “learn” your writing style.
+1. You being by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively allows the model to “learn” your writing style.
 2. You can then generate arbitrary hand-written characters by sampling the distribution $p(x) = p(x|z)p(z)$ where $p(z)=p(z|x_{t})$. 
 
 By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:
