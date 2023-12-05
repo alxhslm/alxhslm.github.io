@@ -1,8 +1,10 @@
 +++
 title = 'Hand Writing Generation'
 date = 2023-12-01T21:28:11Z
-katex = true
 +++
+
+{{< katex >}}
+
 
 This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model. The source code is available on GitHub.
 
@@ -24,8 +26,8 @@ In order to get a better feel for how the model works, and its stengths and weak
 
 This dashboard goes through the following steps:
 
-1. You being by drawing a few characters which gives us some observations $x_t$ This allows the encoder to produce an estimate of the posterior distribution $p(z|x_{t})$, which effectively allows the model to “learn” your writing style.
-2. You can then generate arbitrary hand-written characters by sampling the distribution $p(x) = p(x|z)p(z)$ where $p(z)=p(z|x_{t})$. 
+1. You being by drawing a few characters which gives us some observations \\(x_t\\) This allows the encoder to produce an estimate of the posterior distribution \\(p(z|x_{t})\\), which effectively allows the model to “learn” your writing style.
+2. You can then generate arbitrary hand-written characters by sampling the distribution \\(p(x) = p(x|z)p(z)\\) where \\(p(z)=p(z|x_{t})\\). 
 
 By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:
 
