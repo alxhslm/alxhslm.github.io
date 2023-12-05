@@ -139,8 +139,9 @@ df["roaster_country"].value_counts()
 
 If we look at the distribution of pricing for the most common countries, we see that the distribution is quite different in each country. In particular, the coffees sold in the US are much more "peaky". This likely indicates that there is some bias in the dataset. Given that CoffeeReview is based in the US, there are disproportionately more affordable coffees from US roasters.
 
-> :warning: This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if coffees from German roasters would be more or less likely to be highly rated.
-
+{{< alert >}}
+This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if coffees from German roasters would be more or less likely to be highly rated.
+{{< /alert >}}
 
 ```python
 import plotly.express as px
@@ -245,7 +246,10 @@ We can now use this information to engineer roaster features with a smaller numb
 df["roaster"] = df["roaster"].where(df["roaster"].apply(lambda r: r in popular_roasters), "Other")
 ```
 
-> :warning: If we find these features have a strong influence on the model, we need to be careful when applying the model to new coffees from unknown roasters. Even if the coffee is from a well-known roaster, they will have a "roaster" value of "Other" if they are not present in the training set. 
+
+{{< alert >}}
+If we find these features have a strong influence on the model, we need to be careful when applying the model to new coffees from unknown roasters. Even if the coffee is from a well-known roaster, they will have a "roaster" value of "Other" if they are not present in the training set. 
+{{< /alert >}}
 
 ### Region of origin
 The different regions of the world typically produce coffees which are similar in style. Eg African coffees are typically more acidic. Therefore it seems possible that the region may provide as much information as the country of origin. We will therefore engineer this feature.
