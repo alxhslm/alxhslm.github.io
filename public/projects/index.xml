@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Alex Haslam</title>
-    <link>https://alxhslm.github.io/projects/</link>
+    <link>https://alxhlsm.github.io/projects/</link>
     <description>Recent content in Projects on Alex Haslam</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Dec 2023 21:28:11 +0000</lastBuildDate><atom:link href="https://alxhslm.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <copyright>© 2023 Alex Haslam</copyright>
+    <lastBuildDate>Fri, 01 Dec 2023 21:28:11 +0000</lastBuildDate><atom:link href="https://alxhlsm.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hand Writing Generation</title>
-      <link>https://alxhslm.github.io/projects/hand-writing-generation/</link>
+      <link>https://alxhlsm.github.io/projects/hand-writing-generation/</link>
       <pubDate>Fri, 01 Dec 2023 21:28:11 +0000</pubDate>
       
-      <guid>https://alxhslm.github.io/projects/hand-writing-generation/</guid>
-      <description>This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model.
-Objective The aim of this project is to:
-Train a model to classify hand-written alphanumeric characters Generate synthetic hand-written characters using the same model I decided to use a Variational autoencoder since it is one of the few widely used models uniting deep learning and Bayesian methods.</description>
+      <guid>https://alxhlsm.github.io/projects/hand-writing-generation/</guid>
+      <description>This was a more advanced project to gain more practical experience with deep learning with unstructured data.</description>
+      
     </item>
     
     <item>
       <title>Coffee Rating Prediction</title>
-      <link>https://alxhslm.github.io/projects/coffee-rating-prediction/</link>
+      <link>https://alxhlsm.github.io/projects/coffee-rating-prediction/</link>
       <pubDate>Tue, 21 Nov 2023 20:12:00 +0000</pubDate>
       
-      <guid>https://alxhslm.github.io/projects/coffee-rating-prediction/</guid>
-      <description>This was my first personal ML project. The goal was to familiarise myself with XGBoost and AWS Lambda. I enjoy drinking nice coffee, so I chose a topic which I hoped would help me buy better coffee in the future &amp;#x2615;.
-Objective The objective of this project is to be able to predict how highly rated a coffee would be on CoffeeReview.com based purely on information about the coffee such as:</description>
+      <guid>https://alxhlsm.github.io/projects/coffee-rating-prediction/</guid>
+      <description>This was my first personal ML project.</description>
+      
     </item>
     
   </channel>
