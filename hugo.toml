@@ -7,7 +7,7 @@ enableEmoji = true
 [params.profileMode]
 enabled = true
 title = "Alex Haslam"
-subtitle = "Engineer"
+subtitle = "Simulation and ML Engineer"
 imageUrl = "/images/profile.png"
 imageWidth = 120
 imageHeight = 120
