@@ -15,4 +15,6 @@ The objective of this project is to be able to predict how highly rated a coffee
 ## Interactive dashboard
 Have a play with the Streamlit dashboard [here](https://coffee-rating-prediction.streamlit.app/) and see how your favourite coffee fares.
 
+![Streamlit app](images/streamlit_app.png)
+
 The source code is available on [GitHub](https://github.com/alxhslm/coffee-rating-prediction).

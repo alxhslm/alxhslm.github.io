@@ -15,7 +15,7 @@ The aim of this project is to:
 I decided to use a [Variational autoencoder](https://en.wikipedia.org/wiki/Variational_autoencoder) since it is one of the few widely used models uniting deep learning and Bayesian methods.
 
 ## Interactive dashboard
-In order to get a better feel for how the model works, and its stengths and weaknesses, I created a [Streamlit](https://streamlit.io/) dashboard (which you can access [here](https://hand-writing-generation.streamlit.app/) to have a go yourself).
+In order to get a better feel for how the model works, and its stengths and weaknesses, I created a Streamlit dashboard (which you can access [here](https://hand-writing-generation.streamlit.app/) to have a go yourself).
 
 ![Streamlit app](images/streamlit_app.png)
 
