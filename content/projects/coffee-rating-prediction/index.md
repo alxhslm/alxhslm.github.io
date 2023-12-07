@@ -496,7 +496,6 @@ results = xgb_model.evals_result()
 scores = pd.Series(results[f"validation_0"]["rmse"])
 ```
 
-
 In the same way as the linear model, this model fails to capture the very low or high ratings.
 
 ```python
@@ -507,6 +506,7 @@ pd.DataFrame(
     }
 ).hist(histnorm="percent", barmode="group", labels={"value": "rating [%]"})
 ```
+
 {{< include src="charts/trees_hist.html" >}}
 
 ### Feature importances
@@ -563,8 +563,8 @@ for name, model in models.items():
 
 fig = px.bar(scores.transpose(), barmode="group", labels={"index": "model", "value": "loss"})
 ```
-{{< include src="charts/comparison_losses.html" >}}
 
+{{< include src="charts/comparison_losses.html" >}}
 
 We can see that the two models display similar performance, and predict a similar distribution of ratings with shorter tails. This suggests that the model is not the reason for failing to predict the highest/lowest scores is more due to some other more systematic error such as:
 
