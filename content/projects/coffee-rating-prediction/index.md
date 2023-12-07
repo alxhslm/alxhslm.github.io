@@ -17,9 +17,11 @@ The objective of this project is to be able to predict how highly rated a coffee
 - Price
 - Flavour profile
 
+I will use this [dataset](https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset/data) from Kaggle which contains ratings for ~1900 coffees.
+
 ## Exploratory data analysis
 
-We begin by loading in the data from the dataset from [Kaggle](https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset/data). I also renamed the columns to more clearly distinguish between the country of origin and roaster country.
+I will begin by loading in the data into a `pd.DataFrame` and also renaming the columns to more clearly distinguish between the country of origin and roaster country.
 
 ```python
 import pandas as pd
@@ -62,7 +64,7 @@ Let's fix a typo in the roaster country for one coffee.
 df["roaster_country"] = df["roaster_country"].str.replace("New Taiwan", "Taiwan")
 ```
 
-Some roasters were being duplicated due to the presence of the characters below, so let us replace them with the English equivalent for consistency:
+Some roasters such as "El Gran Cafe" were entered with slightly different spellings (eg sometimes with the accented é and sometimes with a plain e). I will rename the roasters consistently by replacing these characters:
 
 ```python
 replace = {"’s": "'s", "é": "e", "’": "'"}
@@ -72,7 +74,7 @@ for k, v in replace.items():
 
 ### Ratings
 
-We can see that the ratings are approximately normally distribution. However, the median rating is surprisingly high at ~94%.
+We can see that the ratings appear to be approximately normally distributed. However, the median rating is surprisingly high at ~94%.
 
 ```python
 df["rating"].hist(histnorm='percent', labels={"value":"rating [%]"})
@@ -80,9 +82,9 @@ df["rating"].hist(histnorm='percent', labels={"value":"rating [%]"})
 
 {{< include src="charts/ratings_hist.html" >}}
 
-### Coffee pricing
+### Price
 
-The distribution for the price of the coffee has a very long tail, due to a few very expensive coffees. This suggests that there may be benefit in applying the log transformation.
+The distribution for the price of the coffee is shown below.
 
 ```python
 df["price_per_100g"].hist((histnorm='percent', labels={"value":"price per 100g [$]"})
@@ -90,13 +92,13 @@ df["price_per_100g"].hist((histnorm='percent', labels={"value":"price per 100g [
 
 {{< include src="charts/price_hist.html" >}}
 
-Now that we have applied the log transformation, the distribution is closer to a normal distribution.
+There is a very long tail, due to a few very expensive coffees. This suggests that there may be benefit in applying the log transformation. Once we do this, the distribution is closer to a normal distribution.
 
 ```python
 df["price_per_100g"].apply(np.log1p).(histnorm='percent', labels={"value":"price per 100g [log $]"})
 ```
 
-{{< include src="charts/price_hist_log.html" >}}
+{{< include src="charts/price_log_hist.html" >}}
 
 ### Roasting style
 
@@ -130,11 +132,7 @@ df["roaster_country"].value_counts()
 | China           | 1   |
 | Kenya           | 1   |
 
-If we look at the distribution of pricing for the most common countries, we see that the distribution is quite different in each country. In particular, the coffees sold in the US are much more "peaky". This likely indicates that there is some bias in the dataset. Given that CoffeeReview is based in the US, there are disproportionately more affordable coffees from US roasters.
-
-{{< alert >}}
-This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if coffees from German roasters would be more or less likely to be highly rated.
-{{< /alert >}}
+If we look at the distribution of pricing for the most common countries, we see that the distribution is quite different in each country. In particular, the distribution of coffees from US roasters has a much more pronounced peak at the lower price level. This likely indicates that there is some bias in the dataset. Given that CoffeeReview is based in the US, they have reviewed a disproportionate number of more affordable coffees from US roasters.
 
 ```python
 import plotly.express as px
@@ -151,6 +149,10 @@ px.histogram(
 
 {{< include src="charts/roaster_country_hist.html" >}}
 
+{{< alert >}}
+This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if a coffee from a German roaster would be more or less likely to be highly rated since there are no coffees from German roasters in the dataset.
+{{< /alert >}}
+
 ### Country of origin
 
 We will now examine the country of origin for the different coffees:
@@ -163,7 +165,7 @@ df["region_of_origin"].hist(histnorm="percent", labels={"value":"country of orig
 
 As expected, most of the coffees come from the largest coffee producing regions in the world. Almost all examples are from one of the following regions:
 
-- Africa such as Ethiopia or Kenya
+- East Africa such as Ethiopia or Kenya
 - Central or South America such as Colombia or Guatemala
 
 There are also a lot of coffees from Hawaii, which is likely again because the data is from a US-based website.
@@ -217,9 +219,7 @@ def _assert_identical_values(df: pd.DataFrame) -> pd.Series:
 roaster_map = df[["roaster", "roaster_country"]].groupby("roaster").first()["roaster_country"]
 ```
 
-There is evidence that certain roasters product particularly good/poor coffee (or are preferred/disliked by the reviewers). The model may therefore need a feature giving it this information.
-
-We cannot simply convert the roaster using one-hot encoding as there are too many different values. Let us instead only include the most common roasters (those with > 10 coffees).
+Since the previous analysis above showed that there is evidence that certain roasters product particularly good/poor coffee (or are preferred/disliked by the reviewers), the model may therefore need a feature giving it this information. We cannot simply convert the roaster using one-hot encoding as there are too many different values. Let us instead only include the most common roasters (those with > 10 coffees).
 
 ```python
 roasters = df["roaster"].value_counts()
@@ -297,7 +297,7 @@ with open("./data/flavours.json", "r") as f:
     FLAVOURS = json.load(f)
 ```
 
-We can now add boolean features for each flavour.
+We can now engineer boolean features for each flavour.
 
 ```python
 def rating_contains_words(review: str, keywords: list[str]) -> bool:
@@ -318,14 +318,7 @@ Let's now combine the flavours into a single column.
 df["flavours"] = df.apply(lambda coffee: [flavour for flavour in FLAVOURS if coffee[flavour]], axis=1)
 ```
 
-It is useful to examine the popularity of the different flavours, by plotting the histogram. We can see that the most common flavours are:
-
-- Caramelly
-- Acidic
-- Fruity
-- Chocolate
-
-Intuitively, this makes sense as these are the sorts of flavours we see on coffee packets.
+It is useful to examine the popularity of the different flavours, by plotting the histogram.
 
 ```python
 df[list(FLAVOURS.keys())].sum().divide(df.shape[0]).sort_values(ascending=False).plot.bar(labels={"index":"flavour"})
@@ -333,7 +326,19 @@ df[list(FLAVOURS.keys())].sum().divide(df.shape[0]).sort_values(ascending=False)
 
 {{< include src="charts/flavour_hist.html" >}}
 
-It is also interesting to check how many flavours the different coffees have. If we have done a good job at defining the flavour keywords, we would expect not many coffees to have no flavours.
+We can see that the most common flavours are:
+
+- Caramelly
+- Acidic
+- Fruity
+- Chocolate
+
+Intuitively, this makes sense as these are the sorts of flavours you commonly see mentioned on packets of coffee.
+
+It is also interesting to check how many flavours the different coffees have. If we have done a good job at defining the flavour keywords, we would expect:
+
+- Most coffees to have at least some flavours since this is a key component of any review
+- Most coffees to not have an excessive number of flavours, as this would indicate we have chosen too "common" keywords
 
 ```python
 df[list(FLAVOURS.keys())].sum(axis=1).hist(histnorm="percent", labels={"value":"num_flavours"})
@@ -341,9 +346,15 @@ df[list(FLAVOURS.keys())].sum(axis=1).hist(histnorm="percent", labels={"value":"
 
 {{< include src="charts/num_flavours_hist.html" >}}
 
-Indeed, this appears to be the case. All coffees have at least some flavours, and in fact, most coffees have 6 flavours!
+Indeed, this appears to be the case. All coffees have at least some flavours, and in fact most coffees have ~6 flavours.
 
 ## Building a model
+
+We begin by selecting the features to use. In addition to the raw "roast", "roaster_country" and "price_per_100g" columns, we will use the following engineered features:
+
+- "roaster" where we have encoded the most highly and poorly rated roasters
+- "region_of_origin" where we have categorised the country of origin into major coffee producing regions
+- "flavours" where were have extracted flavour keywords from the reviews
 
 ```python
 features = ["roaster", "roast", "roaster_country", "region_of_origin", "price_per_100g", "flavours"]
@@ -352,8 +363,9 @@ X["price_per_100g"] = X["price_per_100g"].apply(np.log1p)
 y = df["rating"]
 ```
 
-- Split the dataset into train/validation/test sets with 60%/20%/20% distribution.
-- Use the `train_test_split` function and set the `random_state` parameter to 1.
+### Pre-processing
+
+Before we can train a model, we need to perform some additional steps. We msut first split the dataset into train/validation/test, where I have chosen a 60%/20%/20% distribution. I have set the `random_state` parameter to 1 to guarantee reproducibility.
 
 ```python
 from sklearn.model_selection import train_test_split
@@ -364,6 +376,8 @@ y_train_val, y_test = train_test_split(y, test_size=0.2, random_state=1)
 X_train, X_val = train_test_split(X_train_val, test_size=0.25, random_state=1)
 y_train, y_val = train_test_split(y_train_val, test_size=0.25, random_state=1)
 ```
+
+Lastly we will encode the categorical features using `DictVectorizer`.
 
 ```python
 from sklearn.feature_extraction import DictVectorizer
@@ -378,36 +392,38 @@ def _transform(df: pd.DataFrame):
 
 ### Linear regression
 
-Let's start with the simplest model which is a linear regressor.
+Let's start with the simplest model which is a linear regressor. I have used the `Ridge` model which included L2 regularisation to prevent overfitting. I will train the model for multiple values of the regulurisation weight parameter `alpha`, and recorded the losses on the training and validation sets.
 
 ```python
 from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 
-scores = pd.DataFrame(columns=["test", "validation"])
+scores_linear = pd.DataFrame(columns=["train", "validation"])
 for alpha in [0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0]:
     model = Ridge(alpha=alpha)
     model.fit(_transform(X_train), y_train)
     scores.loc[alpha, :] = pd.Series(
         {
-            "test": mean_squared_error(y_train, model.predict(_transform(X_train)), squared=False),
+            "train": mean_squared_error(y_train, model.predict(_transform(X_train)), squared=False),
             "validation": mean_squared_error(y_val, model.predict(_transform(X_val)), squared=False),
         }
     )
 
-fig = scores.plot(log_x=True, labels={"index":"alpha", "value":"loss"})
+fig = scores_linear.plot(log_x=True, labels={"index":"alpha", "value":"loss"})
 ```
 
 {{< include src="charts/linear_losses.html" >}}
 
-This suggests that the best value is 1.0 since this gives the same loss on the validation and test sets. We can now fit a model on the combined train and validation set.
+We see that if we use too high a value of `alpha`, the RMSE starts to increase because the regularisation term is too strong and forces too simple a model. It seems that a suitable value of `alpha` is 1.0, since this gives a relatively low loss on both the validation and test sets.
+
+We can now fit a model on the combined train and validation set.
 
 ```python
 linear_model = Ridge(alpha=1.0)
 linear_model.fit(_transform(X_train_val), y_train_val)
 ```
 
-This model captures the central part of the distribution quite well, but fails to predict the very high or low ratings.
+If we plot the predicted distribution of ratings from this model, we see that it captures the central part of the distribution quite well. However, the model fails to predict the more extreme ratings, and therefore the peak around the median is slightly higher.
 
 ```python
 pd.DataFrame(
@@ -417,7 +433,39 @@ pd.DataFrame(
 
 {{< include src="charts/linear_hist.html" >}}
 
+We can get a bit more insight by evaluating the importance of the difference features using `permutation_importance`.
+
+```python
+from sklearn.inspection import permutation_importance
+r = permutation_importance(linear_model, _transform(X_train_val), y_train_val, n_repeats=10, random_state=0)
+linear_importances = pd.Series(dict(zip(dv.get_feature_names_out(), r.importances_mean)))
+linear_importances[linear_importances.abs().sort_values(ascending=False).index]
+```
+
+| feature                        | importance |
+| ------------------------------ | ---------- |
+| price_per_100g                 | 0.243042   |
+| roaster=Other                  | 0.075393   |
+| flavours=resinous              | 0.066831   |
+| region_of_origin=East Africa   | 0.063009   |
+| roaster_country=Taiwan         | 0.059065   |
+| roast=Medium-Light             | 0.053463   |
+| roaster_country=United States  | 0.042189   |
+| flavours=fruity                | 0.038182   |
+| roaster=Hula Daddy Kona Coffee | 0.029996   |
+| roaster=Kakalove Cafe          | 0.029231   |
+| roast=Light                    | 0.026638   |
+
+We can see in both cases that the biggest influence is the price. This suggests that either:
+
+- Price is genuinely an indicator of quality
+- Price biases the reviewers
+
+Other than the price, the region of origin plays a big influence. Whether a coffee is roasted by certain roasters also has a relatively significant impact on the rating. Surprisingly the flavour notes do not have that much influence apart from the "resinous" and "fruity" flavours.
+
 ### Gradient-boosted trees
+
+Another type of model which performs well on tasks like this are random forests. Here I will use `XGBoost` which also performs [gradient boosting](https://en.wikipedia.org/wiki/Gradient_boosting) to further improve performance. We will train a model for an increasing number of estimators (ie decision trees), and for increasing maximum tree depth (set by the `max_depth` parameter).
 
 ```python
 import xgboost as xgb
@@ -427,7 +475,7 @@ eval_sets = {
     "validation": (_transform(X_val), y_val),
 }
 
-scores = {}
+scores_depth = {}
 for max_depth in [1, 2, 3, 4, 5]:
     xgb_params = {
         'max_depth': max_depth,
@@ -443,21 +491,28 @@ for max_depth in [1, 2, 3, 4, 5]:
     results = model.evals_result()
     scores[max_depth] = pd.DataFrame({k: results[f"validation_{i}"]["rmse"] for i, k in enumerate(eval_sets)})
 
-pd.DataFrame({depth: df["validation"] for depth, df in scores.items()}).plot(
-    labels={"index": "n_estimators", "variable": "max_depth", "value": "rmse"}
-)
+import plotly.graph_objects as go
+COLORS = px.colors.qualitative.Plotly
+fig = go.Figure()
+for i, (depth, df) in enumerate(scores_max_depth.items()):
+    fig.add_trace(go.Scatter(x = df.index, y=df["train"], name=f"{depth} (train)", line_dash="dash", line_color=COLORS[i]))
+    fig.add_trace(go.Scatter(x = df.index, y=df["validation"], name=f"{depth} (val)", line_color=COLORS[i]))
+fig.update_layout(xaxis_title="n_estimators", yaxis_title="rmse", legend_title_text = "max_depth")
+fig.show()
 ```
 
 {{< include src="charts/trees_losses_depth.html" >}}
 
-This suggests that we should pick `max_depth`=2 or 3 to prevent overfitting. Let us select `max_depth`=3 with 90 estimators, since this gives the lowest validation loss.
+We can see that the model is able to achieve a lower RMSE for greater values for `max_depth`. However, this does not come with a corresponding decrease in validation error, indicating that there is overfitting. A suitable value would be `max_depth`=2 or 3 since this is the lowest depth which achieves the minimum validation loss of ~1.05. Let us select `max_depth`=3 with 10 estimators, since this gives the lowest validation loss without any indication of overfitting at low numbers of estimators.
+
+We can now retrain a model with these parameters, but for multiple values of the `eta` parameter which controls the "learning rate" (ie how strongly each new estimator aims to compensate for the previous ones):
 
 ```python
-scores = {}
+scores_eta = {}
 for eta in [0.01, 0.03, 0.1, 0.3, 1.0]:
     xgb_params = {
         'max_depth': 3,
-        'n_estimators': 90,
+        'n_estimators': 10,
         "eta": eta,
         'min_child_weight': 1,
         'objective': 'reg:squarederror',
@@ -469,21 +524,26 @@ for eta in [0.01, 0.03, 0.1, 0.3, 1.0]:
     model.fit(_transform(X_train), y_train, eval_set=list(eval_sets.values()))
 
     results = model.evals_result()
-    scores[eta] = pd.DataFrame({k: results[f"validation_{i}"]["rmse"] for i, k in enumerate(eval_sets)})
+    scores_eta[eta] = pd.DataFrame({k: results[f"validation_{i}"]["rmse"] for i, k in enumerate(eval_sets)})
 
-pd.DataFrame({eta: df["validation"] for eta, df in scores.items()}).plot(
-    labels={"index": "n_estimators", "variable": "eta", "value": "rmse"}
-)
+fig = go.Figure()
+for i, (eta, df) in enumerate(scores_eta.items()):
+    fig.add_trace(go.Scatter(x = df.index, y=df["train"], name=f"{eta} (train)", line_dash="dash", line_color=COLORS[i]))
+    fig.add_trace(go.Scatter(x = df.index, y=df["validation"], name=f"{eta} (val)", line_color=COLORS[i]))
+
+fig.update_layout(xaxis_title="n_estimators", yaxis_title="rmse", legend_title_text = "eta")
 ```
 
 {{< include src="charts/trees_losses_eta.html" >}}
 
-To prevent overfitting, we should select `eta` = 0.3.
+We can see that if we set too low a value, the model is not able to achieve as low a loss. However, if it is too high, the model overfits and the training loss continues to decrease without reducing the validation loss. It appears that we should select `eta` = 0.3 to give the best compromise.
+
+We can now train a model with these final parameters on the combined training and validation sets:
 
 ```python
 xgb_params = {
     'max_depth': 3,
-    'n_estimators': 90,
+    'n_estimators': 10,
     "eta": 0.3,
     'min_child_weight': 1,
     'objective': 'reg:squarederror',
@@ -493,7 +553,6 @@ xgb_params = {
 xgb_model = xgb.XGBRegressor(**xgb_params, eval_metric="rmse")
 xgb_model.fit(_transform(X_train_val), y_train_val, eval_set=[(_transform(X_train_val), y_train_val)])
 results = xgb_model.evals_result()
-scores = pd.Series(results[f"validation_0"]["rmse"])
 ```
 
 In the same way as the linear model, this model fails to capture the very low or high ratings.
@@ -509,67 +568,52 @@ pd.DataFrame(
 
 {{< include src="charts/trees_hist.html" >}}
 
-### Feature importances
-
-We can get a bit more insight by evaluating the importance of the difference features.
+As with the linear models, can get a bit more insight by evaluating the importance of the difference features.
 
 ```python
-from sklearn.inspection import permutation_importance
-
-importances = {}
-for name, model in models.items():
-    r = permutation_importance(model, _transform(X_train_val), y_train_val, n_repeats=10, random_state=0)
-    importances[name] = pd.Series(dict(zip(dv.get_feature_names_out(), r.importances_mean)))
-
-importances = pd.DataFrame(importances)
+r = permutation_importance(xgb_model, _transform(X_train_val), y_train_val, n_repeats=10, random_state=0)
+xgb_importances = pd.Series(dict(zip(dv.get_feature_names_out(), r.importances_mean)))
+xgb_importances[xgb_importances.abs().sort_values(ascending=False).index]
 ```
 
-| feature                       | linear   | xgb       |
-| ----------------------------- | -------- | --------- |
-| price_per_100g                | 0.197381 | 0.244563  |
-| flavours=fruity               | 0.067031 | 0.078077  |
-| region_of_origin=East Africa  | 0.072613 | 0.052817  |
-| roaster_country=Taiwan        | 0.057250 | 0.028345  |
-| roaster=Other                 | 0.027719 | 0.050806  |
-| roast=Light                   | 0.047623 | 0.002267  |
-| roaster=El Gran Cafe          | 0.020535 | 0.045360  |
-| roaster=Kakalove Cafe         | 0.037606 | 0.035591  |
-| roaster_country=United States | 0.035916 | -0.002266 |
-| roast=Medium-Light            | 0.029053 | 0.015307  |
+| feature                        | importance |
+| ------------------------------ | ---------- |
+| price_per_100g                 | 0.306629   |
+| flavours=resinous              | 0.093346   |
+| roaster=Other                  | 0.062972   |
+| roaster_country=Taiwan         | 0.060680   |
+| flavours=fruity                | 0.040122   |
+| region_of_origin=North America | 0.030498   |
+| region_of_origin=East Africa   | 0.027630   |
+| roast=Medium-Light             | 0.018537   |
+| roaster=El Gran Cafe           | 0.016596   |
+| roast=Medium-Dark              | 0.015745   |
+| roaster=Kakalove Cafe          | 0.010607   |
+| flavours=nutty                 | 0.010169   |
 
-We can see in both cases that the biggest influence is the price. This suggests that either:
-
-- Price is genuinely an indicator of quality
-- Price biases the reviewers
-
-Other than the price, the region of origin plays a big influence. Surprisingly the flavour notes do not have that much influence apart from the fruitiness. Whether a coffee is roasted by certain roasters does have a non-negligible impact on the rating.
-
-```python
-importances.loc[importances.max(axis=1).sort_values(ascending=False).index].head(10)
-```
+We see that the price continues to have the biggest influence. We also see that the "resinous" and "fruity" flavours are significant here. The roaster features also play a significant role, but interestingly the roasters which feature here are different from the linear model.
 
 ### Model selection
 
-We can evaluate the losses on the test dataset, and see which model is most accurate.
+Finally can evaluate the losses of both models on the test dataset, and see which model is most accurate.
 
 ```python
 models = {"linear": linear_model, "xgb": xgb_model}
 
-scores = pd.DataFrame(dtype=float)
+scores_comparison = pd.DataFrame(dtype=float)
 for name, model in models.items():
     loss_train = mean_squared_error(y_train_val, model.predict(_transform(X_train_val)), squared=False)
     loss_test = mean_squared_error(y_test, model.predict(_transform(X_test)), squared=False)
     scores[name] = pd.Series({"train": loss_train, "test": loss_test})
 
-fig = px.bar(scores.transpose(), barmode="group", labels={"index": "model", "value": "loss"})
+fig = px.bar(scores_comparison.transpose(), barmode="group", labels={"index": "model", "value": "loss"})
 ```
 
 {{< include src="charts/comparison_losses.html" >}}
 
-We can see that the two models display similar performance, and predict a similar distribution of ratings with shorter tails. This suggests that the model is not the reason for failing to predict the highest/lowest scores is more due to some other more systematic error such as:
+Both models achieve similar losses on the test set. However, we can also see that the `XGBoost` model has a much larger difference between the train and test losses. This suggests that this model is too simple and has overfit to the training set.
 
-- Lack of information in the features (eg perhaps we need more detailed information about the origin)
-- System error in the reviews (eg different reviewers)
+We can see that the two models predict a similar distribution of ratings with shorter tails that the ground truth distribution.
 
 ```python
 pd.DataFrame(
@@ -579,7 +623,23 @@ pd.DataFrame(
 
 {{< include src="charts/comparison_hist.html" >}}
 
-Overall, the two models have very similar performance. Since the linear regression model is simpler (and has _slightly_ better performance), this is the preferred model.
+This suggests that the model is not the reason for failing to predict the highest/lowest scores is more due to some other more systematic error such as:
+
+- Lack of information in the features (eg perhaps we need more detailed information about the origin)
+- System error in the reviews (eg different reviewers)
+
+### Conclusions
+
+We have shown that it is possible to predict how highly rated a coffee would be on CoffeeReview.com based purelty on information about the coffee and a linear model. We have shown that the biggest influencers on rating are:
+
+- Price
+- Flavour: if a coffee is fruity or resinous
+- If a coffee is from East Africa
+- If a coffee is from certain roasters
+
+We showed that the models could predict the rating to quite a high degree of accuracy, but struggled to predict particularly low or highly rated coffees. However, they produced an unbiased estimate.
+
+Overall, the two models have very similar performance on the test set. The linear regression model is preferred since it is simpler and has _slightly_ better performance.
 
 ## Deployment
 
@@ -587,16 +647,8 @@ The chosen model was wrapped within a `flask` webserver, which was in turn wrapp
 
 ### Interactive dashboard
 
-In order to be able to interact the model and predict ratings for arbitrary coffees, I created a Streamlit dashboard which you can access [here](https://coffee-rating-prediction.streamlit.app/). The dashboard generates the required features from the input data, and then calls the model server. Have a play and see how your favourite coffee fares!
+In order to be able to interact the model and predict ratings for arbitrary coffees, I created a Streamlit dashboard which you can access [here](https://coffee-rating-prediction.streamlit.app/). The dashboard generates the required features from the data inputted by the user, and then queries the model server. The predicted rating is then displayed in the dashboard. Have a play and see how your favourite coffee fares!
 
 ![Streamlit app](images/streamlit_app.png)
 
-## Conclusions
-
-We have shown that it is possible to predict how highly rated a coffee would be on CoffeeReview.com based purelty on information about the coffee and a linear model. We have shown that the biggest influencers on rating are:
-
-- Price
-- Fruityness
-- If a coffee is from East Africa
-
-We showed that the model could predict the rating to quite a high degree of accuracy, but struggled to predict particularly low or highly rated coffees. However, overall it produced an unbiased estimate. We can now apply use this model to predict the ratings of new coffees! :coffee:
+We can now apply use this model to predict the ratings of new coffees! :coffee:

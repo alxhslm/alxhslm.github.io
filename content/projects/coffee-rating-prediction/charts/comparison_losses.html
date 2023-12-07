@@ -7,30 +7,47 @@
     src="https://cdn.plot.ly/plotly-2.24.1.min.js"
   ></script>
   <div
-    id="5f766b32-93d2-49cf-9fb4-03a94ab2cfc3"
+    id="fea5ad68-f0a3-460a-8acf-fb759488316c"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("5f766b32-93d2-49cf-9fb4-03a94ab2cfc3")) {
+    if (document.getElementById("fea5ad68-f0a3-460a-8acf-fb759488316c")) {
       Plotly.newPlot(
-        "5f766b32-93d2-49cf-9fb4-03a94ab2cfc3",
+        "fea5ad68-f0a3-460a-8acf-fb759488316c",
         [
           {
             alignmentgroup: "True",
             hovertemplate:
-              "variable=0\u003cbr\u003eindex=%{x}\u003cbr\u003evalue=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
-            legendgroup: "0",
+              "variable=train\u003cbr\u003emodel=%{x}\u003cbr\u003ermse=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+            legendgroup: "train",
             marker: { color: "#636efa", pattern: { shape: "" } },
-            name: "0",
-            offsetgroup: "0",
+            name: "train",
+            offsetgroup: "train",
             orientation: "v",
             showlegend: true,
             textposition: "auto",
             x: ["linear", "xgb"],
             xaxis: "x",
-            y: [1.2448641862630527, 1.3122199436078394],
+            y: [1.1065052311737993, 1.064363669278517],
+            yaxis: "y",
+            type: "bar",
+          },
+          {
+            alignmentgroup: "True",
+            hovertemplate:
+              "variable=test\u003cbr\u003emodel=%{x}\u003cbr\u003ermse=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+            legendgroup: "test",
+            marker: { color: "#EF553B", pattern: { shape: "" } },
+            name: "test",
+            offsetgroup: "test",
+            orientation: "v",
+            showlegend: true,
+            textposition: "auto",
+            x: ["linear", "xgb"],
+            xaxis: "x",
+            y: [1.2448641862630527, 1.335907280236717],
             yaxis: "y",
             type: "bar",
           },
@@ -428,10 +445,10 @@
             },
           },
           xaxis: { anchor: "y", domain: [0.0, 1.0], title: { text: "model" } },
-          yaxis: { anchor: "x", domain: [0.0, 1.0], title: { text: "mse" } },
+          yaxis: { anchor: "x", domain: [0.0, 1.0], title: { text: "rmse" } },
           legend: { title: { text: "variable" }, tracegroupgap: 0 },
           margin: { t: 60 },
-          barmode: "relative",
+          barmode: "group",
         },
         { responsive: true },
       );

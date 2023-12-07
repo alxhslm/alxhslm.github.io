@@ -7,22 +7,22 @@
     src="https://cdn.plot.ly/plotly-2.24.1.min.js"
   ></script>
   <div
-    id="e4223b1e-6590-4f33-b308-6218636b6bed"
+    id="a84ec34b-623e-4f62-8700-dfe8383debbc"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("e4223b1e-6590-4f33-b308-6218636b6bed")) {
+    if (document.getElementById("a84ec34b-623e-4f62-8700-dfe8383debbc")) {
       Plotly.newPlot(
-        "e4223b1e-6590-4f33-b308-6218636b6bed",
+        "a84ec34b-623e-4f62-8700-dfe8383debbc",
         [
           {
             alignmentgroup: "True",
             bingroup: "x",
             histnorm: "percent",
             hovertemplate:
-              "variable=rating\u003cbr\u003evalue=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+              "variable=rating\u003cbr\u003erating [%]=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "rating",
             marker: { color: "#636efa", pattern: { shape: "" } },
             name: "rating",
@@ -519,6 +519,7 @@
           legend: { title: { text: "variable" }, tracegroupgap: 0 },
           margin: { t: 60 },
           barmode: "relative",
+          showlegend: false,
         },
         { responsive: true },
       );

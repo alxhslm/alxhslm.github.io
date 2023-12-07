@@ -7,22 +7,22 @@
     src="https://cdn.plot.ly/plotly-2.24.1.min.js"
   ></script>
   <div
-    id="21e92513-9497-4f87-ac76-445bde2023b4"
+    id="783e7583-ea29-45e9-8973-beaef0be3806"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("21e92513-9497-4f87-ac76-445bde2023b4")) {
+    if (document.getElementById("783e7583-ea29-45e9-8973-beaef0be3806")) {
       Plotly.newPlot(
-        "21e92513-9497-4f87-ac76-445bde2023b4",
+        "783e7583-ea29-45e9-8973-beaef0be3806",
         [
           {
             alignmentgroup: "True",
             bingroup: "x",
             histnorm: "percent",
             hovertemplate:
-              "variable=price_per_100g\u003cbr\u003eprice per 100g [log USD]=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+              "variable=price_per_100g\u003cbr\u003eprice per 100g [log $]=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "price_per_100g",
             marker: { color: "#636efa", pattern: { shape: "" } },
             name: "price_per_100g",
@@ -847,7 +847,7 @@
           xaxis: {
             anchor: "y",
             domain: [0.0, 1.0],
-            title: { text: "price per 100g [log USD]" },
+            title: { text: "price per 100g [log $]" },
           },
           yaxis: {
             anchor: "x",
@@ -857,6 +857,7 @@
           legend: { title: { text: "variable" }, tracegroupgap: 0 },
           margin: { t: 60 },
           barmode: "relative",
+          showlegend: false,
         },
         { responsive: true },
       );

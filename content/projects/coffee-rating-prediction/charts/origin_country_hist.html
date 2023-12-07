@@ -7,22 +7,22 @@
     src="https://cdn.plot.ly/plotly-2.24.1.min.js"
   ></script>
   <div
-    id="89bb5b45-ae2b-4fea-bf1f-4438127f4371"
+    id="41c69960-837e-4878-a02a-225caf6c42ef"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("89bb5b45-ae2b-4fea-bf1f-4438127f4371")) {
+    if (document.getElementById("41c69960-837e-4878-a02a-225caf6c42ef")) {
       Plotly.newPlot(
-        "89bb5b45-ae2b-4fea-bf1f-4438127f4371",
+        "41c69960-837e-4878-a02a-225caf6c42ef",
         [
           {
             alignmentgroup: "True",
             bingroup: "x",
             histnorm: "percent",
             hovertemplate:
-              "variable=country_of_origin\u003cbr\u003evalue=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+              "variable=country_of_origin\u003cbr\u003ecountry of origin=%{x}\u003cbr\u003epercent=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
             legendgroup: "country_of_origin",
             marker: { color: "#636efa", pattern: { shape: "" } },
             name: "country_of_origin",
@@ -1674,7 +1674,11 @@
               mapbox: { style: "light" },
             },
           },
-          xaxis: { anchor: "y", domain: [0.0, 1.0], title: { text: "value" } },
+          xaxis: {
+            anchor: "y",
+            domain: [0.0, 1.0],
+            title: { text: "country of origin" },
+          },
           yaxis: {
             anchor: "x",
             domain: [0.0, 1.0],
@@ -1683,6 +1687,7 @@
           legend: { title: { text: "variable" }, tracegroupgap: 0 },
           margin: { t: 60 },
           barmode: "relative",
+          showlegend: false,
         },
         { responsive: true },
       );
