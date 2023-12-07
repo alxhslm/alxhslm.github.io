@@ -8,13 +8,16 @@ This was my first personal ML project. The goal was to familiarise myself with [
 {{< github repo="alxhslm/coffee-rating-prediction" >}}
 
 ## Objective
+
 The objective of this project is to be able to predict how highly rated a coffee would be on [CoffeeReview.com](http://CoffeeReview.com) based purely on information about the coffee such as:
+
 - Origin
 - Roaster and roasting style
 - Price
 - Flavour profile
 
 ## Interactive dashboard
+
 Have a play with the Streamlit dashboard [here](https://coffee-rating-prediction.streamlit.app/) and see how your favourite coffee fares.
 
 ![Streamlit app](images/streamlit_app.png)
