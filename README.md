@@ -20,6 +20,13 @@ git clone git@github.com:alxhslm/alxhslm.github.io.git
 git submodule add -b main https://github.com/nunocoracao/blowfish.git themes/blowfish
 ```
 
+4. Install [`pre-commit`](https://pre-commit.com/) hooks by running:
+
+```
+pip install pre-commit
+pre-commit install
+```
+
 ## Local development
 
 Run the server locally using:
