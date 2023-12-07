@@ -1,6 +1,8 @@
 +++
-title = 'Coffee Rating Prediction'
-date = 2023-11-21T20:12:00Z
+title = 'Coffee Rating Prediction: Modelling'
+series = ['Coffee Rating Prediction']
+series_order = 2
+date = 2023-11-13T00:00:00Z
 showTableOfContents = true
 +++
 
@@ -8,201 +10,11 @@ This was my first personal ML project. The goal was to familiarise myself with [
 
 {{< github repo="alxhslm/coffee-rating-prediction" >}}
 
-## Objective
+## Background
 
-The objective of this project is to be able to predict how highly rated a coffee would be on [CoffeeReview.com](http://CoffeeReview.com) based purely on information about the coffee such as:
+In a [previous post]({{< ref "../eda" >}}) in this series, we performed experimental data analysis to understand the distribution of the rating and get some insight as to which features might be important.
 
-- Origin
-- Roaster and roasting style
-- Price
-- Flavour profile
-
-I will use this [dataset](https://www.kaggle.com/datasets/schmoyote/coffee-reviews-dataset/data) from Kaggle which contains ratings for ~1900 coffees.
-
-## Exploratory data analysis
-
-I will begin by loading in the data into a `pd.DataFrame` and also renaming the columns to more clearly distinguish between the country of origin and roaster country.
-
-```python
-import pandas as pd
-
-df = pd.read_csv("./data/simplified_coffee.csv")
-for col in ["name", "roaster", "roast", "loc_country", "origin", "review"]:
-    df[col] = df[col].astype("string")
-
-df["review_date"] = pd.to_datetime(df["review_date"])
-df = df.rename(columns={"loc_country": "roaster_country", "100g_$": "price_per_100g", "origin": "country_of_origin"})
-df.head()
-```
-
-Let us first check for NaNs.
-
-```python
-df.isna().sum()
-```
-
-| name              | 0   |
-| ----------------- | --- |
-| roaster           | 0   |
-| roast             | 12  |
-| roaster_country   | 0   |
-| country_of_origin | 0   |
-| price_per_100g    | 0   |
-| rating            | 0   |
-| review_date       | 0   |
-| review            | 0   |
-
-The only column with NaNs is the roast. Since there are only 12 missing values, we could just remove these rows. However, since most coffees have the same roast type (as will see later), let us fill with the modal value.
-
-```python
-df["roast"] = df["roast"].fillna(df["roast"].mode().iloc[0])
-```
-
-Let's fix a typo in the roaster country for one coffee.
-
-```python
-df["roaster_country"] = df["roaster_country"].str.replace("New Taiwan", "Taiwan")
-```
-
-Some roasters such as "El Gran Cafe" were entered with slightly different spellings (eg sometimes with the accented é and sometimes with a plain e). I will rename the roasters consistently by replacing these characters:
-
-```python
-replace = {"’s": "'s", "é": "e", "’": "'"}
-for k, v in replace.items():
-    df["roaster"] = df["roaster"].str.replace(k, v)
-```
-
-### Ratings
-
-We can see that the ratings appear to be approximately normally distributed. However, the median rating is surprisingly high at ~94%.
-
-```python
-df["rating"].hist(histnorm='percent', labels={"value":"rating [%]"})
-```
-
-{{< include src="charts/ratings_hist.html" >}}
-
-### Price
-
-The distribution for the price of the coffee is shown below.
-
-```python
-df["price_per_100g"].hist((histnorm='percent', labels={"value":"price per 100g [$]"})
-```
-
-{{< include src="charts/price_hist.html" >}}
-
-There is a very long tail, due to a few very expensive coffees. This suggests that there may be benefit in applying the log transformation. Once we do this, the distribution is closer to a normal distribution.
-
-```python
-df["price_per_100g"].apply(np.log1p).(histnorm='percent', labels={"value":"price per 100g [log $]"})
-```
-
-{{< include src="charts/price_log_hist.html" >}}
-
-### Roasting style
-
-The vast majority of the coffee have the medium-light roast type. This large bias in the dataset may make it challenging for a model to detect any impact of roast style on coffee rating.
-
-```python
-df["roast"].hist(histnorm="percent", labels={"value":"roast"})
-```
-
-{{< include src="charts/roast_hist.html" >}}
-
-### Roaster country
-
-Most of the data we have is from US rosters.
-
-```python
-df["roaster_country"].value_counts()
-```
-
-| roaster_country |     |
-| --------------- | --- |
-| United States   | 774 |
-| Taiwan          | 339 |
-| Hawai'i         | 77  |
-| Guatemala       | 24  |
-| Hong Kong       | 9   |
-| Japan           | 8   |
-| England         | 7   |
-| Canada          | 5   |
-| Australia       | 1   |
-| China           | 1   |
-| Kenya           | 1   |
-
-If we look at the distribution of pricing for the most common countries, we see that the distribution is quite different in each country. In particular, the distribution of coffees from US roasters has a much more pronounced peak at the lower price level. This likely indicates that there is some bias in the dataset. Given that CoffeeReview is based in the US, they have reviewed a disproportionate number of more affordable coffees from US roasters.
-
-```python
-import plotly.express as px
-
-countries = ["United States", "Taiwan", "Guatemala"]
-px.histogram(
-    df[df["roaster_country"].apply(lambda c: c in countries)],
-    x="price_per_100g",
-    color="roaster_country",
-    barmode="group",
-    histnorm='percent',
-)
-```
-
-{{< include src="charts/roaster_country_hist.html" >}}
-
-{{< alert >}}
-This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if a coffee from a German roaster would be more or less likely to be highly rated since there are no coffees from German roasters in the dataset.
-{{< /alert >}}
-
-### Country of origin
-
-We will now examine the country of origin for the different coffees:
-
-```python
-df["region_of_origin"].hist(histnorm="percent", labels={"value":"country of origin"})
-```
-
-{{< include src="charts/origin_country_hist.html" >}}
-
-As expected, most of the coffees come from the largest coffee producing regions in the world. Almost all examples are from one of the following regions:
-
-- East Africa such as Ethiopia or Kenya
-- Central or South America such as Colombia or Guatemala
-
-There are also a lot of coffees from Hawaii, which is likely again because the data is from a US-based website.
-
-### Highly and lowly rated coffees
-
-If we look at the highest and lowest rates coffees, we see that they are dominated by certain roasters.
-
-```python
-df.loc[df["rating"] > 96, ["name", "roaster"]].groupby("roaster").count()
-```
-
-| roaster                    | count |
-| -------------------------- | ----- |
-| Barrington Coffee Roasting | 1     |
-| Bird Rock Coffee Roasters  | 1     |
-| Dragonfly Coffee Roasters  | 1     |
-| Hula Daddy Kona Coffee     | 1     |
-| JBC Coffee Roasters        | 3     |
-| Kakalove Cafe              | 1     |
-| Paradise Roasters          | 2     |
-
-```python
-df.loc[df["rating"] < 90, ["name", "roaster"]].groupby("roaster").count()
-```
-
-| roaster      | count |
-| ------------ | ----- |
-| El Gran Cafe | 8     |
-| Other        | 4     |
-
-This suggests that either:
-
-- Certain roasters find the best/worst coffees or roast them particularly well
-- The reviewers favour/dislike certainer roasters
-
-In either case, our model may need to access the roaster.
+The next step is to use this information to develop and train a model on the data which is capable of predicting the ratings.
 
 ## Feature engineering
 
@@ -628,7 +440,7 @@ This suggests that the model is not the reason for failing to predict the highes
 - Lack of information in the features (eg perhaps we need more detailed information about the origin)
 - System error in the reviews (eg different reviewers)
 
-### Conclusions
+## Conclusions
 
 We have shown that it is possible to predict how highly rated a coffee would be on CoffeeReview.com based purelty on information about the coffee and a linear model. We have shown that the biggest influencers on rating are:
 
@@ -641,14 +453,4 @@ We showed that the models could predict the rating to quite a high degree of acc
 
 Overall, the two models have very similar performance on the test set. The linear regression model is preferred since it is simpler and has _slightly_ better performance.
 
-## Deployment
-
-The chosen model was wrapped within a `flask` webserver, which was in turn wrapped within a Docker container and deployed to AWS lambda. This allows us to make updates the model, and deploy a new model without needing to update the dashboard discussed below.
-
-### Interactive dashboard
-
-In order to be able to interact the model and predict ratings for arbitrary coffees, I created a Streamlit dashboard which you can access [here](https://coffee-rating-prediction.streamlit.app/). The dashboard generates the required features from the data inputted by the user, and then queries the model server. The predicted rating is then displayed in the dashboard. Have a play and see how your favourite coffee fares!
-
-![Streamlit app](images/streamlit_app.png)
-
-We can now apply use this model to predict the ratings of new coffees! :coffee:
+In the [next post]({{< ref "../deployment" >}}) in this series, we will actually deploy the trained model to the cloud.
