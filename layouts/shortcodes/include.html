@@ -1,3 +1,2 @@
-{{ $file := .Get "src" }}
-{{ $path := path.Join .Page.File.Dir $file}}
-{{ (printf $path) | readFile | safeHTML }}
+{{ $file := .Get "src" }} {{ $path := path.Join .Page.File.Dir $file}} {{
+(printf $path) | readFile | safeHTML }}
