@@ -1,6 +1,7 @@
 +++
 title = 'About'
 showDate = false
+showAuthor = false
 showWordCount = false
 showReadingTime = false
 showTableOfContents = true
