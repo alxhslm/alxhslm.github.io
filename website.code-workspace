@@ -1,24 +1,30 @@
 {
-  "folders": [
-    {
-      "path": "."
-    }
-  ],
-  "settings": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "[markdown]": {
-      "editor.quickSuggestions": {
-        "comments": "on",
-        "strings": "on",
-        "other": "on"
-      }
-    }
-  },
-  "extensions": {
-    "recommendations": [
-      "budparr.language-hugo-vscode",
-      "esbenp.prettier-vscode",
-      "tamasfe.even-better-toml"
-    ]
-  }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[markdown]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.quickSuggestions": {
+				"comments": "on",
+				"strings": "on",
+				"other": "on"
+			}
+		},
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[css]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"budparr.language-hugo-vscode",
+			"esbenp.prettier-vscode",
+			"tamasfe.even-better-toml"
+		]
+	}
 }
