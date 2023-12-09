@@ -10,3 +10,6 @@ repos:
     hooks:
       - id: prettier
         args: ["--write"]
+        types: [file]
+        files: \.(md|html|css)$
+

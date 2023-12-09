@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://alxhslm.github.io/sitemap.xml
