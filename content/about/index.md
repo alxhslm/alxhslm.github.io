@@ -131,7 +131,7 @@ Download
 {{< tag >}} {{< icon "aws" >}} AWS {{< /tag >}}
 {{< /tagList >}}
 
-### Devops
+### Development
 
 {{< tagList >}}
 {{< tag >}} {{< icon "vs_code" >}} VS Code {{< /tag >}}
