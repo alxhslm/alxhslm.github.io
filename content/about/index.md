@@ -97,44 +97,44 @@ Download
 ### Python
 
 {{< tagList >}}
-{{< tag >}} {{< icon "poetry" >}}&thinsp;Poetry {{< /tag >}}
-{{< tag >}} {{< icon "pytest" >}}&thinsp;Pytest {{< /tag >}}
+{{< tag >}} {{< icon "poetry" >}} Poetry {{< /tag >}}
+{{< tag >}} {{< icon "pytest" >}} Pytest {{< /tag >}}
 {{< /tagList >}}
 
 - **Scientific libraries**:
   {{< tagList >}}
-  {{< tag >}} {{< icon "python" >}}&thinsp;Python {{< /tag >}}
-  {{< tag >}} {{< icon "numpy" >}}&thinsp;NumPy {{< /tag >}}
-  {{< tag >}} {{< icon "pandas" >}}&thinsp;Pandas {{< /tag >}}
+  {{< tag >}} {{< icon "python" >}} Python {{< /tag >}}
+  {{< tag >}} {{< icon "numpy" >}} NumPy {{< /tag >}}
+  {{< tag >}} {{< icon "pandas" >}} Pandas {{< /tag >}}
   {{< /tagList >}}
 - **Visualisation:**
   {{< tagList >}}
-  {{< tag >}} {{< icon "matplotlib" >}}&thinsp;Matplotlib {{< /tag >}}
-  {{< tag >}} {{< icon "plotly" >}}&thinsp;Plotly {{< /tag >}}
-  {{< tag >}} {{< icon "streamlit" >}}&thinsp;Streamlit {{< /tag >}}
+  {{< tag >}} {{< icon "matplotlib" >}} Matplotlib {{< /tag >}}
+  {{< tag >}} {{< icon "plotly" >}} Plotly {{< /tag >}}
+  {{< tag >}} {{< icon "streamlit" >}} Streamlit {{< /tag >}}
   {{< /tagList >}}
 - **Machine learining:**
   {{< tagList >}}
-  {{< tag >}} {{< icon "scikit-learn" >}}&thinsp;Scikit-learn {{< /tag >}}
-  {{< tag >}} {{< icon "pytorch" >}}&thinsp;PyTorch {{< /tag >}}
-  {{< tag >}} {{< icon "jax" >}}&thinsp;JAX {{< /tag >}}
-  {{< tag >}} {{< icon "clearml" >}}&thinsp;ClearML {{< /tag >}}
+  {{< tag >}} {{< icon "scikit-learn" >}} Scikit-learn {{< /tag >}}
+  {{< tag >}} {{< icon "pytorch" >}} PyTorch {{< /tag >}}
+  {{< tag >}} {{< icon "jax" >}} JAX {{< /tag >}}
+  {{< tag >}} {{< icon "clearml" >}} ClearML {{< /tag >}}
   {{< /tagList >}}
 
 ### Cloud
 
 {{< tagList >}}
-{{< tag >}} {{< icon "docker" >}}&thinsp;Docker {{< /tag >}}
-{{< tag >}} {{< icon "terraform" >}}&thinsp;Terraform {{< /tag >}}
-{{< tag >}} {{< icon "gcp" >}}&thinsp;GCP {{< /tag >}}
-{{< tag >}} {{< icon "aws" >}}&thinsp;AWS {{< /tag >}}
+{{< tag >}} {{< icon "docker" >}} Docker {{< /tag >}}
+{{< tag >}} {{< icon "terraform" >}} Terraform {{< /tag >}}
+{{< tag >}} {{< icon "gcp" >}} GCP {{< /tag >}}
+{{< tag >}} {{< icon "aws" >}} AWS {{< /tag >}}
 {{< /tagList >}}
 
 ### Development
 
 {{< tagList >}}
-{{< tag >}} {{< icon "vs_code" >}}&thinsp;VS Code {{< /tag >}}
-{{< tag >}} {{< icon "git" >}}&thinsp;Git {{< /tag >}}
-{{< tag >}} {{< icon "github_actions" >}}&thinsp;GitHub Actions {{< /tag >}}
-{{< tag >}} {{< icon "circle_ci" >}}&thinsp;CircleCI {{< /tag >}}
+{{< tag >}} {{< icon "vs_code" >}} VS Code {{< /tag >}}
+{{< tag >}} {{< icon "git" >}} Git {{< /tag >}}
+{{< tag >}} {{< icon "github_actions" >}} GitHub Actions {{< /tag >}}
+{{< tag >}} {{< icon "circle_ci" >}} CircleCI {{< /tag >}}
 {{< /tagList >}}
