@@ -96,45 +96,45 @@ Download
 
 ### Python
 
-{{< tagList >}}
-{{< tag >}} {{< icon "poetry" >}} Poetry {{< /tag >}}
-{{< tag >}} {{< icon "pytest" >}} Pytest {{< /tag >}}
-{{< /tagList >}}
+{{< keywordList >}}
+{{< keyword >}} {{< icon "poetry" >}} Poetry {{< /keyword >}}
+{{< keyword >}} {{< icon "pytest" >}} Pytest {{< /keyword >}}
+{{< /keywordList >}}
 
 - **Scientific libraries**:
-  {{< tagList >}}
-  {{< tag >}} {{< icon "python" >}} Python {{< /tag >}}
-  {{< tag >}} {{< icon "numpy" >}} NumPy {{< /tag >}}
-  {{< tag >}} {{< icon "pandas" >}} Pandas {{< /tag >}}
-  {{< /tagList >}}
+  {{< keywordList >}}
+  {{< keyword >}} {{< icon "python" >}} Python {{< /keyword >}}
+  {{< keyword >}} {{< icon "numpy" >}} NumPy {{< /keyword >}}
+  {{< keyword >}} {{< icon "pandas" >}} Pandas {{< /keyword >}}
+  {{< /keywordList >}}
 - **Visualisation:**
-  {{< tagList >}}
-  {{< tag >}} {{< icon "matplotlib" >}} Matplotlib {{< /tag >}}
-  {{< tag >}} {{< icon "plotly" >}} Plotly {{< /tag >}}
-  {{< tag >}} {{< icon "streamlit" >}} Streamlit {{< /tag >}}
-  {{< /tagList >}}
+  {{< keywordList >}}
+  {{< keyword >}} {{< icon "matplotlib" >}} Matplotlib {{< /keyword >}}
+  {{< keyword >}} {{< icon "plotly" >}} Plotly {{< /keyword >}}
+  {{< keyword >}} {{< icon "streamlit" >}} Streamlit {{< /keyword >}}
+  {{< /keywordList >}}
 - **Machine learining:**
-  {{< tagList >}}
-  {{< tag >}} {{< icon "scikit-learn" >}} Scikit-learn {{< /tag >}}
-  {{< tag >}} {{< icon "pytorch" >}} PyTorch {{< /tag >}}
-  {{< tag >}} {{< icon "jax" >}} JAX {{< /tag >}}
-  {{< tag >}} {{< icon "clearml" >}} ClearML {{< /tag >}}
-  {{< /tagList >}}
+  {{< keywordList >}}
+  {{< keyword >}} {{< icon "scikit-learn" >}} Scikit-learn {{< /keyword >}}
+  {{< keyword >}} {{< icon "pytorch" >}} PyTorch {{< /keyword >}}
+  {{< keyword >}} {{< icon "jax" >}} JAX {{< /keyword >}}
+  {{< keyword >}} {{< icon "clearml" >}} ClearML {{< /keyword >}}
+  {{< /keywordList >}}
 
 ### Cloud
 
-{{< tagList >}}
-{{< tag >}} {{< icon "docker" >}} Docker {{< /tag >}}
-{{< tag >}} {{< icon "terraform" >}} Terraform {{< /tag >}}
-{{< tag >}} {{< icon "gcp" >}} GCP {{< /tag >}}
-{{< tag >}} {{< icon "aws" >}} AWS {{< /tag >}}
-{{< /tagList >}}
+{{< keywordList >}}
+{{< keyword >}} {{< icon "docker" >}} Docker {{< /keyword >}}
+{{< keyword >}} {{< icon "terraform" >}} Terraform {{< /keyword >}}
+{{< keyword >}} {{< icon "gcp" >}} GCP {{< /keyword >}}
+{{< keyword >}} {{< icon "aws" >}} AWS {{< /keyword >}}
+{{< /keywordList >}}
 
 ### Development
 
-{{< tagList >}}
-{{< tag >}} {{< icon "vs_code" >}} VS Code {{< /tag >}}
-{{< tag >}} {{< icon "git" >}} Git {{< /tag >}}
-{{< tag >}} {{< icon "github_actions" >}} GitHub Actions {{< /tag >}}
-{{< tag >}} {{< icon "circle_ci" >}} CircleCI {{< /tag >}}
-{{< /tagList >}}
+{{< keywordList >}}
+{{< keyword >}} {{< icon "vs_code" >}} VS Code {{< /keyword >}}
+{{< keyword >}} {{< icon "git" >}} Git {{< /keyword >}}
+{{< keyword >}} {{< icon "github_actions" >}} GitHub Actions {{< /keyword >}}
+{{< keyword >}} {{< icon "circle_ci" >}} CircleCI {{< /keyword >}}
+{{< /keywordList >}}
