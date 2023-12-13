@@ -7,62 +7,39 @@
     src="https://cdn.plot.ly/plotly-2.24.1.min.js"
   ></script>
   <div
-    id="7b852386-a1c0-4c04-8bb9-3d06ab3b18fb"
+    id="179c12dd-f17f-40ae-9a3e-04feae0276cf"
     class="plotly-graph-div"
     style="height: 100%; width: 100%"
   ></div>
   <script type="text/javascript">
     window.PLOTLYENV = window.PLOTLYENV || {};
-    if (document.getElementById("7b852386-a1c0-4c04-8bb9-3d06ab3b18fb")) {
+    if (document.getElementById("179c12dd-f17f-40ae-9a3e-04feae0276cf")) {
       Plotly.newPlot(
-        "7b852386-a1c0-4c04-8bb9-3d06ab3b18fb",
+        "179c12dd-f17f-40ae-9a3e-04feae0276cf",
         [
           {
             alignmentgroup: "True",
             hovertemplate:
-              "type=truth\u003cbr\u003erating=%{x}\u003cbr\u003epercentage=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
-            legendgroup: "truth",
+              "variable=all\u003cbr\u003eregion_of_origin=%{x}\u003cbr\u003epercentage=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
+            legendgroup: "all",
             marker: { color: "#636efa", pattern: { shape: "" } },
-            name: "truth",
-            offsetgroup: "truth",
+            name: "all",
+            offsetgroup: "all",
             orientation: "v",
             showlegend: true,
             textposition: "auto",
             x: [
-              86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0, 93.0, 94.0, 95.0, 96.0,
-              97.0, 98.0, 99.0,
+              "South America",
+              "Central America",
+              "Southeast Asia",
+              "East Africa",
+              "North America",
+              "Other",
             ],
             xaxis: "x",
             y: [
-              0.10050251256281408, 0.3015075376884422, 0.3015075376884422,
-              0.20100502512562815, 3.1155778894472363, 5.226130653266332,
-              14.874371859296481, 27.738693467336685, 29.849246231155778,
-              14.37185929648241, 3.2160804020100504, 0.7035175879396985, 0.0,
-              0.0,
-            ],
-            yaxis: "y",
-            type: "bar",
-          },
-          {
-            alignmentgroup: "True",
-            hovertemplate:
-              "type=xgb\u003cbr\u003erating=%{x}\u003cbr\u003epercentage=%{y}\u003cextra\u003e\u003c\u002fextra\u003e",
-            legendgroup: "xgb",
-            marker: { color: "#EF553B", pattern: { shape: "" } },
-            name: "xgb",
-            offsetgroup: "xgb",
-            orientation: "v",
-            showlegend: true,
-            textposition: "auto",
-            x: [
-              86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0, 93.0, 94.0, 95.0, 96.0,
-              97.0, 98.0, 99.0,
-            ],
-            xaxis: "x",
-            y: [
-              0.0, 0.0, 0.0, 0.0, 0.8032128514056224, 1.6064257028112447,
-              9.63855421686747, 44.87951807228915, 38.152610441767074,
-              4.919678714859438, 0.0, 0.0, 0.0, 0.0,
+              15.168539325842698, 19.502407704654896, 2.568218298555377,
+              49.59871589085072, 10.112359550561797, 3.0497592295345104,
             ],
             yaxis: "y",
             type: "bar",
@@ -460,15 +437,20 @@
               mapbox: { style: "light" },
             },
           },
-          xaxis: { anchor: "y", domain: [0.0, 1.0], title: { text: "rating" } },
+          xaxis: {
+            anchor: "y",
+            domain: [0.0, 1.0],
+            title: { text: "region_of_origin" },
+          },
           yaxis: {
             anchor: "x",
             domain: [0.0, 1.0],
             title: { text: "percentage" },
           },
-          legend: { title: { text: "type" }, tracegroupgap: 0 },
+          legend: { title: { text: "variable" }, tracegroupgap: 0 },
           margin: { t: 60 },
           barmode: "group",
+          showlegend: false,
         },
         { responsive: true },
       );
