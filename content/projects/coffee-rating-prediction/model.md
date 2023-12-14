@@ -1,18 +1,14 @@
 +++
-title = 'Coffee Rating Prediction: Modelling'
+title = 'Modelling'
 series = ['Coffee Rating Prediction']
 series_order = 2
 date = 2023-11-13T00:00:00Z
 showTableOfContents = true
 +++
 
-This was my first personal ML project. The goal was to familiarise myself with [XGBoost](https://xgboost.readthedocs.io/en/stable/) and [AWS Lambda](https://aws.amazon.com/lambda/). I enjoy drinking nice coffee, so I chose a topic which I hoped would help me buy better coffee in the future. The source code is available on GitHub.
-
-{{< github repo="alxhslm/coffee-rating-prediction" >}}
-
 ## Background
 
-In a [previous post]({{< ref "../eda" >}}) in this series, we performed experimental data analysis to understand the distribution of the rating and get some insight as to which features might be important.
+In a [previous post]({{< ref "./eda" >}}) in this series, we performed experimental data analysis to understand the distribution of the rating and get some insight as to which features might be important.
 
 The next step is to use this information to develop and train a model on the data which is capable of predicting the ratings.
 
@@ -443,4 +439,4 @@ We showed that the models could predict the rating to quite a high degree of acc
 
 Overall, the two models have very similar performance on the test set. The linear regression model is preferred since it is simpler and has _slightly_ better performance.
 
-In the [next post]({{< ref "../deployment" >}}) in this series, we will actually deploy the trained model to the cloud.
+In the [next post]({{< ref "./deployment" >}}) in this series, we will actually deploy the trained model to the cloud.

@@ -1,14 +1,10 @@
 +++
-title = 'Coffee Rating Prediction: EDA'
+title = 'Exploratory data analysis'
 series = ['Coffee Rating Prediction']
 series_order = 1
 date = 2023-11-09T00:00:00Z
 showTableOfContents = true
 +++
-
-This was my first personal ML project. The goal was to familiarise myself with [XGBoost](https://xgboost.readthedocs.io/en/stable/) and [AWS Lambda](https://aws.amazon.com/lambda/). I enjoy drinking nice coffee, so I chose a topic which I hoped would help me buy better coffee in the future. The source code is available on GitHub.
-
-{{< github repo="alxhslm/coffee-rating-prediction" >}}
 
 ## Objective
 
@@ -123,7 +119,7 @@ word_cloud = WordCloud(collocations=False, width = 1000, height = 500, backgroun
 plt.imshow(word_cloud)
 ```
 
-![Word cloud](images/word_cloud.png)
+![Word cloud](../images/word_cloud.png)
 
 Note that we have had to remove common coffee-related nouns, which is assumed provide no information about the particular coffee. We can see that the most common words relate to the flavour of the coffee such as "acidity" or "chocolate". This suggests that we can extract some features for the different flavours in the coffee.
 
@@ -417,7 +413,7 @@ In this article, we has processed the coffee dataset and performed analysis to e
    - Certain roasters have much higher and lower average ratings for their coffees, suggesting that this does impact the rating
    - The roast style, origin and flavour profile all appear to have some impact on the rating, but it does not appear that the relationship is as strong as the roaster
 
-In the [next post]({{< ref "../model" >}}), we will use the insight gained from this analysis to engineer features, and then training a predictive model.
+In the [next post]({{< ref "./model" >}}), we will use the insight gained from this analysis to engineer features, and then training a predictive model.
 
 ```
 
