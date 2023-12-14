@@ -37,6 +37,14 @@ df = df.rename(columns={"loc_country": "roaster_country", "100g_$": "price_per_1
 df.head()
 ```
 
+| name                             | roaster                    | roast        | roaster_country | country_of_origin | price_per_100g | rating | review_date | review                                            |
+| -------------------------------- | -------------------------- | ------------ | --------------- | ----------------- | -------------- | ------ | ----------- | ------------------------------------------------- |
+| Ethiopia Shakiso Mormora         | Revel Coffee               | Medium-Light | United States   | Ethiopia          | 4.70           | 92     | 2017-11-01  | Crisply sweet, cocoa-toned. Lemon blossom, roa... |
+| Ethiopia Suke Quto               | Roast House                | Medium-Light | United States   | Ethiopia          | 4.19           | 92     | 2017-11-01  | Delicate, sweetly spice-toned. Pink peppercorn... |
+| Ethiopia Gedeb Halo Beriti       | Big Creek Coffee Roasters  | Medium       | United States   | Ethiopia          | 4.85           | 94     | 2017-11-01  | Deeply sweet, subtly pungent. Honey, pear, tan... |
+| Ethiopia Kayon Mountain          | Red Rooster Coffee Roaster | Light        | United States   | Ethiopia          | 5.14           | 93     | 2017-11-01  | Delicate, richly and sweetly tart. Dried hibis... |
+| Ethiopia Gelgelu Natural Organic | Willoughby's Coffee & Tea  | Medium-Light | United States   | Ethiopia          | 3.97           | 93     | 2017-11-01  | High-toned, floral. Dried apricot, magnolia, a... |
+
 We should check for any NaNs:
 
 ```python
@@ -54,7 +62,7 @@ df.isna().sum()
 | review_date       | 0   |
 | review            | 0   |
 
-The "roast" column is the only one containing NaNs. Since there are only 12 missing values, we could just remove these rows. However, since most coffees have the same roasting style (as will see later), let us fill with the modal value.
+The `roast` column is the only one containing NaNs. Since there are only 12 missing values, we could just remove these rows. However, since most coffees have the same roasting style (as will see later), let us fill with the modal value.
 
 ```python
 df["roast"] = df["roast"].fillna(df["roast"].mode().iloc[0])
@@ -66,7 +74,7 @@ Let's fix a typo in the roaster country for one coffee.
 df["roaster_country"] = df["roaster_country"].str.replace("New Taiwan", "Taiwan")
 ```
 
-Some roasters such as "El Gran Cafe" were entered with slightly different spellings (eg sometimes with the accented é and sometimes with a plain e). I will rename the roasters consistently by replacing these characters:
+Some roasters such as "El Gran Cafe" are duplicated since they entered with slightly different spellings in different rows (eg sometimes with the accented é and sometimes with a plain e). I will rename the roasters consistently by replacing these characters:
 
 ```python
 replace = {"’s": "'s", "é": "e", "’": "'"}
@@ -80,14 +88,11 @@ We should also verify that the information about each roaster (in this case only
 def _assert_identical_values(df: pd.DataFrame) -> pd.Series:
     assert (df.iloc[1:, :] == df.iloc[0, :]).all().all()
     return df.iloc[0, :]
-
-
-roaster_map = df[["roaster", "roaster_country"]].groupby("roaster").first()["roaster_country"]
 ```
 
 ### Region of origin
 
-Most coffees come from certain regions of the world, which produce coffees which are generally similar in flavour profile (eg African coffees are typically more acidic and South American coffees more nutty.) Therefore it may be useful to categorise the countries by region.
+Most coffees come from certain regions of the world, and the coffees from each region tend to be similar in flavour profile (eg African coffees are typically more acidic and South American coffees more nutty.) Therefore it may be useful to categorise the countries by region.
 
 The mapping from regions to countries has been manually compiled and stored in [`regions.json`](https://github.com/alxhslm/coffee-rating-prediction/blob/main/data/regions.json). We need to load this JSON file, invert the mapping so that it goes from country to region, and then engineer a new column for the region.
 
@@ -144,12 +149,6 @@ for flavour, keywords in FLAVOURS.items():
     df[flavour] = df["review"].apply(rating_contains_words, args=(keywords,))
 ```
 
-Let's now combine the flavours into a single column.
-
-```python
-df["flavours"] = df.apply(lambda coffee: [flavour for flavour in FLAVOURS if coffee[flavour]], axis=1)
-```
-
 It is also interesting to check how many flavours the different coffees have. If we have done a good job at defining the flavour keywords, we would expect that mode coffees would:
 
 - Have at least _some_ flavours since this is a key component of any review
@@ -169,7 +168,7 @@ We will begin by exploring the distribution of each feature in the dataset.
 
 ### Rating
 
-We can see that the ratings appear to be approximately normally distributed. However, the median rating is surprisingly high at ~94% and the standard deviation is low, so that the effect rating range ranges roughly from 85-95.
+We can see that the ratings appear to be approximately normally distributed. However, the median rating is surprisingly high at ~94% and the standard deviation is low, so that the effect rating range ranges roughly from 85-100.
 
 ```python
 df["rating"].hist()
@@ -201,7 +200,7 @@ df["roast"].hist()
 
 ### Roaster country
 
-Most of the data we have is from US rosters.
+If we look at the value counts, we see that most of the coffees are from US roasters.
 
 ```python
 df["roaster_country"].value_counts()
@@ -359,7 +358,7 @@ df.hist("rating", by="roast")
 
 {{< include src="charts/rating_hist_by_roast.html" >}}
 
-It is clear that dark and medium-dark roasted coffees are often rated more poorly, since the tail has a significant skew to the left for these roasting styles. We can also see that the lighter roasted coffees have a much higher median rating, with medium coffees somewhere in between.
+It is clear that dark and medium-dark roasted coffees are often rated more poorly, since the tail has a significant skew to the left for these roasting styles. We can also see that the lighter roasted coffees have a much higher median rating, with medium roasted coffees somewhere in between.
 
 We can plot the mean rating for each roasting style in the same way as for the roasters:
 
@@ -376,12 +375,12 @@ As expected, the darker roasting styles have a much lower rating on average, whi
 Since there are many countries, we will analyse the influence of region of origin instead of country. We can plot the histogram of rating grouping by each region:
 
 ```python
-plot_hist(df, "rating", by="region_of_origin")
+df.hist("rating", by="region_of_origin")
 ```
 
 {{< include src="charts/rating_hist_by_origin.html" >}}
 
-We can see that the distribution for Central American coffees has a left-leaning tail, and the median is slightly lower than the other regions. However, it is hard to glean much more than that. However, we can plot the mean rating for each region of origin:
+We can see that the distribution for Central American coffees has a left-leaning tail, and the median is slightly lower than the other regions. However, we can glean more information by looking at the mean rating for each region of origin:
 
 ```python
 df.groupby("region_of_origin")["rating"].mean().plot.bar()
@@ -416,9 +415,9 @@ In this article, we has processed the coffee dataset and performed analysis to e
 2. We have detected which factors may be more likely to impact the rating:
    - There is some definite correlation between price and rating
    - Certain roasters have much higher and lower average ratings for their coffees, suggesting that this does impact the rating
-   - The roast style, origin and flavour profile all appear to have some impact on the rating, but it does not appear to be as strong as for the price and roaster
+   - The roast style, origin and flavour profile all appear to have some impact on the rating, but it does not appear that the relationship is as strong as the roaster
 
-In the [next post]({{< ref "../model" >}}), we will use the insight gained from this analysis to engineer features, and move onto training a predictive model.
+In the [next post]({{< ref "../model" >}}), we will use the insight gained from this analysis to engineer features, and then training a predictive model.
 
 ```
 
