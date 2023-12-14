@@ -13,8 +13,8 @@ title = "Alex Haslam"
 [author]
 name = "Alex Haslam"
 image = "images/profile.png"
-headline = "Simulation and ML Engineer"
-bio = "I’m an engineer based in London, with expertise in simulation and machine learning."
+headline = "Machine Learning Engineer"
+bio = "I’m an engineer based in London, with expertise in machine learning, numerical methods and software development."
 links = [
   { github = "https://github.com/alxhslm"},
   { linkedin =  "https://www.linkedin.com/in/alexanderhaslam"},
