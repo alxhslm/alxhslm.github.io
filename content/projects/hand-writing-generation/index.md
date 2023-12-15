@@ -120,10 +120,10 @@ This dashboard goes through the following steps:
 
 By varying how you draw, you can change the style of characters which the model produces. Here are some examples of the sort of hand-written characters the model can synthesise:
 
-| Prompt                                         | Description | Generated images                        |
-| ---------------------------------------------- | ----------- | --------------------------------------- |
-| ![Narrow characters](images/narrow_prompt.png) | Narrow      | ![Narrow characters](images/narrow.jpg) |
-| ![Wide characters](images/wide_prompt.png)     | Wide        | ![Wide characters](images/wide.jpg)     |
-| ![Thin characters](images/light_prompt.png)    | Light       | ![Thin characters](images/light.jpg)    |
-| ![Bold characters ](images/bold_prompt.png)    | Bold        | ![Bold characters ](images/bold.jpg)    |
-| ![Italic characters](images/italic_prompt.png) | Italic      | ![Italic characters](images/italic.jpg) |
+| Prompt                                     | Description | Generated images                        |
+| ------------------------------------------ | ----------- | --------------------------------------- |
+| ![Narrow prompt](images/narrow_prompt.png) | Narrow      | ![Narrow characters](images/narrow.jpg) |
+| ![Wide prompt](images/wide_prompt.png)     | Wide        | ![Wide characters](images/wide.jpg)     |
+| ![Thin prompt](images/light_prompt.png)    | Light       | ![Thin characters](images/light.jpg)    |
+| ![Bold prompt](images/bold_prompt.png)     | Bold        | ![Bold characters](images/bold.jpg)     |
+| ![Italic prompt](images/italic_prompt.png) | Italic      | ![Italic characters](images/italic.jpg) |
