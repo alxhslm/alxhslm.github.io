@@ -414,7 +414,3 @@ In this article, we has processed the coffee dataset and performed analysis to e
    - The roast style, origin and flavour profile all appear to have some impact on the rating, but it does not appear that the relationship is as strong as the roaster
 
 In the [next post]({{< ref "./model" >}}), we will use the insight gained from this analysis to engineer features, and then training a predictive model.
-
-```
-
-```
