@@ -105,7 +105,7 @@ def kl_div_loss_fun(z_mean: torch.Tensor, log_z_var: torch.Tensor) -> torch.Tens
     return -0.5 * torch.sum(1 + log_z_var - z_mean.pow(2) - log_z_var.exp()) / z_mean.shape[0]
 ```
 
-where `z_mean` is given by \\(q\_{x_1}(x)\\) and `log_z_var` is \\(q\_{x,2}(x)\\).
+where `z_mean` is given by \\(q\_{x,1}(x)\\) and `log_z_var` is \\(q\_{x,2}(x)\\).
 
 ## Interactive dashboard
 
