@@ -57,6 +57,10 @@ It has the following layers:
 
 [^1]: Note that in practice no `Softmax` is applied here since this is implicitly included as part of the `CrossEntropyLoss`, which leads to improved numerical stability
 
+{{< alert icon="circle-info">}}
+The dimension of the latent variables \\(z\\) was set to 64.
+{{< /alert >}}
+
 ### Decoder
 
 This part of the model reconstructs an image from class labels and latent variables. We first sample from the posterior distribution:
@@ -90,7 +94,11 @@ For a supervised VAE like this, we need 3 loss terms:
 2. **Categorical loss** to enforce that the model can accurately classify characters by predicting class probabilities \\(p(y|x)\\). This was implemented using `CrossEntropyLoss`.
 3. **[Kullback-Leibler divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) loss** to enforce that the encoder accurately predicts the posterior on the latent variables \\(p(z|x)\\).
 
-1 & 3 would be needed for an unsupervised VAE as well, but 2 is an additional loss needed for the semi-supervised nature of this problem. The KL-loss was implemented as follows:
+{{< alert icon="lightbulb">}}
+1 & 3 would be needed for an unsupervised VAE as well, but 2 is an additional loss needed for the semi-supervised nature of this problem.
+{{< /alert >}}
+
+The KL-loss was implemented as follows:
 
 ```python
 def kl_div_loss_fun(z_mean: torch.Tensor, log_z_var: torch.Tensor) -> torch.Tensor:
