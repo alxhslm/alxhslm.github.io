@@ -27,10 +27,10 @@
      inkscape:cx="493.28171"
      inkscape:cy="386.84273"
      inkscape:window-width="1920"
-     inkscape:window-height="1027"
+     inkscape:window-height="999"
      inkscape:window-x="0"
      inkscape:window-y="25"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:current-layer="g18" />
   <g
      transform="matrix(2.1509888,0,0,2.1509888,-2130.2294,-1093.3154)"
@@ -394,7 +394,7 @@
        x="1299.126"
        y="594.18616"
        style="font-size:16px"
-       id="text16">1x1568</text>
+       id="text16">1x(49x32)</text>
     <text
        class="info"
        dy="-4.8000002"

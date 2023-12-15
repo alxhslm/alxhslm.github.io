@@ -70,10 +70,10 @@ and we have already computed the class probabilities \\(p(y|x)\\). The final ste
 This has the following layers:
 
 - From _class labels_ \\(y\\) logits:
-  - Linear + ReLU (input size 32, output size 128)
+  - Linear + ReLU (input size 36, output size 128)
   - Linear (input size 128, output size 49x32)
 - From _latent variables_ \\(z\\):
-  - Linear (input size 32, output size 49x32)
+  - Linear (input size 64, output size 49x32)
 - Unflatten (input size 49x32, output size 7x7x32)
 - Deconvolutional layer + ReLU (input size 7x7x32, output size 14x14x32)
 - Deconvolutional layer + Sigmoid (input size 14x14x32, output size 28x28x1) [^2]
