@@ -5,7 +5,7 @@ date = 2023-12-01T21:28:11Z
 
 {{< katex >}}
 
-This was a more advanced project to gain more practical experience with deep learning with unstructured data. With all of the recent hype around generative AI, also thought it would be interesting to use some form of generative model. The source code is available on GitHub.
+This was another personal ML project, in which I wanted to gain some experience working with unstructured data. With all of the recent advancements in generative AI, also thought it would be interesting to use some form of generative model. The source code is available on GitHub.
 
 {{< github repo="alxhslm/hand-writing-generation" >}}
 
