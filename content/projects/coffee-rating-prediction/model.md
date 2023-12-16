@@ -233,7 +233,7 @@ pd.DataFrame(
 
 {{< include src="charts/linear_hist.html" >}}
 
-We can get a bit more insight by evaluating the importance of the difference features using `permutation_importance`.
+We can get a bit more insight by evaluating the importance of the different features using `permutation_importance`.
 
 ```python
 from sklearn.inspection import permutation_importance
@@ -409,7 +409,7 @@ scores_comparison.transpose().plot.bar()
 
 Both models achieve similar losses on the training set, but there is difference in performance on the test set. We can see that the `XGBoost` model has a much larger difference between test losses. This suggests that this model has overfit to the training set.
 
-We can see that the two models both predict a similar distribution of ratings with shorter tails that the ground truth distribution.
+We can see that the two models both predict a similar distribution of ratings with shorter tails than the ground truth distribution.
 
 ```python
 pd.DataFrame(
@@ -424,7 +424,7 @@ This suggests that the models are failing to predict the highest/lowest scores d
 - Lack of information in the features (eg perhaps we need more detailed information about the origin)
 - Inconsistencies in the review process (eg different reviewers with different preferences)
 
-Investing this is beyond the scope of this project, and we will choose to carry forward the linear model since this has the best performance.
+Investing this is beyond the scope of this project, since the linear model achieves the objective with sufficiently good performance.
 
 ## Conclusions
 

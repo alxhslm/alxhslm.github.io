@@ -186,7 +186,7 @@ There is a very long tail, due to a few very expensive coffees. This suggests th
 
 ### Roasting style
 
-The vast majority of the coffee have the medium-light roast type. This large bias in the dataset may make it challenging for a model to detect any impact of roasting style on coffee rating.
+The vast majority of the coffees have the medium-light roast type. This large bias in the dataset may make it challenging for a model to detect any impact of roasting style on coffee rating.
 
 ```python
 df["roast"].hist()
@@ -226,7 +226,7 @@ df[df["roaster_country"].apply(lambda c: c in countries)].histogram("price_per_1
 {{< include src="charts/roaster_country_hist.html" >}}
 
 {{< alert >}}
-This strong bias towards coffees roasted in the US means that it is unclear how well our will apply to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if a coffee from a German roaster would be more or less likely to be highly rated since there are no coffees from German roasters in the dataset.
+This strong bias towards coffees roasted in the US means that it is unclear how well any model trained on this data will generalise to coffees roasted outside the US. In addition, the number of different countries present is very small, and we cannot for example, predict if a coffee from a German roaster would be more or less likely to be highly rated since there are no coffees from German roasters in the dataset.
 {{< /alert >}}
 
 ### Origin
@@ -302,7 +302,7 @@ There is evidence of diminishing returns from increasing the price of the coffee
 
 ### Roaster
 
-If we look at the highest and lowest rates coffees, we see that they are dominated by certain roasters.
+If we look at the highest and lowest rated coffees, we see that they are dominated by certain roasters.
 
 ```python
 df.loc[df["rating"] > 96, ["name", "roaster"]].groupby("roaster").count()
@@ -384,7 +384,7 @@ df.groupby("region_of_origin")["rating"].mean().plot.bar()
 
 {{< include src="charts/mean_rating_by_origin.html" >}}
 
-This makes it is more obvious that the East African coffees are more highly rated on average, and Central American are less highly rated. Therefore, there is evidence that the origin may have some influence on the rating of a coffee. However, the effect does not appear to be as strong as the roaster for example, since the difference between the highest and lowest average ratings is only around 0.5 compared to around 3.0 for the roaster.
+This highlights that the East African coffees are more highly rated on average, and Central American are less highly rated. Therefore, there is evidence that the origin may have some influence on the rating of a coffee. However, the effect does not appear to be as strong as the roaster for example, since the difference between the highest and lowest average ratings is only around 0.5 compared to around 3.0 for the roaster.
 
 ### Flavour
 
