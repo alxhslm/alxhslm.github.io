@@ -14,7 +14,7 @@ The next step is to use this information to develop and train a model on the dat
 
 ## Feature selection
 
-We have quite a few features available, but not all will lead to a significant improvement of the accuracy of the model. We will therefore begin by assessing the importance of the different features in an quantitative way, so that we include the minimum number needed to generate accurate predictions.
+We have quite a few features available, but not all will lead to a significant improvement of the accuracy of the model. We will therefore begin by assessing the importance of the different features in a quantitative way, so that we include the minimum number needed to generate accurate predictions.
 
 ### Correlation
 
