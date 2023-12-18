@@ -244,16 +244,16 @@ linear_importances[linear_importances.abs().sort_values(ascending=False).index]
 
 | Feature                                | Importance |
 | -------------------------------------- | ---------- |
-| price_per_100g                         | 0.178820   |
-| country_of_origin=Kenya                | 0.097280   |
-| country_of_origin=Ethiopia             | 0.074695   |
-| popular_roaster=Other                  | 0.071963   |
-| flavours=resinous                      | 0.062578   |
-| roaster_country=Taiwan                 | 0.057746   |
-| roaster_country=United States          | 0.042876   |
-| roast=Medium-Light                     | 0.039895   |
-| popular_roaster=Hula Daddy Kona Coffee | 0.033369   |
-| flavours=fruity                        | 0.033124   |
+| price_per_100g                         | 0.177400   |
+| popular_roaster=Other                  | 0.078086   |
+| flavours=resinous                      | 0.070506   |
+| country_of_origin=Kenya                | 0.065933   |
+| country_of_origin=Ethiopia             | 0.044702   |
+| roaster_country=Taiwan                 | 0.037096   |
+| flavours=fruity                        | 0.033723   |
+| popular_roaster=Kakalove Cafe          | 0.024013   |
+| popular_roaster=Hula Daddy Kona Coffee | 0.018847   |
+| country_of_origin=Panama               | 0.017545   |
 
 We can see that the biggest influence is the price, which was expected given the high correlation we observed. Certain countries styles have a large importance, which is expected given that the mutual information from this feature was quite high. The flavours have a significant but lower importance compared to the other features.
 
