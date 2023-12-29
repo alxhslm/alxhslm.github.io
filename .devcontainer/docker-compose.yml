@@ -11,6 +11,12 @@ services:
         # Buildkit doesn't cache in-between layers by default, which is fine in
         # CI environment, but for local development it speeds things up
         BUILDKIT_INLINE_CACHE: "true"
+        # Update VARIANT to pick hugo variant.
+        # Example variants: hugo, hugo_extended
+        VARIANT: "hugo"
+        # Update VERSION to pick a specific hugo version.
+        # Example versions: latest, 0.73.0, 0,71.1
+        VERSION: "0.120.2"
 
     env_file:
       - ../.env

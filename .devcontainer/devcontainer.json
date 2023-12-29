@@ -6,9 +6,11 @@
 	"customizations": {
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
-			"settings": {},
+			"settings": {
+				"html.format.templating": true
+			},
 			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": 	 [
+			"extensions": [
 				"budparr.language-hugo-vscode",
 				"esbenp.prettier-vscode",
 				"tamasfe.even-better-toml"
@@ -19,6 +21,10 @@
 	"initializeCommand": ".devcontainer/initialize.sh",
 	"postCreateCommand": "bash .devcontainer/post-create.sh",
 	"postStartCommand": "bash .devcontainer/post-start.sh",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		1313
+	],
 	"remoteUser": "vscode",
 	"features": {}
 }
