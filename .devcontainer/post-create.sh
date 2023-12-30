@@ -19,6 +19,9 @@ if [ ! -e ".git/hooks/pre-commit" ] ; then
   pre-commit install
 fi
 
+# Fetch sub-modules
+git submodule update --init --recursive
+
 # Install direnv hooks
 echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
 echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
