@@ -31,13 +31,15 @@ In this blog post, I will share my experiences using ClearML, which is one of th
 
 One of the major strengths of ClearML is that it is quite generic, making it suitable for a wide range of ML applications. ClearML allows users to record custom metadata, log live metrics and store plots and other rich data in the results.
 
-For example, at my company, we used ClearML for the classical use-case of training models implemented in JAX, where we recorded hyperparameters and losses, and saved the trained parameters. However, we also needed to run computationally intensive simulations with these models. In this case, we used ClearML to record settings for the simulations, and track the progress so we could monitor the results in real-time. ClearML was able to support both use-cases very well.
+For example, at my company, we used ClearML for the classical use-case of training models implemented in JAX, where we tracked hyperparameters, and recorded the trained parameters and other metrics. However, we also needed to run computationally intensive simulations with these models. In this case, we used ClearML to record settings for the simulations, and track the progress so we could monitor the results in real-time. ClearML was able to support both use-cases very well.
 
 ### Run experiments anywhere
 
 ClearML experiments can run on any machine where you can run the agent. We initially used ClearML to track experiments run locally on our machines. Once the number of models we needed to maintain increased, we then built the capability to run experiments in the cloud.
 
-The value of tracking _local_ experiments is often underestimated during the model development process, but it allowed to collaborate more easily and isolate performance regressions. Being able to train models in the cloud then allowed us to iterate more quickly, but tracking experiments locally was still a big step forward. It is worth noting that this also applies to other MLOps tools in general, and not just ClearML.
+The value of tracking _local_ experiments is often underestimated during the model development process, but it allowed us to collaborate more easily and isolate performance regressions. Being able to train models in the cloud then allowed us to iterate more quickly, but tracking experiments locally was still a big step forward [^1].
+
+[^1]: It is worth noting that this also applies to other MLOps tools in general, and not just ClearML.
 
 ### Vibrant community
 
@@ -53,9 +55,9 @@ Whether this is seen as positive or negative will likely depend on your use case
 
 ### Affordable pricing for small teams
 
-One of the main reasons we chose ClearML was that it offers a Community Edition which allows users to self-host on their own infrastructure. This allows us to keep all of the data in-house and reduce the running costs significantly, which is obviously a significant advantage for a start-up.
+One of the main reasons we chose ClearML was that it offers a [Community Edition](https://github.com/allegroai/clearml/) which allows users to self-host on their own infrastructure. This allows us to keep all of the data in-house and reduce the running costs significantly, which is obviously a significant advantage for a start-up.
 
-ClearML also offers a hosted solution if you don’t want to manage your own infrastructure. This is priced based on the number of users, which means it is affordable for small teams.
+ClearML also offers a hosted solution if you don’t want to manage your own infrastructure. This is priced based on the number of users, which means it is affordable for small teams, although this might become expensive once your team scales.
 
 ## What limitations have we found with ClearML?
 
@@ -63,9 +65,9 @@ ClearML also offers a hosted solution if you don’t want to manage your own inf
 
 The free tier and self-hosted options are generally quite generous. However, not _all_ features you might expect included, and the [documentation](https://clear.ml/pricing) on which features are included could be made clearer. For example, one limitation we ran into was that autoscalers are not available in the free tier, so we had to build extra tooling in-house to distribute experiments between workers.
 
-Perhaps more disappointingly, other important features such as SSO or Kubernetes integration are not available even in the pro tier, and require one of the enterprise tiers[^1]. Therefore it is important to check if the specific features required for your use case are included in the relevant tier you intend to use.
+Perhaps more disappointingly, other important features such as SSO or Kubernetes integration are not available even in the pro tier, and require one of the enterprise tiers[^2]. Therefore it is important to check if the specific features required for your use case are included in the relevant tier you intend to use.
 
-[^1]: There are both scale and enterprise tiers which both have custom pricing.
+[^2]: There are both scale and enterprise tiers which both have custom pricing.
 
 ### Documentation is patchy
 
@@ -79,11 +81,11 @@ Fortunately it seems that ClearML has since improved the documentation in this a
 
 ClearML allows you to view metrics from a single experiment very quickly and easily from the UI. You can also generate custom plots and store them in the results for the experiment, which can then also be viewed from the UI.
 
-Whilst you can also very easily compare _metrics_ from different experiments on the same chart, you are unable to view _custom plots_ from different experiments on the same chart. This means that your visualisation options for comparing experiments is [limited to simple scalar metrics](https://clear.ml/docs/latest/docs/webapp/webapp_exp_comparing).
+Whilst you can also very easily compare _metrics_ from different experiments on the same chart, you are unable to view _custom plots_ from different experiments on the same chart [^3]. This means that your visualisation options for comparing experiments is [limited to simple scalar metrics](https://clear.ml/docs/latest/docs/webapp/webapp_exp_comparing).
 
-We overcame this limitation by building custom dashboards using Streamlit to fetch data from the ClearML database, and then visualise results using our own custom plots. This worked quite well for us, but this obviously introduces additional maintenance overhead. It would be nicer to be able to analyse experiments in a bit more detail inside the ClearML UI [^2].
+[^3]: Unfortunately it doesn't seem like this is something which will be supported anytime soon going by this long-standing GitHub [issue](https://github.com/allegroai/clearml/issues/81).
 
-[^2]: Unfortunately it doesn't seem like this is something which will be supported anytime soon going by this long-standing GitHub [issue](https://github.com/allegroai/clearml/issues/81).
+We overcame this limitation by building custom dashboards using Streamlit to fetch data from the ClearML database, and then visualise results using our own custom plots. This worked quite well for us, but this obviously introduces additional maintenance overhead. It would be cleaner if you could analyse experiments in more detail inside the ClearML UI itself.
 
 ## Conclusions
 
