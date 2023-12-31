@@ -4,13 +4,13 @@ date = 2023-12-30T14:04:46Z
 tags = ['clearml', 'machine learning']
 +++
 
-When building ML applications, managing the various datasets & models can be quite a headache, which is where MLOps tools come in. The current landscape is still quite immature, and there are endless tools with different capabilities, aiming to streamline different aspects of the machine learning lifecycle. This makes is quite difficult to assess which tools are suitable for your use case.
+When building ML applications, managing the various datasets & models can be quite a headache, which is where MLOps tools come in. The current landscape is still quite immature, and there are endless tools with different capabilities, aiming to streamline different aspects of the machine learning lifecycle. This makes it quite difficult to assess which tools are suitable for your use case.
 
 In this blog post, I will share my experiences using ClearML, which is one of the most popular MLOps tools. I will discuss the features which we found to be useful at my current company, as well as some of the limitations we ran into. I hope this will help guide others when choosing an MLOps tool for their team.
 
 ## What is ClearML?
 
-[ClearML](http://clear.ml/) is a popular end-to-end MLOps tool that covers the whole ML pipeline within a single open-source platform. It offers suite of tools to manage datasets, experiments, and models, and also track them all in a unified web interface. There are some other tools in this space, and I have a put a brief comparison of the other popular ones below. Compared to the other options, ClearML is a more heavyweight tool, although not quite as popular.
+[ClearML](http://clear.ml/) is a popular end-to-end MLOps tool that covers the whole ML pipeline within a single open-source platform. It offers a suite of tools to manage datasets, experiments, and models, and also track them all in a unified web interface. There are some other tools in this space, and I have put a brief comparison of the other popular ones below. Compared to the other options, ClearML is a more heavyweight tool, although not quite as popular.
 
 |                     | [ClearML](http://clear.ml/) | [MLflow](https://mlflow.org/docs/latest/index.html) | [Weights and Biases](https://wandb.ai/) |
 | ------------------- | --------------------------- | --------------------------------------------------- | --------------------------------------- |
@@ -48,7 +48,7 @@ Additionally, ClearML has an active community on [Slack](https://clear.ml/commun
 
 ### Batteries included
 
-Unlike some other tools such as Weights and Biases, ClearML goes beyond just experiment tracking, and includes features for [dataset management](https://clear.ml/docs/latest/docs/clearml_data/), [orchestration](https://clear.ml/docs/latest/docs/pipelines/) and even [deployment](https://clear.ml/docs/latest/docs/clearml_serving/). This allows you have a centralised platform for the whole ML pipeline, without having to integrate additional tools such as using [DVC](https://dvc.org/) to version datasets or [KServe](https://kserve.github.io/website/latest/) for deployment, which could be seen as introducing additional complexity.
+Unlike some other tools such as Weights and Biases, ClearML goes beyond just experiment tracking, and includes features for [dataset management](https://clear.ml/docs/latest/docs/clearml_data/), [orchestration](https://clear.ml/docs/latest/docs/pipelines/) and even [deployment](https://clear.ml/docs/latest/docs/clearml_serving/). This allows you to have a centralised platform for the whole ML pipeline, without having to integrate additional tools such as using [DVC](https://dvc.org/) to version datasets or [KServe](https://kserve.github.io/website/latest/) for deployment, which could be seen as introducing additional complexity.
 
 Whether this is seen as positive or negative will likely depend on your use case. However, if you need the full set of capabilities offered by ClearML and have a small team, it is much quicker to get up and running with a single tool.
 
@@ -62,7 +62,7 @@ ClearML also offers a hosted solution if you don’t want to manage your own inf
 
 ### Some key features are paywalled
 
-The free tier and self-hosted options are generally quite generous. However, not _all_ features you might expect included, and the [documentation](https://clear.ml/pricing) on which features are included could be made clearer. For example, one limitation we ran into was that autoscalers are not available in the free tier, so we had to build extra tooling in-house to distribute experiments between workers.
+The free tier and self-hosted options are generally quite generous. However, not _all_ the features you might expect are included, and the [documentation](https://clear.ml/pricing) on which features are included could be made clearer. For example, one limitation we ran into was that autoscalers are not available in the free tier, so we had to build extra tooling in-house to distribute experiments between workers.
 
 Perhaps more disappointingly, other important features such as SSO or Kubernetes integration are not available even in the pro tier, and require one of the enterprise tiers[^2]. Therefore it is important to check if the specific features required for your use case are included in the relevant tier you intend to use.
 
@@ -70,7 +70,7 @@ Perhaps more disappointingly, other important features such as SSO or Kubernetes
 
 ### Documentation is patchy
 
-While ClearML’s documentation is generally very clear and quite comprehensive, there are certain more advanced or esoteric areas of the API which are less well-documented. For example, the standard ClearML API does not include support for managing queues (for orchestrating tasks over workers), and instead recommends using the generic [HTTP API client](https://clear.ml/docs/latest/docs/clearml_sdk/apiclient_sdk/). However, the documented for this API is quite limited so some trial and error was required for us to get this to work.
+While ClearML’s documentation is generally very clear and quite comprehensive, there are certain more advanced or esoteric areas of the API which are less well-documented. For example, the standard ClearML API does not include support for managing queues (for orchestrating tasks over workers), and instead recommends using the generic [HTTP API client](https://clear.ml/docs/latest/docs/clearml_sdk/apiclient_sdk/). However, the documentation for this API is quite limited so some trial and error was required for us to get this to work.
 
 The ClearML documentation also sometimes fails to explain certain concepts beyond the key ones such as `Task`s and `Model`s particularly well. For example, we wanted to run groups of simulations, where each simulation was for a different scenario. The solution turned out to be to use [function tasks](https://clear.ml/docs/latest/docs/references/sdk/task#create_function_task), which allow a parent task to spawn multiple sub-tasks, but it was not clear from the documentation alone that this would achieve what we needed.
 
@@ -84,7 +84,7 @@ Whilst you can also very easily compare _metrics_ from different experiments on 
 
 [^3]: Unfortunately it doesn't seem like this is something which will be supported anytime soon going by this long-standing GitHub [issue](https://github.com/allegroai/clearml/issues/81).
 
-We overcame this limitation by building custom dashboards using Streamlit to fetch data from the ClearML database, and then visualise results using our own custom plots. This worked quite well for us, but this obviously introduces additional maintenance overhead. It would be cleaner if you could analyse experiments in more detail inside the ClearML UI itself.
+We overcame this limitation by building custom dashboards using Streamlit to fetch data from the ClearML database, and then visualise results using our own custom plots. This worked quite well for us, but this obviously requires additional maintenance. It would be cleaner if you could analyse experiments in more detail inside the ClearML UI itself.
 
 ## Conclusions
 
