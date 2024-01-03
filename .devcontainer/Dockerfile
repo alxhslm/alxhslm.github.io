@@ -22,7 +22,7 @@ RUN /tmp/scripts/install_hugo.sh ${VARIANT} ${VERSION}
 EXPOSE 1313
 
 # Install pre-commit
-RUN pip3 install pre-commit
+RUN pip install pre-commit
 
 # This cache directory will mounted as a volume inside the container to preserve
 # it across rebuilds. Docker mounts "take" ownership and permissions from
