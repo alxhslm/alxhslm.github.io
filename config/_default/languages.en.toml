@@ -11,11 +11,11 @@ title = "Alex Haslam"
   logo = "images/logo.png"
 
 [author]
-name = "Alex Haslam"
-image = "images/profile.png"
-headline = "Machine Learning Engineer"
-bio = "I’m an engineer based in London, with expertise in machine learning, numerical methods and software development."
-links = [
-  { github = "https://github.com/alxhslm"},
-  { linkedin =  "https://www.linkedin.com/in/alexanderhaslam"},
-]
+  name = "Alex Haslam"
+  image = "images/profile.png"
+  headline = "Machine Learning Engineer"
+  bio = "I’m an engineer based in London, with expertise in machine learning, numerical methods and software development."
+  links = [
+    { github = "https://github.com/alxhslm" },
+    { linkedin = "https://www.linkedin.com/in/alexanderhaslam" },
+  ]

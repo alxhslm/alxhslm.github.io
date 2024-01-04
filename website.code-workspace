@@ -18,7 +18,9 @@
 		},
 		"[css]": {
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
-		}
+		},
+		"evenBetterToml.formatter.indentEntries": true,
+		"evenBetterToml.formatter.indentTables": true,
 	},
 	"extensions": {
 		"recommendations": [
