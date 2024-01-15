@@ -43,7 +43,8 @@ $$p(y|x) \approx q_y(x)$$
 where \\(q_y(x)\\) is also approximated as a neural network within the encoder.
 
 The architecture of the encoder is shown in the diagram below:
-![Encoder](images/encoder.svg)
+
+<img src="images/encoder.svg">
 
 It has the following layers:
 
@@ -70,7 +71,7 @@ $$ z \sim N(\mu=q\_{x,1}(x), \sigma^2 = e^{q\_{x,2}(x)})$$
 
 and we have already computed the class probabilities \\(p(y|x)\\). The final step is to then reconstruct an image from this information. The decoder has the following architecture, which is very similar to the encoder but in reverse:
 
-![Decoder](images/decoder.svg)
+<img src="images/decoder.svg">
 
 This has the following layers:
 
