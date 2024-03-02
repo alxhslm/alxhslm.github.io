@@ -4,7 +4,6 @@ showDate = false
 showAuthor = false
 showWordCount = false
 showReadingTime = false
-showTableOfContents = true
 +++
 
 I'm an engineer based in London, with experience from F1 and agtech, as well as a PhD in engineering. I'm highly skilled in simulation, building predictive models and writing production software in Python. I have a passion for innovation and a strong attention to detail. I enjoy coming up with elegant solutions to challenging real-world problems.

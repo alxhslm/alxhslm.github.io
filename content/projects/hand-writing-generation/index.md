@@ -1,7 +1,6 @@
 +++
 title = 'Hand Writing Generation'
 date = 2023-12-01T21:28:11Z
-showTableOfContents = true
 tags = ['machine learning', 'deep learning','modelling']
 +++
 

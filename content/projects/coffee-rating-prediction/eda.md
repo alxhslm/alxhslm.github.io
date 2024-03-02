@@ -3,7 +3,6 @@ title = 'Exploratory data analysis'
 series = ['Coffee Rating Prediction']
 series_order = 1
 date = 2023-11-09T00:00:00Z
-showTableOfContents = true
 +++
 
 ## Objective

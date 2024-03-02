@@ -3,7 +3,6 @@ title = 'Deployment'
 series = ['Coffee Rating Prediction']
 series_order = 3
 date = 2023-11-21T20:12:00Z
-showTableOfContents = true
 +++
 
 ## Background
