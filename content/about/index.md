@@ -70,25 +70,13 @@ Download
 
 ## Skills
 
-### Simulation
-
-- Mathematical modelling
 - Optimisation
+- Machine learning algorithms
+- Mathematical modelling
 - Numerical methods
-
-### Machine learning
-
-- Classical learning algorithms
-- Deep learning
-- Feature engineering
-- Data visualisation
-
-### Model deployment
-
+- Data analysis and visualisation
 - Experiment management
 - Containerisation
-- Cloud deployment
-- Monitoring
 
 ## Technologies
 
