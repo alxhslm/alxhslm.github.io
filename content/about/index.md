@@ -92,6 +92,7 @@ Download
   {{< keyword icon =  "python" >}} Python {{< /keyword >}}
   {{< keyword icon =  "numpy" >}} NumPy {{< /keyword >}}
   {{< keyword icon =  "pandas" >}} Pandas {{< /keyword >}}
+  {{< keyword icon =  "cvxpy" >}} CVXPY {{< /keyword >}}
   {{< /keywordList >}}
 - **Visualisation:**
   {{< keywordList >}}
