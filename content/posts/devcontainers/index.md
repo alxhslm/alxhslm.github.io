@@ -1,11 +1,11 @@
 +++
-title = 'Dev containers are your friend'
+title = 'Dev containers are awesome'
 date = 2024-03-01T18:35:54Z
 draft = true
 tags = ['development']
 +++
 
-I personally love finding ways to reduce friction in my life easier and optimise my processes [^1] both at work and at home. The best tools are the ones which fit in easily to your workflow, and make you wonder how you worked without them before. Dev containers are one of those tools, and I’m going to explain why I like them so much.
+I personally love finding ways to reduce friction in my life easier and optimise my processes [^1]. The best tools are the ones which fit in easily to your workflow, and make you wonder how you worked without them before. Dev containers are one of those tools for me, and I’m going to explain why I like them so much.
 
 ## What are dev containers?
 
@@ -39,16 +39,18 @@ On the other hand, when you use dev containers, you could just rebuild the old v
 
 ## Configuring a dev container
 
-The first time you set things up, it can be quite tricky. If you’re working on a project with a small team and not many system dependencies, then the benefits of a dev container will be limited, so that it’s hard to justify the investment in time.
+The first time you set things up, it can be quite tricky. If you’re working on a project with a small team and not many system dependencies, then the benefits of a dev container will be limited. This means that it’s harder to justify the upfront investment in time.
 
-However, in my experience, it’s a lot easier the second time since you can copy a lot of the dev container definition form another project, so it becomes much easier. You can also build a lot of other people’s work:
+However, there's no need to start from scratch. You can:
 
 - Make use of [pre-made dev container templates](https://containers.dev/templates) which you can then build on top of
 - Add [pre-made “features”](https://containers.dev/features) to your definition, which carry out common tasks for you such as installing the AWS CLI
 
+In my experience, it becomes a lot easier to set up a dev container the second time around, because you can often copy a lot of the dev container definition from a previous project.
+
 ## Using a dev container in the cloud
 
-A nice bonus of containerising your development environment is that you can develop on any host machine, including ones in the cloud. The most obvious example is [GitHub Codespaces](https://github.com/features/codespaces), where you can spin up a new environment from a branch right from the GitHub UI. There are other cloud development providers such as [Gitpod](https://www.gitpod.io/), [Coder](https://coder.com/) and [CodeSandbox](https://codesandbox.io/). I use this for personal projects quite a lot, since my machine is quite old and sometimes struggles, but you could even use this approach to develop on an iPad.
+A nice bonus of containerising your development environment is that you can develop on _any_ host machine, including ones in the cloud. The most obvious example is [GitHub Codespaces](https://github.com/features/codespaces), where you can spin up a new environment from a branch right from the GitHub UI. There are other cloud development providers such as [Gitpod](https://www.gitpod.io/), [Coder](https://coder.com/) and [CodeSandbox](https://codesandbox.io/). I use Codespaces for personal projects quite a lot, since my machine is quite old and sometimes struggles, but you could even use this approach to develop on an iPad.
 
 A tool I have started to use recently is [DevPod](https://devpod.sh/). This is an open-source tool which you install locally on your machine, and can then be used to spin up cloud dev environments _almost_ as seamlessly as GitHub Codespaces. The key difference is that you can use **any** cloud provider such as AWS or GCP. This can work out to be much cheaper if your usage is high[^3], and allows you to further customise the host machine (eg adding GPUs).
 
