@@ -19,11 +19,12 @@ You define the environment through a `Dockerfile` (and possibly a `docker-compos
 
 ### Zero-setup
 
-The best-case scenario is when someone _else_ has done the hard-work and defined the dev container for you [^2]. There’s no need to read “Get started” instructions for a new project, you just:
+The best-case scenario is when _someone else_ has done the hard-work and defined the dev container for you. There’s no need to read “Get started” instructions for a new project, you just:
 
 1. Pull the repo
 2. Launch VS code
-3. Start developing
+3. Build the container [^2]
+4. Start developing
 
 This is particularly beneficial when your project has **complex system requirements.** One person works out the fiddly bits of how to set things up, and then shares it with everyone; either you pull the updated image, or rebuilding their container.
 
@@ -61,5 +62,5 @@ A nice bonus of containerising your development environment is that you can deve
 A tool I have started to use recently is [DevPod](https://devpod.sh/). This is an open-source tool which you install locally on your machine, and can then be used to spin up cloud dev environments _almost_ as seamlessly as GitHub Codespaces. The key difference is that you can use **any** cloud provider such as AWS or GCP. This can work out to be much cheaper if your usage is high[^3], and allows you to further customise the host machine (eg adding GPUs).
 
 [^1]: Or possibly even over-optimise? 😅
-[^2]: Even better, they may have even built an image for you
+[^2]: Even better, just pull the pre-built image
 [^3]: You can read an interesting price comparison between AWS and Codespaces [here](https://pauley.me/post/2022/ec2-codespace-autostart/)
