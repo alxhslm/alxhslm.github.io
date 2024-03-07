@@ -34,7 +34,7 @@ You might wonder why this matters if you don’t work on many new projects and t
 
 ### Reproducibility
 
-Dev containers help to fix a lot of “Works on my machine” problems. It can happen that the system dependencies to have changed since you were last working on your branch, and then you find your code no longer works. Without a dev container, you may end up spending a lot of time debugging before you _eventually_ realise that there was some mismatch in the system dependencies between your main and development branches.
+Dev containers help to fix a lot of **“Works on my machine”** problems. It can happen that the system dependencies to have changed since you were last working on your branch, and then you find your code no longer works. Without a dev container, you may end up spending a lot of time debugging before you _eventually_ realise that there was some mismatch in the system dependencies between your main and development branches.
 
 On the other hand, when you use dev containers, you could just rebuild the old version of the container to work on the old branch to carry on developing. And if there is a **conflict** in system dependencies, this should become apparent when you merge in your main branch.
 
@@ -46,7 +46,7 @@ Your projects are also completely isolated from each other, so that you never ru
 
 ## Configuring a dev container
 
-The first time you set things up, it can be quite tricky. If you’re working on a project with a small team and not many system dependencies, then the benefits of a dev container will be limited. This means that it’s harder to justify the upfront investment in time.
+It can be quite overwhelming to configure a dev container for the first time. If you’re working on a project with a small team and not many system dependencies, then the benefits of a dev container will be limited. This means that it’s harder to justify the upfront investment in time.
 
 However, there's no need to start from scratch. You can:
 
