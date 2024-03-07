@@ -6,7 +6,7 @@ showWordCount = false
 showReadingTime = false
 +++
 
-I'm an engineer based in London, with experience from F1 and agtech, as well as a PhD in engineering. I'm highly skilled in simulation, building predictive models and writing production software in Python. I have a passion for innovation and a strong attention to detail. I enjoy coming up with elegant solutions to challenging real-world problems.
+I'm an engineer based in London, with experience from F1 and agtech, as well as a PhD in engineering. I'm highly skilled in building optimisation and machine learning models in Python. I have a passion for innovation and a strong attention to detail. I enjoy coming up with elegant solutions to challenging real-world problems.
 
 When I'm not coding, I enjoy [running and cycling](https://www.strava.com/athletes/alex_haslam). I also like to try new [craft beers](https://untappd.com/user/alexharryh) and speciality coffees.
 
@@ -70,25 +70,13 @@ Download
 
 ## Skills
 
-### Simulation
-
-- Mathematical modelling
 - Optimisation
+- Machine learning algorithms
+- Mathematical modelling
 - Numerical methods
-
-### Machine learning
-
-- Classical learning algorithms
-- Deep learning
-- Feature engineering
-- Data visualisation
-
-### Model deployment
-
+- Data analysis and visualisation
 - Experiment management
 - Containerisation
-- Cloud deployment
-- Monitoring
 
 ## Technologies
 
@@ -104,6 +92,7 @@ Download
   {{< keyword icon =  "python" >}} Python {{< /keyword >}}
   {{< keyword icon =  "numpy" >}} NumPy {{< /keyword >}}
   {{< keyword icon =  "pandas" >}} Pandas {{< /keyword >}}
+  {{< keyword icon =  "cvxpy" >}} CVXPY {{< /keyword >}}
   {{< /keywordList >}}
 - **Visualisation:**
   {{< keywordList >}}
