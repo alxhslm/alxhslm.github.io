@@ -11,9 +11,9 @@ I personally love finding ways to reduce friction in my life easier and optimise
 
 Dev containers are special Docker containers where you develop your code. This means that you just need Docker installed on your host machine, and then all dependencies are installed within the container.
 
-They were originally created by Microsoft and were specific to VS code. However, it is now an [open specification](https://containers.dev/) which you can use with multiple editors (incl. full-fat Visual Studio and IntelliJ based IDEs) and cloud services (eg. GitHub Codespaces).
+Dev containers were popularised by VS code, but there is in fact an [open specification](https://containers.dev/). Dev containers can be used with multiple editors (incl. full-fat Visual Studio and IntelliJ based IDEs) and various cloud services (eg. GitHub Codespaces).
 
-You define the environment through a `Dockerfile` or `docker-compose.yaml` and a configuration `devcontainer.json` file. These can then be stored in your Git repo along with your source code.
+You define the environment through a `Dockerfile` (and possibly a `docker-compose.yaml`) and a configuration `devcontainer.json` file. These files configure the container for your project including installing any dependencies, and can be stored in your Git repo along with your source code.
 
 ## Why do I need a dev container?
 
