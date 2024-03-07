@@ -1,7 +1,6 @@
 +++
 title = 'Dev containers are awesome'
 date = 2024-03-01T18:35:54Z
-draft = true
 tags = ['development']
 +++
 
