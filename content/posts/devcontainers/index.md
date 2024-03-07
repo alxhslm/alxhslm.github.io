@@ -37,6 +37,12 @@ Dev containers help to fix a lot of “Works on my machine” problems. It can h
 
 On the other hand, when you use dev containers, you could just rebuild the old version of the container to work on the old branch to carry on developing. And if there is a **conflict** in system dependencies, this should become apparent when you merge in your main branch.
 
+### Isolation
+
+The other major benefit of dev containers is that your dependencies are completely isolated from your host machine. You can't accidentally break your machine - if you make a mistake in the dev container definition, you can just modify your `Dockerfile` and rebuild the container. It's also trivial to completely remove all dependencies for a given project.
+
+Your projects are also completely isolated from each other, so that you never run into issues with conflicting system dependencies. I personally used to find that when developing locally, I would waste time trying to debug an issue before I realised I accidentally activated the wrong Python virtual environment. This is very unlikely to happen when using a dev container because it would (likely) only contain a single virtual environment.
+
 ## Configuring a dev container
 
 The first time you set things up, it can be quite tricky. If you’re working on a project with a small team and not many system dependencies, then the benefits of a dev container will be limited. This means that it’s harder to justify the upfront investment in time.
