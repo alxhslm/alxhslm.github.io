@@ -14,7 +14,7 @@ When I'm not coding, I enjoy [running and cycling](https://www.strava.com/athlet
 
 {{< timeline >}}
 
-{{< timelineItem icon="optimal" header="Optimal Labs" badge="Sept 2020 to Present" subheader="Senior Engineer" >}}
+{{< timelineItem icon="optimal" header="Optimal Labs" badge="Sept 2020 to Jan 2024" subheader="Senior Engineer" >}}
 Deploying fully autonomous greenhouses using state-of-the-art control algorithms
 {{< /timelineItem >}}
 
