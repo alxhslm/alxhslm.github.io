@@ -27,9 +27,9 @@ Please use the form below if you would like to contact me about my work.
     </label>
     <textarea class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="message" name="message" type="message" placeholder="Hello World!" rows=5></textarea>
 </div>
-<button
-class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
-type="submit">
+<button type="submit">
+{{< button>}}
 Send
+{{< /button >}}
 </button>
 </form>
