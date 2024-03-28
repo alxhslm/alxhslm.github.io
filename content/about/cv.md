@@ -1,5 +1,5 @@
 +++
-title = 'About'
+title = 'Curriculum vitae'
 showDate = false
 showAuthor = false
 showWordCount = false

@@ -17,13 +17,24 @@
 
 [[main]]
   name = "About"
-  pageRef = "about"
   weight = 1
 
 [[main]]
   name = "Projects"
   pageRef = "projects"
   weight = 20
+
+[[main]]
+  name = "CV"
+  parent = "About"
+  pageRef = "cv"
+  weight = 1
+
+[[main]]
+  name = "Contact"
+  parent = "About"
+  pageRef = "contact"
+  weight = 2
 
   #[[main]]
   #  name = "Categories"
