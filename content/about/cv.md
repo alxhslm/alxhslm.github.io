@@ -14,6 +14,10 @@ When I'm not coding, I enjoy [running and cycling](https://www.strava.com/athlet
 
 {{< timeline >}}
 
+{{< timelineItem icon="h2go" header="H2GO Power" badge="Apr 2024 to Present" subheader="Senior Research Scientist" >}}
+Optimising use of hydrogen assets using AI
+{{< /timelineItem >}}
+
 {{< timelineItem icon="optimal" header="Optimal Labs" badge="Sept 2020 to Jan 2024" subheader="Senior Engineer" >}}
 Deploying fully autonomous greenhouses using state-of-the-art control algorithms
 {{< /timelineItem >}}
