@@ -12,14 +12,20 @@ showReadingTime = false
 
 {{< timelineItem icon="h2go" header="H2GO Power" badge="Apr 2024 to Present" subheader="Senior Research Scientist" >}}
 Optimising use of hydrogen assets using AI
+
+<p><a href="https://www.h2gopower.com/">{{< icon "link" >}} Website</a></p>
 {{< /timelineItem >}}
 
 {{< timelineItem icon="optimal" header="Optimal Labs" badge="Sept 2020 to Jan 2024" subheader="Senior Engineer" >}}
 Deploying fully autonomous greenhouses using state-of-the-art control algorithms
+
+<p><a href="https://www.optimal.ag/">{{< icon "link" >}}Website</a></p>
 {{< /timelineItem >}}
 
 {{< timelineItem icon="mclaren" header="McLaren Racing" badge="Aug 2012 to Nov 2016" subheader="Simulation Engineer" >}}
 Developing models of components, simulator control algorithms and lap-time simulations
+
+<p><a href="https://www.mclaren.com/racing/">{{< icon "link" >}}Website</a></p>
 {{< /timelineItem >}}
 
 {{< /timeline >}}
