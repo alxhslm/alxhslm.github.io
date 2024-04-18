@@ -42,7 +42,7 @@ and numerical simulation techniques.
 
 <p>Thesis: <em>Non-linear vibration transmission through rolling-element bearings in rotating machines</em></p>
 {{< button href="https://spiral.imperial.ac.uk/bitstream/10044/1/101592/1/Haslam-A-2020-PhD-Thesis.pdf" >}}
-Download
+Download {{< icon "download" >}}
 {{< /button >}}
 {{< /timelineItem >}}
 
@@ -53,7 +53,7 @@ Specialising in dynamics & control with modules covering modelling, simulation, 
 
 <p>Thesis: <em>Stability and controllability of an F1 race car</em></p>
 {{< button href="files/masters_thesis.pdf" >}}
-Download
+Download {{< icon "download" >}}
 {{< /button >}}
 {{< /timelineItem >}}
 
