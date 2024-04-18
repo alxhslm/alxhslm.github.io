@@ -30,12 +30,14 @@
   parent = "About"
   pageRef = "cv"
   weight = 1
+  pre = "list"
 
 [[main]]
   name = "Contact"
   parent = "About"
   pageRef = "contact"
   weight = 2
+  pre = "envelope"
 
   #[[main]]
   #  name = "Categories"
