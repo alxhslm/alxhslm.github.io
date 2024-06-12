@@ -6,23 +6,15 @@ tags = ['machine learning', 'computer vision', 'deployment']
 
 {{< katex >}}
 
-This started as a take-home task for a job application, but I found that the results were quite fun, so I decided to tidy it up and deploy it. You can access the deployed Streamlit dashboard [here](https://googly-eyes.streamlit.app/).
+The aim of this project was for me to get some experience with computer vision problems. I found that the results were quite fun, so I decided to tidy up the code and deploy it. You can access the deployed Streamlit dashboard [here](https://googly-eyes.streamlit.app/).
 
 {{< github repo="alxhslm/googly-eyes" >}}
 
-## Task description
+## Problem description
 
-FunnyFaces Inc. has hired your talent to develop a web application that allows a user to upload a picture of their face and it returns that same picture but with googly eyes in place of their actual eyes. Fun for the whole family!
+The objective was to create a system which could automatically overlay googly eyes on top of people's actual eyes in a given photo as shown below. I wanted it to work even if there was more than one person in the photo.
 
-The project owner was kind enough to supply a draft of what the company requires; which is attached to this email.
-
-Please develop the "Googly Eyes" service, which exposes a single HTTP endpoint that allows a user to upload a photo and returns the same photo but modified with googly eyes in place of their eyes. Googly eyes are funnier if they are slightly randomised both in size and orientation of the pupils, so that's something you should take into consideration when developing your service. It also shouldn't matter if there are one or more people in the photo - all get googly eyes. As stated - this is fun for the whole family!
-
-Note: FunnyFaces Inc. is a fun company but takes its users' privacy very seriously. The company requires that you **never** store any uploaded picture on your service other than exceptionally for the duration of the request.
-
-![Onfido Senior Machine Learning Engineer Task.jpg](images/Onfido_Senior_Machine_Learning_Engineer_Task.jpg)
-
-## Proposed solution
+{{< include src="images/service.svg">}}
 
 ### Assumptions
 
@@ -32,14 +24,14 @@ To simplify the problem, I made the following assumptions:
 - The faces are approximately aligned with the vertical axis of the photo, so the face detection step does need to be robust to misalignment
 - The people will be facing the camera in the photos (or close to it), so we do not need to consider 3D geometric effects when placing the eyes
 
-### Architecture
+### Project plan
 
 This problem can be decomposed into the following steps:
 
-- Build a method for identifying eyes in photos of people
+- Build a build to identify eyes in photos of people
 - Generate Googly eyes with random shapes and sizes
 - Create a server which processes HTTP requests
-- Create a way to interact with the service
+- Create a UI to interact with the service
 
 I will now explain how I achieved each of these steps.
 
@@ -54,7 +46,7 @@ The most obvious approach for identifying eyes is to use a CNN, trained on pre-l
 
 I considered two different approaches to identifying faces.
 
-### Training my own model
+### Training a custom model
 
 I could think of two possible architectures of identifying the faces:
 
@@ -63,7 +55,7 @@ I could think of two possible architectures of identifying the faces:
    1. Stage 1: Identify faces
    2. Stage 2: Identify eyes from each face
 
-The latter approach would likely be more robust, since it forces the context around the eyes to be taken in to account. However, it would be slower since two models need to be evaluated.
+The latter approach has the potential to be more robust, since the eye identification model only has to consider faces, so is less likely to be "tricked" by other features in an image. However, it would be slower since two models need to be evaluated.
 
 In either approach, we can make use of pre-trained image classification models for the main trunk of the model:
 
@@ -77,11 +69,11 @@ The dataset we use to train network is very important. We must ensure that it is
 Since the task of recognising faces and facial features is a very common one, we can make use of pre-existing models to perform this step for us. After a brief search, I came across many open-source models, the two most performant models being:
 
 - **MTCNN** ([paper](https://ieeexplore.ieee.org/document/7553523))**:** [PyTorch implementation](https://github.com/timesler/facenet-pytorch) [TensorFlow implementation](https://github.com/ipazc/mtcnn)
-- **RetinaFace (**[paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.pdf)): \*\*\*\*[PyTorch implementation](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) [TensorFlow implementation](https://github.com/serengil/retinaface)
+- **RetinaFace**([paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.pdf)): [PyTorch implementation](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) [TensorFlow implementation](https://github.com/serengil/retinaface)
 
 RetinaFace generally performs _slightly_ better, likely because it was trained with an augmented set of labels including 1k 3D vertices.
 
-I chose to make use of the existing RetinaFace model, in order to allow me to spend more time on the server and dashboard. This model would likely be much more accurate than any model I would train in a short period of time.
+I chose to make use of the existing RetinaFace model, since this model would likely be much more accurate than any model I could train, without spending a lot of time on data processing and model training. This also allowed me to focus my time on the other aspects of the system.
 
 I converted the Tensorflow model to use the Tensorflow-lite runtime instead. This required updating the model and pre-processing steps to use fixed image dimensions. This has two main advantages:
 
@@ -100,60 +92,66 @@ $$
 \Delta_{eye2eye}=\sqrt{(x_r-x_l)^2+(y_r-y_l)^2}
 $$
 
-where $x_r, y_r$ are the pixel co-ordinates of each eye. I then set the radius of the googly eyes $r_e$ by:
+where \\(x_r, y_r\\) are the pixel co-ordinates of each eye. I then set the radius of the googly eyes \\(r_e\\) by:
 
 $$
 r_e =\gamma\frac{\Delta_{eye2eye}}{2}
 $$
 
-where $\gamma$ is a scaling parameter in the range $0<\gamma<1.0$. I set the default value to 0.5.
+where \\(\gamma\\) is a scaling parameter in the range \\(0<\gamma<1.0\\). I set the default value to 0.5.
 
 ### Pupil size
 
-The pupil size $r_p$ was set based on the eye size from:
+The pupil size \\(r_p\\) was set based on the eye size from:
 
 $$
 r_p=\lambda r_{e}
 $$
 
-where $\lambda$ is a random variable sampled from the following distribution:
+where \\(\lambda\\) is a random variable sampled from the following distribution:
 
 $$
 \lambda \sim U(\lambda_1, \lambda_2)
 $$
 
-where the default values for the parameters $\lambda_1$ and $\lambda_2$ were set to 0.4 and 0.6 respectively.
+where the default values for the parameters \\(\lambda_1\\) and \\(\lambda_2\\) were set to 0.4 and 0.6 respectively.
 
 ### Pupil position and orientation
 
 To randomise the position of the pupil, the position was set by the following equation:
 
 $$
-\begin{align*}x_p&=x_e+ (r_e-r_p) \sin \theta \\ y_p&=y_e+ (r_e-r_p) \cos \theta\end{align*}
+x_p = x_e+ (r_e-r_p) \sin \theta
 $$
 
-where $\theta$ is the random _orientation_ sampled from the following distribution:
+$$
+y_p = y_e+ (r_e-r_p) \cos \theta
+$$
+
+where \\(\theta\\) is the random _orientation_ sampled from the following distribution:
 
 $$
 \theta \sim U(0,2\pi)
 $$
 
-## Server
+## Local development
 
-In order to handle the HTTP requests, I created a server using [Flask](https://flask.palletsprojects.com/en/3.0.x/). I created two end-points:
+### Server
 
-- `googly_eyes` to perform the actual image manipulation
-- `identify_faces` to return information about the detect faces including bounding boxes and eye positions for debugging purposes
+In order to handle the HTTP requests, I created a server using [Flask](https://flask.palletsprojects.com/en/3.0.x/). I created a single end-point specified as follows:
 
-In both cases, the photo is stored in the body of the POST request. All image processing and manipulation was then performed in memory, so no images are ever stored to disk on the server.
+| Body                  | Response                    |
+| --------------------- | --------------------------- |
+| Image                 | Edited image                |
+| Googly eye parameters | Locations of detected faces |
 
-For the `googly_eyes` end-point, additional parameters for the eye and pupil size can be included in the body. This allows the client to adjust these settings to personal preference.
+Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the body. This allows the client to adjust these settings to personal preference. The locations of the faces are returned for debugging purposes.
 
-For the `identify_faces` end-point, the face positions are returned as JSON.
+All image processing and manipulation was then performed in memory, so no images are ever stored to disk on the server.
 
-When running the server for production, I used the [Gunicorn](https://gunicorn.org/) web server. The Python dependencies are managed using [Poetry](https://python-poetry.org/) and the server is encapsulated within a docker container.
+When running the server in Docker, I used the [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/index.html) web server. The Python dependencies are managed using [Poetry](https://python-poetry.org/) and the server is encapsulated within a docker container.
 
-## Dashboard
+### Dashboard
 
 To allow the user to interact with the server more easily, I build a minimal dashboard using [Streamlit](https://streamlit.io/) which allows the user to:
 
@@ -161,16 +159,53 @@ To allow the user to interact with the server more easily, I build a minimal das
 - Adjust parameters for the googly eyes
 - Download the modified photo
 
-![Screenshot 2024-02-05 at 16.12.39.png](images/Screenshot_2024-02-05_at_16.12.39.png)
+![Streamlit Dashboard](images/dashboard.png)
 
 The dashboard then performs the following steps:
 
-- Gets the settings from the information entered by the user
-- Makes the HTTP request to the server to add the googly eyes
-- Displays the result and adds a download link
+1. Gets the settings from the information entered by the user
+2. Makes the HTTP request to the server to add the googly eyes
+3. Overlay the identified faces for debugging purposes (if requested)
+4. Displays the result and adds a download link
 
-The dashboard is hosted in a separate Docker container, with its own smaller set of dependencies using Poetry.
+The dashboard is hosted in a separate Docker container, with its own smaller set of dependencies using Poetry. The network connection to the server is configured via [`docker-compose.yaml`](https://github.com/alxhslm/googly-eyes/blob/main/docker-compose.yml).
 
-## Deployment
+## Cloud deployment
 
-Since the server was already contained within a Docker container, it was quite simple to convert it into an AWS Lambda function. This is fine for a proof of concept, but is quite slow due to the server being quite underpowered.
+### Server
+
+Since the server was already contained within a Docker container and contained only a single end-point, it was quite simple to convert it into an [AWS Lambda](https://aws.amazon.com/lambda/) function. I used an [AWS function URL](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) to expose the AWS Lambda, with IAM authentication. This had the advantage that I did not need to manage any compute resources.
+
+The main challenge I ran into was the the Python Lambda Docker images were based on a version of Amazon Linux with out-of-date system dependencies for Tensorflow. To get around this, I built a custom image using the process described [here](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-types), based on the Debian-based Python images on [Docker Hub](https://hub.docker.com/_/python).
+
+I found that the AWS Lambda was able to run the RetinaFace model with 3GB of RAM. However, it is quite slow due to the server being quite underpowered, and therefore needs a large 60s timeout.
+
+### Dashoard
+
+The Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could not quite be deployed. The dashboard used uses files from the `common` directory but [Streamlit cloud](https://streamlit.io/cloud) dashboards only have access to files in the same directory.
+
+To get around this limitation, I created a wrapper module [`app.py`](https://github.com/alxhslm/googly-eyes/blob/main/app.py) at the root of the repo, which in turn calls the existing dashboard code. This ensures that the deployed dashoard has access to the entire repo. This setup supports both local development and cloud deployment, without any code duplication.
+
+The architecture of the system is shown below.
+
+{{< mermaid >}}
+graph TD
+subgraph Streamlit Cloud
+subgraph Wrapper module
+A
+end
+end
+E[User]-.->A
+A[Dashboard]--Image-->B[Lambda Function]
+B--Edited image-->A
+B--Image-->D[RetinaFace]
+D--->F
+F[Googlifier]--Edited image-->B
+subgraph AWS
+subgraph Docker container
+B
+D
+F
+end
+end
+{{< /mermaid >}}
