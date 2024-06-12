@@ -136,6 +136,11 @@ $$
 
 ## Local development
 
+The first stage was get the system running locally on my machine. This was split into two components:
+
+- Server to handle HTTP requests and perform the image manipulation
+- Dashboard acting as a user-friendly interface for making requests to the server
+
 ### Server
 
 In order to handle the HTTP requests, I created a server using [Flask](https://flask.palletsprojects.com/en/3.0.x/). I created a single end-point specified as follows:
@@ -178,6 +183,8 @@ The dashboard then performs the following steps:
 The dashboard is hosted in a separate [Docker container](https://github.com/alxhslm/googly-eyes/blob/main/dashboard/Dockerfile), with its own smaller set of dependencies using Poetry. The network connection to the server is configured using [Docker compose](https://github.com/alxhslm/googly-eyes/blob/main/docker-compose.yml).
 
 ## Cloud deployment
+
+Now that I had got everything working locally, the next stage was to deploy it to the cloud.
 
 ### Server
 
