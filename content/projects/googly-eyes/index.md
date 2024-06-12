@@ -187,7 +187,7 @@ The main challenge I ran into was the the [AWS Python Lambda Docker images](http
 
 I found that the AWS Lambda required 3GB of RAM to run the RetinaFace model reliably. However, it is quite slow due to the server being quite underpowered, and therefore needs a large 60s timeout.
 
-### Dashoard
+### Dashboard
 
 The Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could quite be deployed to [Streamlit cloud](https://streamlit.io/cloud) it is. This is because the dashboard used uses files from the shared [`common`](https://github.com/alxhslm/googly-eyes/tree/main/common) directory but Streamlit cloud dashboards only have access to files in the same directory.
 
