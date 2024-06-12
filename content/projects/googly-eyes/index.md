@@ -1,7 +1,7 @@
 +++
 title = 'Googly Eyes'
 date = 2024-02-08T14:00:00Z
-tags = ['machine learning', 'computer vision', 'deployment']
+tags = ['computer vision', 'deployment']
 +++
 
 {{< katex >}}
