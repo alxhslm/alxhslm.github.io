@@ -46,10 +46,10 @@ The most obvious approach for identifying eyes is to use a CNN, trained on pre-l
 
 ### Training a custom model
 
-The first option I considered was to implement my own model. I could think of two possible architectures of identifying the faces:
+The first option I considered was to implement my own model. I could think of two possible architectures for localising the eyes:
 
-1. Train a model to detect eyes directly from the photo
-2. Use a 2-stage classifier as follows:
+1. Train a model to identify eyes directly from the photo
+2. Use a 2-stage identifier as follows:
    - _Stage 1_: Identify faces
    - _Stage 2_: Identify eyes from each face
 
@@ -150,13 +150,13 @@ In order to handle the HTTP requests, I created a server using [Flask](https://f
 | Image                 | Edited image                |
 | Googly eye parameters | Locations of detected faces |
 
-Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the body. This allows the user to override the value of any of these settings to personal preference. The locations of the faces are returned for debugging purposes.
+Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the request body. This allows the user to override the value of any of these settings to personal preference. The locations of the faces are returned for debugging purposes.
 
 The server runs through the following steps:
 
 1. Deserialize the request body to extract the image and parameters
 2. Call the RetinaFace model to identify the faces in the images
-3. Overlay eyes on each of the faces
+3. Overlay googly eyes on each of the faces
 4. Serialize the edited image and combine with the identified faces to form the response body
 
 All image processing and manipulation was then performed in memory, so no images are ever stored to disk on the server.
