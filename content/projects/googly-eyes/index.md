@@ -51,9 +51,9 @@ I considered two different approaches to identifying faces.
 I could think of two possible architectures of identifying the faces:
 
 1. Train a model to detect eyes directly from the photo
-2. Use a 2-stage classifier where:
-   1. Stage 1: Identify faces
-   2. Stage 2: Identify eyes from each face
+2. Use a 2-stage classifier as follows:
+   - _Stage 1_: Identify faces
+   - _Stage 2_: Identify eyes from each face
 
 The latter approach has the potential to be more robust, since the eye identification model only has to consider faces, so is less likely to be "tricked" by other features in an image. However, it would be slower since two models need to be evaluated.
 
@@ -147,9 +147,16 @@ In order to handle the HTTP requests, I created a server using [Flask](https://f
 
 Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the body. This allows the client to adjust these settings to personal preference. The locations of the faces are returned for debugging purposes.
 
+The server runs through the following steps:
+
+1. Deserialize the request body to extract the image and parameters
+2. Call the RetinaFace model to identify the faces in the images
+3. Overlay eyes on each of the faces
+4. Serialize the edited image and combine with the identified faces to form the response body
+
 All image processing and manipulation was then performed in memory, so no images are ever stored to disk on the server.
 
-When running the server in Docker, I used the [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/index.html) web server. The Python dependencies are managed using [Poetry](https://python-poetry.org/) and the server is encapsulated within a docker container.
+When running the server in Docker, I used the [Waitress](https://docs.pylonsproject.org/projects/waitress/en/stable/index.html) web server. The Python dependencies are managed using [Poetry](https://python-poetry.org/) and the server is encapsulated within a [Docker container](https://github.com/alxhslm/googly-eyes/blob/main/server/Dockerfile).
 
 ### Dashboard
 
@@ -168,7 +175,7 @@ The dashboard then performs the following steps:
 3. Overlay the identified faces for debugging purposes (if requested)
 4. Displays the result and adds a download link
 
-The dashboard is hosted in a separate Docker container, with its own smaller set of dependencies using Poetry. The network connection to the server is configured via [`docker-compose.yaml`](https://github.com/alxhslm/googly-eyes/blob/main/docker-compose.yml).
+The dashboard is hosted in a separate [Docker container](https://github.com/alxhslm/googly-eyes/blob/main/dashboard/Dockerfile), with its own smaller set of dependencies using Poetry. The network connection to the server is configured using [Docker compose](https://github.com/alxhslm/googly-eyes/blob/main/docker-compose.yml).
 
 ## Cloud deployment
 
@@ -176,13 +183,13 @@ The dashboard is hosted in a separate Docker container, with its own smaller set
 
 Since the server was already contained within a Docker container and contained only a single end-point, it was quite simple to convert it into an [AWS Lambda](https://aws.amazon.com/lambda/) function. I used an [AWS function URL](https://docs.aws.amazon.com/lambda/latest/dg/lambda-urls.html) to expose the AWS Lambda, with IAM authentication. This had the advantage that I did not need to manage any compute resources.
 
-The main challenge I ran into was the the Python Lambda Docker images were based on a version of Amazon Linux with out-of-date system dependencies for Tensorflow. To get around this, I built a custom image using the process described [here](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-types), based on the Debian-based Python images on [Docker Hub](https://hub.docker.com/_/python).
+The main challenge I ran into was the the [AWS Python Lambda Docker images](https://hub.docker.com/r/amazon/aws-lambda-python) were based on a version of Amazon Linux with out-of-date system dependencies for the version of Tensorflow I was using. To get around this, I built a custom image using the process described [here](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-types), based on a Debian-based Python image from [Docker Hub](https://hub.docker.com/_/python).
 
-I found that the AWS Lambda was able to run the RetinaFace model with 3GB of RAM. However, it is quite slow due to the server being quite underpowered, and therefore needs a large 60s timeout.
+I found that the AWS Lambda required 3GB of RAM to run the RetinaFace model reliably. However, it is quite slow due to the server being quite underpowered, and therefore needs a large 60s timeout.
 
 ### Dashoard
 
-The Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could not quite be deployed. The dashboard used uses files from the `common` directory but [Streamlit cloud](https://streamlit.io/cloud) dashboards only have access to files in the same directory.
+The Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could quite be deployed to [Streamlit cloud](https://streamlit.io/cloud) it is. This is because the dashboard used uses files from the shared [`common`](https://github.com/alxhslm/googly-eyes/tree/main/common) directory but Streamlit cloud dashboards only have access to files in the same directory.
 
 To get around this limitation, I created a wrapper module [`app.py`](https://github.com/alxhslm/googly-eyes/blob/main/app.py) at the root of the repo, which in turn calls the existing dashboard code. This ensures that the deployed dashoard has access to the entire repo. This setup supports both local development and cloud deployment, without any code duplication.
 
