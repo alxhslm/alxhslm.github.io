@@ -44,11 +44,9 @@ This is an _object localisation_ problem since:
 
 The most obvious approach for identifying eyes is to use a CNN, trained on pre-labelled images of people’s faces.
 
-I considered two different approaches to identifying faces.
-
 ### Training a custom model
 
-I could think of two possible architectures of identifying the faces:
+The first option I considered was to implement my own model. I could think of two possible architectures of identifying the faces:
 
 1. Train a model to detect eyes directly from the photo
 2. Use a 2-stage classifier as follows:
@@ -57,7 +55,7 @@ I could think of two possible architectures of identifying the faces:
 
 The latter approach has the potential to be more robust, since the eye identification model only has to consider faces, so is less likely to be "tricked" by other features in an image. However, it would be slower since two models need to be evaluated.
 
-In either approach, we can make use of pre-trained image classification models for the main trunk of the model:
+In either approach, we can make use of pre-trained image classification models for the main trunk of the model since:
 
 - They are often trained in datasets with people in so already have some capability to recognise faces and facial features
 - The input layers of the network identify “features” which will transfer well to different applications
@@ -66,10 +64,12 @@ The dataset we use to train network is very important. We must ensure that it is
 
 ### Pre-trained models
 
-Since the task of recognising faces and facial features is a very common one, we can make use of pre-existing models to perform this step for us. After a brief search, I came across many open-source models, the two most performant models being:
+Since the task of recognising faces and facial features is a very common one, we can make use of pre-existing models to perform this step for us. After a brief search, I came across many open-source models. The two most performant models are listed below.
 
-- **MTCNN** ([paper](https://ieeexplore.ieee.org/document/7553523))**:** [PyTorch implementation](https://github.com/timesler/facenet-pytorch) [TensorFlow implementation](https://github.com/ipazc/mtcnn)
-- **RetinaFace**([paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.pdf)): [PyTorch implementation](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) [TensorFlow implementation](https://github.com/serengil/retinaface)
+| Model      | Paper                                                                                                                                                   | Source code                                                                                                                                   |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| MTCNN      | [PDF](https://arxiv.org/pdf/1604.02878)                                                                                                                 | [PyTorch](https://github.com/timesler/facenet-pytorch) / [TensorFlow](https://github.com/ipazc/mtcnn)                                         |
+| RetinaFace | [PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Deng_RetinaFace_Single-Shot_Multi-Level_Face_Localisation_in_the_Wild_CVPR_2020_paper.pdf) | [PyTorch](https://github.com/deepinsight/insightface/tree/master/detection/retinaface) / [TensorFlow](https://github.com/serengil/retinaface) |
 
 RetinaFace generally performs _slightly_ better, likely because it was trained with an augmented set of labels including 1k 3D vertices.
 
@@ -150,7 +150,7 @@ In order to handle the HTTP requests, I created a server using [Flask](https://f
 | Image                 | Edited image                |
 | Googly eye parameters | Locations of detected faces |
 
-Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the body. This allows the client to adjust these settings to personal preference. The locations of the faces are returned for debugging purposes.
+Both the body and response of the post request are in JSON format. In both cases, the photo is serialized as a Base64 string. Additional parameters for the eye and pupil size can be included in the body. This allows the user to override the value of any of these settings to personal preference. The locations of the faces are returned for debugging purposes.
 
 The server runs through the following steps:
 
@@ -196,11 +196,11 @@ I found that the AWS Lambda required 3GB of RAM to run the RetinaFace model reli
 
 ### Dashboard
 
-The Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could quite be deployed to [Streamlit cloud](https://streamlit.io/cloud) it is. This is because the dashboard used uses files from the shared [`common`](https://github.com/alxhslm/googly-eyes/tree/main/common) directory but Streamlit cloud dashboards only have access to files in the same directory.
+Unfortunately the Streamlit dashboard I built already in the [`dashboard`](https://github.com/alxhslm/googly-eyes/tree/main/dashboard) subdirectory could not be deployed to [Streamlit cloud](https://streamlit.io/cloud) as-is. This is because the dashboard used uses files from the shared [`common`](https://github.com/alxhslm/googly-eyes/tree/main/common) directory but Streamlit cloud dashboards only have access to files in the same directory.
 
 To get around this limitation, I created a wrapper module [`app.py`](https://github.com/alxhslm/googly-eyes/blob/main/app.py) at the root of the repo, which in turn calls the existing dashboard code. This ensures that the deployed dashoard has access to the entire repo. This setup supports both local development and cloud deployment, without any code duplication.
 
-The architecture of the system is shown below.
+The architecture of the production system is shown below.
 
 {{< mermaid >}}
 graph TD
