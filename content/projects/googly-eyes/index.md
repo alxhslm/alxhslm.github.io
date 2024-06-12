@@ -16,7 +16,7 @@ The objective was to create a system which could automatically overlay googly ey
 
 {{< include src="images/service.svg">}}
 
-### Assumptions
+### Simplifications
 
 To simplify the problem, I made the following assumptions:
 
