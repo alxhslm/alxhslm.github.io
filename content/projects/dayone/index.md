@@ -4,7 +4,7 @@ date = 2021-01-03T15:36:00Z
 tags = ['journal']
 +++
 
-I started journalling a few years ago, and I prefer to do this digitally because I appreciate the improved discoverability when compared to a paper notebook. Initially I used the [Journey](https://journey.cloud/) app because:
+A few years ago, I started a daily journal habit. I found that preferred to do this digitally because my hand-writing is terrible, and it is easier to look back when compared to a paper notebook. Initially I used the [Journey](https://journey.cloud/) app because:
 
 - It was the only cross-platform option at the time (via the web app)
 - It was a lot cheaper than the alternatives (since there was a one-off payment option)
