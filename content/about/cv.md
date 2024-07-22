@@ -119,7 +119,6 @@ Download {{< icon "download" >}}
 
 {{< keywordList >}}
 {{< keyword icon =  "docker" >}} Docker {{< /keyword >}}
-{{< keyword icon =  "terraform" >}} Terraform {{< /keyword >}}
 {{< keyword icon =  "gcp" >}} GCP {{< /keyword >}}
 {{< keyword icon =  "aws" >}} AWS {{< /keyword >}}
 {{< /keywordList >}}
@@ -127,7 +126,6 @@ Download {{< icon "download" >}}
 ### Development
 
 {{< keywordList >}}
-{{< keyword icon =  "vs_code" >}} VS Code {{< /keyword >}}
 {{< keyword icon =  "git" >}} Git {{< /keyword >}}
 {{< keyword icon =  "github_actions" >}} GitHub Actions {{< /keyword >}}
 {{< keyword icon =  "circle_ci" >}} CircleCI {{< /keyword >}}
