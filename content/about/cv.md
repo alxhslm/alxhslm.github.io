@@ -112,6 +112,7 @@ Download {{< icon "download" >}}
   {{< keyword icon =  "pytorch" >}} PyTorch {{< /keyword >}}
   {{< keyword icon =  "jax" >}} JAX {{< /keyword >}}
   {{< keyword icon =  "clearml" >}} ClearML {{< /keyword >}}
+  {{< keyword icon =  "mlflow" >}} MLflow {{< /keyword >}}
   {{< /keywordList >}}
 
 ### Cloud
