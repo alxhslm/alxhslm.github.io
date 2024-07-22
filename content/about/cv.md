@@ -86,53 +86,11 @@ Download {{< icon "download" >}}
 
 ## Technologies
 
-### Software development
-
-{{< keywordList >}}
-{{< keyword icon =  "python" >}} Python {{< /keyword >}}
-{{< keyword icon =  "poetry" >}} Poetry {{< /keyword >}}
-{{< keyword icon =  "pytest" >}} Pytest {{< /keyword >}}
-{{< keyword icon =  "git" >}} Git {{< /keyword >}}
-{{< keyword icon =  "github_actions" >}} GitHub Actions {{< /keyword >}}
-{{< keyword icon =  "circle_ci" >}} CircleCI {{< /keyword >}}
-{{< /keywordList >}}
-
-### Machine learning
-
-{{< keywordList >}}
-{{< keyword icon =  "numpy" >}} NumPy {{< /keyword >}}
-{{< keyword icon =  "pandas" >}} Pandas {{< /keyword >}}
-{{< keyword icon =  "scikit-learn" >}} Scikit-learn {{< /keyword >}}
-{{< keyword icon =  "pytorch" >}} PyTorch {{< /keyword >}}
-{{< keyword icon =  "jax" >}} JAX {{< /keyword >}}
-{{< /keywordList >}}
-
-### Optimisation
-
-{{< keywordList >}}
-{{< keyword icon =  "cvxpy" >}} CVXPY {{< /keyword >}}
-{{< keyword icon =  "optuna" >}} Optuna {{< /keyword >}}
-{{< /keywordList >}}
-
-### Visualisation
-
-{{< keywordList >}}
-{{< keyword icon =  "matplotlib" >}} Matplotlib {{< /keyword >}}
-{{< keyword icon =  "plotly" >}} Plotly {{< /keyword >}}
-{{< keyword icon =  "streamlit" >}} Streamlit {{< /keyword >}}
-{{< /keywordList >}}
-
-### Experiment management
-
-{{< keywordList >}}
-{{< keyword icon =  "clearml" >}} ClearML {{< /keyword >}}
-{{< keyword icon =  "mlflow" >}} MLflow {{< /keyword >}}
-{{< /keywordList >}}
-
-### Cloud
-
-{{< keywordList >}}
-{{< keyword icon =  "docker" >}} Docker {{< /keyword >}}
-{{< keyword icon =  "gcp" >}} GCP {{< /keyword >}}
-{{< keyword icon =  "aws" >}} AWS {{< /keyword >}}
-{{< /keywordList >}}
+|                       |                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Software development  | {{< keywordList >}} {{< keyword icon =  "python" >}} Python {{< /keyword >}} {{< keyword icon =  "poetry" >}} Poetry {{< /keyword >}} {{< keyword icon =  "pytest" >}} Pytest {{< /keyword >}} {{< keyword icon =  "git" >}} Git {{< /keyword >}} {{< keyword icon =  "github_actions" >}} GitHub Actions {{< /keyword >}} {{< keyword icon =  "circle_ci" >}} CircleCI {{< /keyword >}} {{< /keywordList >}} |
+| Machine learning      | {{< keywordList >}} {{< keyword icon =  "numpy" >}} NumPy {{< /keyword >}} {{< keyword icon =  "pandas" >}} Pandas {{< /keyword >}} {{< keyword icon =  "scikit-learn" >}} Scikit-learn {{< /keyword >}} {{< keyword icon =  "pytorch" >}} PyTorch {{< /keyword >}} {{< keyword icon =  "jax" >}} JAX {{< /keyword >}} {{< /keywordList >}}                                                                   |
+| Optimisation          | {{< keywordList >}} {{< keyword icon =  "cvxpy" >}} CVXPY {{< /keyword >}} {{< keyword icon =  "optuna" >}} Optuna {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                                                                      |
+| Visualisation         | {{< keywordList >}} {{< keyword icon =  "matplotlib" >}} Matplotlib {{< /keyword >}} {{< keyword icon =  "plotly" >}} Plotly {{< /keyword >}} {{< keyword icon =  "streamlit" >}} Streamlit {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                             |
+| Experiment management | {{< keywordList >}} {{< keyword icon =  "clearml" >}} ClearML {{< /keyword >}} {{< keyword icon =  "mlflow" >}} MLflow {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                                                                  |
+| Cloud                 | {{< keywordList >}} {{< keyword icon =  "docker" >}} Docker {{< /keyword >}} {{< keyword icon =  "gcp" >}} GCP {{< /keyword >}} {{< keyword icon =  "aws" >}} AWS {{< /keyword >}} {{< /keywordList >}}                                                                                                                                                                                                       |
