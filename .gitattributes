@@ -1,3 +1,4 @@
 themes linguist-linguist-vendored
 public linguist-generated
 *.md linguist-detectable
+content/**/*.html linguist-detectable=false
