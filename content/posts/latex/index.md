@@ -87,11 +87,11 @@ A more robust solution is use a devcontainer as described below.
 
 ## Using a devcontainer
 
-I’m a strong advocate for using devcontainers to standardise your environment, and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as https://github.com/qdm12/latexdevcontainer or https://github.com/a-nau/latex-devcontainer, but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to Overleaf, but using the family VS Code for editing.
+I’m a strong advocate for [using devcontainers to standardise your environment]({{< ref "/posts/devcontainers" >}}), and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as [qdm12/latexdevcontainer](https://github.com/qdm12/latexdevcontainer) or [a-nau/latex-devcontainer](https://github.com/a-nau/latex-devcontainer), but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to Overleaf, but using the family VS Code for editing.
 
 ### Dependency management
 
-The main challenge I ran into was configuring a minimal LaTeX installation, with only those packages required for my document. To install only TeXLive with minimal packages you can use the following script:
+The main challenge I ran into was configuring a minimal LaTeX installation, with only those packages required for my document. To install only TeXLive with minimal packages you can use the following bash script:
 
 ```bash
 #!/bin/bash
