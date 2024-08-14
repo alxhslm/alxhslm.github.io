@@ -87,11 +87,37 @@ A more robust solution is use a devcontainer as described below.
 
 ## Using a devcontainer
 
-I’m a strong advocate for [using devcontainers to standardise your environment]({{< ref "/posts/devcontainers" >}}), and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as [qdm12/latexdevcontainer](https://github.com/qdm12/latexdevcontainer) or [a-nau/latex-devcontainer](https://github.com/a-nau/latex-devcontainer), but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to Overleaf, but using the more familiar VS Code editor.
+I’m a strong advocate for [using devcontainers to standardise your environment]({{< ref "/posts/devcontainers" >}}), and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as [qdm12/latexdevcontainer](https://github.com/qdm12/latexdevcontainer) or [a-nau/latex-devcontainer](https://github.com/a-nau/latex-devcontainer), but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to [Overleaf](https://www.overleaf.com/), but using the more familiar VS Code editor.
 
-### Dependency management
+### Installing LaTeX dependencies
 
-The main challenge I ran into was configuring a minimal LaTeX installation, with only those packages required for my document. To install only TeXLive with minimal packages you can use the following bash script:
+To install LaTeX on a Debian-based OS, you need to install some additional system dependencies:
+
+```docker
+# Install required system packages for LaTeX
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+  ghostscript \
+  gnupg \
+  perl \
+  && rm -rf /var/lib/apt/lists/*
+```
+
+To use `latexindent.pl`, you also need to install some additional `perl` packages:
+
+```docker
+# Install dependencies needed by latexindent
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+  libunicode-linebreak-perl\
+  libyaml-tiny-perl \
+  libfile-homedir-perl \
+  && rm -rf /var/lib/apt/lists/*
+```
+
+### Minimal LaTeX installation
+
+The main challenge I ran into was configuring a minimal LaTeX installation, with only those packages required for my document. To install TeXLive with minimal packages you can use the following bash script:
 
 ```bash
 #!/bin/bash
@@ -115,7 +141,7 @@ rm -rf \
   ./texlive
 ```
 
-where the `texlive.profile` file is used to configure what will be installed. Here is my version which only installs the default LaTeX packages, and no documentation or source code:
+which can then be called within your `Dockerfile`. The `texlive.profile` file is used to configure what will be installed. Here is my version which only installs the default LaTeX packages, and no documentation or source code:
 
 ```bash
 selected_scheme scheme-infraonly
@@ -145,7 +171,7 @@ To then install only these packages, you add the following to your `post_start.s
 cat texlive-packages.txt | sed -re '/^#/d' | xargs sudo tlmgr install
 ```
 
-Obviously this does not pin the package versions, but at least it means you don't have to install every LaTeX package under the sun for a simple document.
+which will install only the specified packaged using the `tlmgr` package manager. Obviously this does not pin the package versions, but at least you don't have to install every LaTeX package under the sun for a simple document.
 
 ## Continuous integration
 
