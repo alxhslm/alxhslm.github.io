@@ -1,7 +1,6 @@
 +++
 title = 'CI for your CV'
 date = 2024-08-12T08:46:08Z
-draft = true
 tags=['development']
 +++
 
