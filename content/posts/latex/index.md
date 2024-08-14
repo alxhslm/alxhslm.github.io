@@ -22,17 +22,17 @@ The main reasons why I chose to use a specific LaTeX IDE were:
 
 To be honest, I never really loved any of these options because they weren’t particularly good _text_ editors with odd keybindings and limited theming options. With the exception of Texifier on the Mac, they tend to be ugly GTK apps and are not particularly enjoyable to use.
 
-The obvious solution to this is to use the IDE I use everyday for Python development which is VS Code. To get LaTeX specific functionality like syntax highlighting, you can use the [LaTeX Workshop extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) for VS Code. I did try using this extension back in 2020, but I found that it was lacking features at the time. However, it has matured considerably since then and IMO gives just as good an experience as a LaTeX specific editor.
+The obvious solution to this is to use the IDE I use everyday for Python development which is VS Code. To get LaTeX specific functionality like syntax highlighting, you can use the [LaTeX Workshop extension](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop). When I tried using this extension back in 2020, I found it to be lacking in features. However, it has matured considerably since then and IMO gives just as good an experience as a LaTeX specific editor.
 
-To automatically work out the build process, you can use the [latexmk](https://mg.readthedocs.io/latexmk.html) Perl script in place of `pdflatex` etc, which I found _just works_.
+To automatically work out the build process, you can use the [latexmk](https://mg.readthedocs.io/latexmk.html) Perl script in place of `pdflatex` etc. This gives you a simple _just build my document_ command which you can use with any editor you like.
 
 ## Pre-commit hooks
 
 ### Spell check
 
-Once you’ve written your document, you obviously want to check for spelling mistakes. When I wrote my PhD thesis, I did this completely manually which is clearly not a full proof strategy. I knew there must be some tool for this, and I found the https://github.com/streetsidesoftware/cspell-cli utility from the makers of the [CSpell VS code extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
+Once you’ve written your document, you obviously want to check for spelling mistakes. When I wrote my PhD thesis, I did this completely manually which is clearly not a full proof strategy. I knew there must be some tool for this, and I found the [cspell](https://github.com/streetsidesoftware/cspell-cli) utility from the makers of the [CSpell VS code extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
 
-To add a custom LaTeX dictionary for `cspell`, you can add the following lines to the `cspell.json` configuration file:
+To add a custom LaTeX dictionary for `cspell` so that it doesn't flag macros, environments etc, you can add the following lines to the `cspell.json` configuration file:
 
 ```json
 {
@@ -56,7 +56,7 @@ repos:
 
 ### Formatting
 
-I’ve now become accustomed to formatting all of my Python code using `black`, because it improves legibility and removes whitespace changes from git diffs. Fortunately there is a similar formatter available for LaTeX in https://github.com/cmhughes/latexindent.pl. This can be configured as a pre-commit hook as follows:
+I’ve now become accustomed to formatting all of my Python code using `black`, because it improves legibility and removes whitespace changes from git diffs. Fortunately there is a similar formatter available for LaTeX in [latexindent.pl](https://github.com/cmhughes/latexindent.pl). This can also be configured as a pre-commit hook as follows:
 
 ```yaml
 repos:
@@ -75,9 +75,9 @@ where the following flags have been set:
 
 - `-wd` ensures it writes any changes to file
 - `-s` suppresses any output
-- `-c` sets the directory for temporary files
+- `-c` sets the directory for temporary files (so that you can add it to `.gitignore`)
 
-Unfortunately, unlike `black` this does not ship as a binary and requires `perl` to be installed on your system. I had to install some additional packages on my Mac to get this to work:
+Unfortunately, unlike `black`, this does not ship as a binary and requires `perl` to be installed on your system. I had to install some additional packages on my Mac to get this to work:
 
 ```yaml
 cpan -i YAML::Tiny File::HomeDir Unicode::GCString
@@ -87,7 +87,7 @@ A more robust solution is use a devcontainer as described below.
 
 ## Using a devcontainer
 
-I’m a strong advocate for [using devcontainers to standardise your environment]({{< ref "/posts/devcontainers" >}}), and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as [qdm12/latexdevcontainer](https://github.com/qdm12/latexdevcontainer) or [a-nau/latex-devcontainer](https://github.com/a-nau/latex-devcontainer), but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to Overleaf, but using the family VS Code for editing.
+I’m a strong advocate for [using devcontainers to standardise your environment]({{< ref "/posts/devcontainers" >}}), and writing LaTeX documents is no different. There are many pre-built devcontainer definitions such as [qdm12/latexdevcontainer](https://github.com/qdm12/latexdevcontainer) or [a-nau/latex-devcontainer](https://github.com/a-nau/latex-devcontainer), but I decided to write my own, because I wanted to a bit more control of the LaTeX installation. Once I had got this working reliably, I was able to make use of GitHub codespaces. This gave me something akin to Overleaf, but using the more familiar VS Code editor.
 
 ### Dependency management
 
@@ -131,7 +131,7 @@ option_src 0
 collection-latex 1
 ```
 
-Unfortunately I couldn’t find a way to specify a set of LaTeX packages to be installed. To achieve this, I created a `texlive-packages.txt` file with a list of package names as follows:
+Unfortunately I couldn’t find a way to specify a set of LaTeX packages to be installed. As a workaround, I created a `texlive-packages.txt` file with a list of package names as follows:
 
 ```
 tabularx
@@ -139,17 +139,19 @@ graphicsx
 ...
 ```
 
-To then install only these packages, you can use the following command:
+To then install only these packages, you add the following to your `post_start.sh` file:
 
 ```bash
 cat texlive-packages.txt | sed -re '/^#/d' | xargs sudo tlmgr install
 ```
 
-## CI
+Obviously this does not pin the package versions, but at least it means you don't have to install every LaTeX package under the sun for a simple document.
 
-Since my source code and development environment were all stored in GitHub, I thought it would be nice to store the generated PDFs there as well. This last step is probably a bit overkill for most people, but I found it to be useful for managing different versions of my CV when applying for jobs.
+## Continuous integration
 
-I built a workflow with GitHub actions making use of the handy [LaTeX GitHub action](https://github.com/marketplace/actions/github-action-for-latex), which runs the following on all branches:
+Since my source code was stored in GitHub and I could write my document using GitHub codespaces, I thought it would be nice to store the generated PDFs there as well. This last step is probably a bit overkill for most people, but I found it to be useful for managing different versions of my CV when applying for jobs.
+
+I built a workflow with GitHub actions making use of the handy [LaTeX GitHub action](https://github.com/marketplace/actions/github-action-for-latex), which runs the following jobs on all branches:
 
 - Pre-commit checks
 - Builds the document to check that it still compiles
