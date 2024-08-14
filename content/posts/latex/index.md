@@ -5,7 +5,7 @@ draft = true
 tags=['development']
 +++
 
-I have recently started to use LaTeX again to write my CV after a long hiatus. A lot has changed since I wrote my PhD thesis using LaTeX, both in terms of the available tooling and my knowledge of modern software development practices. Therefore I made some significant updates to my LaTeX workflow which I will describe below.
+I have recently started to use LaTeX again to write my CV after a long hiatus. A lot has changed since I wrote my PhD thesis using LaTeX back in 2020, both in terms of the available tooling and my knowledge of modern software development practices. Therefore I made some significant updates to my LaTeX workflow which I will describe below.
 
 ## Switching to VS code as an IDE
 
@@ -182,7 +182,7 @@ I built a workflow with GitHub actions making use of the handy [LaTeX GitHub act
 - Pre-commit checks
 - Builds the document to check that it still compiles
 
-Finally, once I’m happy with a specific version, I add a Git tag, which will then trigger a new release with the PDF as an artifact.
+Finally, once I’m happy with a specific version, I add a Git tag to trigger a new release with the PDF as an artifact.
 
 ```yaml
 name: Build LaTeX document
