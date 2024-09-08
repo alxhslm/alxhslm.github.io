@@ -16,7 +16,7 @@ Decarbonising cement production using AI
 {{< /timelineItem >}}
 
 {{< timelineItem icon="h2go" header="H2GO Power" badge="Apr 2024 to Aug 2024" subheader="Senior Research Scientist" >}}
-Optimising use of hydrogen assets using AI
+Building AI optimisation algorithms to better manage hydrogen assets
 
 <p><a href="https://www.h2gopower.com/">{{< icon "link" >}} Website</a></p>
 {{< /timelineItem >}}
