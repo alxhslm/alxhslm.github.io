@@ -9,8 +9,13 @@ showReadingTime = false
 ## Experience
 
 {{< timeline >}}
+{{< timelineItem icon="carbon_re" header="Carbon Re" badge="Sept 2024 to Present" subheader="Senior Machine Learning Engineer" >}}
+Decarbonising cement production using AI
 
-{{< timelineItem icon="h2go" header="H2GO Power" badge="Apr 2024 to Present" subheader="Senior Research Scientist" >}}
+<p><a href="https://www.carbonre.com/">{{< icon "link" >}} Website</a></p>
+{{< /timelineItem >}}
+
+{{< timelineItem icon="h2go" header="H2GO Power" badge="Apr 2024 to Aug 2024" subheader="Senior Research Scientist" >}}
 Optimising use of hydrogen assets using AI
 
 <p><a href="https://www.h2gopower.com/">{{< icon "link" >}} Website</a></p>
