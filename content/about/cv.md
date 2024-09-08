@@ -28,7 +28,7 @@ Deploying fully autonomous greenhouses using state-of-the-art control algorithms
 {{< /timelineItem >}}
 
 {{< timelineItem icon="mclaren" header="McLaren Racing" badge="Aug 2012 to Nov 2016" subheader="Simulation Engineer" >}}
-Developing models of components, simulator control algorithms and lap-time simulations
+Developing the driver-in-the-loop simulator and offline simulation tools for the F1 team
 
 <p><a href="https://www.mclaren.com/racing/">{{< icon "link" >}}Website</a></p>
 {{< /timelineItem >}}
