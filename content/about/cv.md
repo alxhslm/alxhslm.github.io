@@ -27,18 +27,6 @@ Deploying fully autonomous greenhouses using state-of-the-art control algorithms
 <p><a href="https://www.optimal.ag/">{{< icon "link" >}}Website</a></p>
 {{< /timelineItem >}}
 
-{{< timelineItem icon="mclaren" header="McLaren Racing" badge="Aug 2012 to Nov 2016" subheader="Simulation Engineer" >}}
-Developing the driver-in-the-loop simulator and offline simulation tools for the F1 team
-
-<p><a href="https://www.mclaren.com/racing/">{{< icon "link" >}}Website</a></p>
-{{< /timelineItem >}}
-
-{{< /timeline >}}
-
-## Education
-
-{{< timeline >}}
-
 {{< timelineItem icon="graduation-cap" header="Imperial College London" badge="Nov 2016 to Sept 2020" subheader="PhD Engineering" >}}
 Investigated non-linear dynamic phenomena in rotating machinery using advanced modelling
 and numerical simulation techniques.
@@ -49,6 +37,12 @@ and numerical simulation techniques.
 {{< button href="https://spiral.imperial.ac.uk/bitstream/10044/1/101592/1/Haslam-A-2020-PhD-Thesis.pdf" >}}
 Download {{< icon "download" >}}
 {{< /button >}}
+{{< /timelineItem >}}
+
+{{< timelineItem icon="mclaren" header="McLaren Racing" badge="Aug 2012 to Nov 2016" subheader="Simulation Engineer" >}}
+Developing the driver-in-the-loop simulator and offline simulation tools for the F1 team
+
+<p><a href="https://www.mclaren.com/racing/">{{< icon "link" >}}Website</a></p>
 {{< /timelineItem >}}
 
 {{< timelineItem icon="graduation-cap" header="University of Cambridge" badge="Oct 2008 to Jun 2012" subheader="MEng Engineering" >}}
@@ -89,7 +83,7 @@ Download {{< icon "download" >}}
 - Experiment management
 - Containerisation
 
-## Technologies
+### Technologies
 
 |                       |                                                                                                                                                                                                                                                                                                                                                                                                               |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
