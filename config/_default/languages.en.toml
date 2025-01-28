@@ -10,12 +10,12 @@ title = "Alex Haslam"
   dateFormat = "2 January 2006"
   logo = "images/logo.png"
 
-[author]
-  name = "Alex Haslam"
-  image = "images/profile.png"
-  headline = "Optimisation and ML Engineer"
-  bio = "I’m an engineer based in London, with expertise in optimisation, machine learning and simulation."
-  links = [
-    { github = "https://github.com/alxhslm" },
-    { linkedin = "https://www.linkedin.com/in/alexanderhaslam" },
-  ]
+  [params.author]
+    name = "Alex Haslam"
+    image = "images/profile.png"
+    headline = "Optimisation and ML Engineer"
+    bio = "I’m an engineer based in London, with expertise in optimisation, machine learning and simulation."
+    links = [
+      { github = "https://github.com/alxhslm" },
+      { linkedin = "https://www.linkedin.com/in/alexanderhaslam" },
+    ]
