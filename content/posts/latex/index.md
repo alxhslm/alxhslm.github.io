@@ -214,7 +214,7 @@ jobs:
         with:
           root_file: document.tex
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: PDF
           path: document.pdf
@@ -226,7 +226,7 @@ jobs:
       contents: write
     steps:
       - name: Download PDF artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: PDF
       - name: Create release with PDF
