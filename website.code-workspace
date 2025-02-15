@@ -21,6 +21,10 @@
 		},
 		"evenBetterToml.formatter.indentEntries": true,
 		"evenBetterToml.formatter.indentTables": true,
+		"cSpell.words": [
+			"alxhslm",
+			"strava"
+		],
 	},
 	"extensions": {
 		"recommendations": [
