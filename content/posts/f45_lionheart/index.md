@@ -37,7 +37,7 @@ Unfortunately, it didn’t work as expected. When I went to my next class, a dev
 
 ### The “Magic Number” Problem
 
-Another [Reddit post](https://www.reddit.com/r/f45/comments/jw9vhl/comment/gd1mhu2/) mentioned a “magic number” that needed to be entered instead. But where did this number come from?
+Another [Reddit post](https://www.reddit.com/r/f45/comments/jw9vhl/comment/gd1mhu2/) mentioned a “magic number” that needed to be entered instead. This corresponds to the number after `Guest#`. But where did this number come from?
 
 The issue stems from how [ANT+ assigns device addresses](https://forums.garmin.com/developer/connect-iq/f/discussion/317491/ant-device-numbers). Originally, ANT+ used **16-bit addresses**, but newer devices use **20-bit addresses**. Some systems (including F45) still expect a 16-bit number, meaning we need to convert our 20-bit Sensor ID to its 16-bit equivalent.
 
