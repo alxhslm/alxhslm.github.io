@@ -34,7 +34,7 @@ The Banana Switches on this keyboard are excellent. They offer great tactility w
 
 The overall build quality is impressive. Despite being plastic, it looks and feels far more expensive than it actually is. One nice touch is that all the screws are hidden on the bottom, unlike the regular V1, which contributes to a cleaner design.
 
-The wireless connection has been reliable, pairing quickly over Bluetooth and maintaining a stable connection. My old 2015 MacBook Pro struggled with connectivity, but I suspect that’s more down to the laptop than the keyboard itself.
+The wireless connection has been reliable, pairing quickly over Bluetooth and maintaining a stable connection to my M3 MacBook Pro for work. However, my old 2015 MacBook Pro struggled with connectivity, although I suspect that’s more down to the laptop than the keyboard itself.
 
 Battery life is another strong point. It lasts a long time between charges, and macOS allows you to check the battery level easily.
 
@@ -46,13 +46,13 @@ Before buying, I saw a lot of Reddit posts complaining about Keychron’s poor c
 
 Well, lesson learned.
 
-The keyboard arrived **non-functional**. It wouldn’t hold a charge and only worked when plugged in. On top of that, the keys weren’t mapped correctly—it was stuck in Windows mode, with Command and Option swapped.
+The keyboard arrived *non-functional*. It wouldn’t hold a charge and only worked when plugged in. On top of that, the keys weren’t mapped correctly—it was stuck in Windows mode, with Command and Option swapped.
 
 I tried updating the firmware via Keychron Launcher, but that didn’t help. I emailed Keychron… and got no reply.
 
 After doing some research, I found that loose cables inside the keyboard were a common issue. I opened mine up and saw the ribbon connector was actually broken, meaning the ribbon cable wouldn’t stay in place. I assumed I’d need a new PCB and waited to hear back from Keychron.
 
-A week passed, and I still hadn’t heard anything, so I got frustrated and decided to fix it myself. A bit of electrical tape and glue later, the ribbon was secured. I added extra tape to prevent future issues, put everything back together, and—finally—the keyboard was working perfectly.
+A week passed, and I still hadn’t heard anything, so I got frustrated and decided to fix it myself. A bit of electrical tape and superglue later, the ribbon was secured. I added extra tape to prevent future issues, put everything back together, and—finally—the keyboard was working perfectly.
 
 ![Repaired ribbon connector](images/ribbon_cable.jpg "My slightly dodgy repair to the ribbon connector")
 
@@ -60,6 +60,6 @@ Thankfully, it’s a product designed to be opened up, so it was a relatively ea
 
 ## Final Thoughts
 
-Despite the issues, I’d still **recommend the Keychron V1 Max**—because it’s genuinely a great keyboard. However, it’s clear that Keychron has serious **quality control and customer service problems**. If you’re going to buy one, do yourself a favour and order from a reputable retailer, even if it costs a little more. It’ll likely arrive quicker, and you’ll have an easier time if anything goes wrong.
+Despite the issues, I’d still recommend the Keychron V1 Max—because it’s genuinely a great keyboard. However, it’s clear that Keychron has serious quality control and customer service problems. If you’re going to buy one, do yourself a favour and order from a reputable retailer, even if it costs a little more. It’ll likely arrive quicker, and you’ll have an easier time if anything goes wrong.
 
-The only danger now is that I’ve caught the **mechanical keyboard bug**. I’m already eyeing up an upgrade to something with a metal build… Not a cheap hobby!
+The only danger now is that I’ve caught the mechanical keyboard bug. I’m already eyeing up an upgrade to something with a metal build… Not a cheap hobby!
