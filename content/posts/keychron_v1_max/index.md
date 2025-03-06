@@ -54,6 +54,8 @@ After doing some research, I found that loose cables inside the keyboard were a 
 
 A week passed, and I still hadn’t heard anything, so I got frustrated and decided to fix it myself. A bit of electrical tape and glue later, the ribbon was secured. I added extra tape to prevent future issues, put everything back together, and—finally—the keyboard was working perfectly.
 
+![Repaired ribbon connector](images/ribbon_cable.jpg "My slightly dodgy repair to the ribbon connector")
+
 Thankfully, it’s a product designed to be opened up, so it was a relatively easy fix. But I really shouldn’t have had to do this.
 
 ## Final Thoughts
