@@ -10,7 +10,7 @@ For a long time, I put off sorting out my pension because the whole concept felt
 
 Initially, I assumed that successful investing meant picking individual stocks, keeping up with market trends, and making the right bets. I didn't feel like I had any expertise in the world of finance, and it sounded like a full-time job.
 
-Then I read [_Investing Demystified_](https://www.amazon.co.uk/Investing-Demystified-Speculation-Sleepless-Financial/dp/0273781340) by Lars Kroijer, which introduced me to a much simpler approach to investing requiring little effort. Instead of trying to beat the market, you can take a more passive approach by investing in a global equity index fund to generate returns, whilst keeping costs very low. Essentially you allow the market to choose the portfolio of underlying shares for you.
+Then I read [_Investing Demystified_](https://www.amazon.co.uk/Investing-Demystified-Speculation-Sleepless-Financial/dp/0273781340) by Lars Kroijer, which introduced me to a much simpler approach to investing requiring little effort. Instead of trying to beat the market, a rational investor takes a more passive approach by investing in a cheap global equity index fund to generate returns. Essentially you allow the market to choose the optimal portfolio of shares for you.
 
 You can then balance this out with some government bonds as a minimal risk asset, so you can tune your risk level. This passive approach takes the complexity out of investing and gives you a solid foundation for long-term growth.
 
