@@ -12,7 +12,7 @@ Initially, I assumed that successful investing meant picking individual stocks, 
 
 Then I read [_Investing Demystified_](https://www.amazon.co.uk/Investing-Demystified-Speculation-Sleepless-Financial/dp/0273781340) by Lars Kroijer, which introduced me to a much simpler approach to investing requiring little effort. Instead of trying to beat the market, a rational investor takes a more passive approach by investing in a cheap global equity index fund to generate returns. Essentially you allow the market to choose the optimal portfolio of shares for you.
 
-You can then balance this out with some government bonds as a minimal risk asset, so you can tune your risk level. This passive approach takes the complexity out of investing and gives you a solid foundation for long-term growth.
+You can then balance this out with some government bonds as a minimal risk asset (which can also be cheaply invested in with an index fund), so you can tune your risk level. This passive approach takes the complexity out of investing, significantly reduces your costs, and gives you a solid foundation for long-term growth.
 
 ## Building a portfolio simulation tool
 
