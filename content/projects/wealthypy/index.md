@@ -4,13 +4,13 @@ date = 2025-03-18T13:10:32Z
 draft = true
 +++
 
-For a long time, I put off sorting out my pension because the whole concept felt overwhelming. It sounded quite complicated, filled with technical jargon, and I wasn't sure where to start. But as I dug into it, I discovered that a pension is really just a **tax-efficient investment wrapper**, and not something fundamentally different from investing in general. Once I understood that, it became much less intimidating. All I needed to do was find a cheap SIPP platform [^1], and then decide what to invest in.
+For a long time, I put off sorting out my pension because the whole concept felt overwhelming. It sounded quite complicated, filled with technical jargon, and I wasn't sure where to start. But as I dug into it, I discovered that a pension is really just a **tax-efficient investment wrapper**, and not something fundamentally different from investing in general. Once I understood that, it became much less intimidating. Once I chose a suitable (and cheap) SIPP platform [^1], "all" I need to do was decide what to invest in.
 
 ## Discovering rational investing
 
 Initially, I assumed that successful investing meant picking individual stocks, keeping up with market trends, and making the right bets. I didn't feel like I had any expertise in the world of finance, and it sounded like a full-time job.
 
-Then I read [_Investing Demystified_](https://www.amazon.co.uk/Investing-Demystified-Speculation-Sleepless-Financial/dp/0273781340) by Lars Kroijer, which introduced me to a much simpler approach to investing requiring less effort. Instead of trying to beat the market, you can take a more passive approach by investing in a global equity index fund to generate returns, whilst keeping costs low. Essentially you allow the market to choose the portfolio of underlying shares for you.
+Then I read [_Investing Demystified_](https://www.amazon.co.uk/Investing-Demystified-Speculation-Sleepless-Financial/dp/0273781340) by Lars Kroijer, which introduced me to a much simpler approach to investing requiring little effort. Instead of trying to beat the market, you can take a more passive approach by investing in a global equity index fund to generate returns, whilst keeping costs very low. Essentially you allow the market to choose the portfolio of underlying shares for you.
 
 You can then balance this out with some government bonds as a minimal risk asset, so you can tune your risk level. This passive approach takes the complexity out of investing and gives you a solid foundation for long-term growth.
 
