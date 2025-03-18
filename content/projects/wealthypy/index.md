@@ -22,13 +22,13 @@ I struggled to find any freely available tools to help with this, so decided to
 
 {{< github repo="alxhslm/wealthypy" >}}
 
-The tool allows users to:
+### Features of the tool
 
-- Set a starting amount and monthly contributions (which can vary by year)
+- Set a **starting amount** and **monthly contributions**, which can vary over time.
 
-- Adjust the equity and bond returns, as well as the equity-bond split (which can also vary by year)
+- Adjust the **equity and bond returns**, as well as the **equity-bond split**, which can also vary over time.
 
-- Simulate how your portfolio might grow over time, whilst accounting for volatility in the equities using a Monte Carlo-like approach
+- Simulate how your portfolio might grow while accounting for **equity volatility** using a Monte Carlo-like approach.
 
 This has helped me choose how much to contribute to my pension, fine-tune the portfolio to my needs, as well as gain confidence in my overall financial plan. I hope it can help others do the same.
 
