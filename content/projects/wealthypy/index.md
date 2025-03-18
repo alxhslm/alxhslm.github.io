@@ -1,7 +1,6 @@
 +++
 title = 'Wealthypy'
 date = 2025-03-18T13:10:32Z
-draft = true
 +++
 
 For a long time, I put off sorting out my pension because the whole concept felt overwhelming. It sounded quite complicated, filled with technical jargon, and I wasn't sure where to start. But as I dug into it, I discovered that a pension is really just a **tax-efficient investment wrapper**, and not something fundamentally different from investing in general. Once I understood that, it became much less intimidating. Once I chose a suitable (and cheap) SIPP platform [^1], "all" I need to do was decide what to invest in.
