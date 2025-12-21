@@ -60,11 +60,11 @@ This options needs no introduction. Purely as a tool for managing your events, i
 
 This was formerly known as Cron before being bought by Notion. Unfortunately, development appears to have stagnated since then. For example, there is still no week view on the mobile app!
 
-| Pros                                                                               | Cons                                                                                                      |
-| ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| **Free**.                                                                          | Can **only** display tasks from Notion databases, limiting utility for those who use other task managers. |
-| Great integration with any Notion database (projects, day-to-day tasks etc).       | Mobile app lacks feature parity - it doesn’t even have a week view yet!                                   |
-| Includes a decent menubar calendar on Mac and handy conference call notifications. |                                                                                                           |
+| Pros                                                                               | Cons                                                                                                  |
+| ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Free with Notion.                                                                  | Can only display tasks from Notion databases, limiting utility for those who use other task managers. |
+| Great integration with any Notion database (projects, day-to-day tasks etc).       | Mobile app lacks feature parity - it doesn’t even have a week view yet!                               |
+| Includes a decent menubar calendar on Mac and handy conference call notifications. |                                                                                                       |
 
 {{< figure src="./images/notion_calendar.png" caption="Notion Calendar menubar" >}}
 
@@ -85,12 +85,12 @@ This is widely regarded as the best calendar app for Apple devices. However, the
 
 BusyCal is the main competitor to Fantastical. It has an up-front pricing model (with a limited widow of updates), but doesn’t quite have the same polish as Fantastical.
 
-| Pros                                                                                   | Cons                                                                                                                                                |
-| -------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **One-off purchase** (perpetual license) for the desktop app, avoiding subscriptions.  | Licensing only includes **18 months of free updates**. You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates. |
-| Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more **functional** and less aesthetically polished than Fantastical.                                                          |
-| Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                                                                               |
-| Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                                                                                     |
+| Pros                                                                                   | Cons                                                                                       |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **One-off purchase** (perpetual license) for the desktop app, avoiding subscriptions.  | Licensing only includes **18 months of free updates** [^1].                                |
+| Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more **functional** and less aesthetically polished than Fantastical. |
+| Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                      |
+| Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                            |
 
 ## Why are there so few native calendar apps?
 
@@ -104,8 +104,9 @@ So, after this deep dive, what did I go for?
 
 If you’re already embedded in the Notion ecosystem, Notion Calendar provides good task integration and a decent desktop app, all for free - although the mobile app is pretty poor. If you are budget-conscious and willing to piece together features, Apple Calendar + third-party helper apps is a surprisingly capable option, albeit less polished.
 
-However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view. [[1]](https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/) It's just as good on iOS too.
+However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view [^2]. It's just as good on iOS too.
 
 I’ve decided to stop the endless search. While the subscription is a consideration, Fantastical still excels at my needs. Sometimes, the best solution is the one you already know. I just wish there were more options to choose from!
 
-[1] I’m not the only person who came to this conclusion
+[^1]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
+[^2]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
