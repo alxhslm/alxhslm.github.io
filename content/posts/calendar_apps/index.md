@@ -40,6 +40,8 @@ Note that I focussed only on apps for Macs and iOS since this is what I use dail
 | Can show Reminders alongside your calendar since iOS 18/MacOS Seqioua.   | Can require additional third-party apps (e.g. [Itsycal](https://www.mowglii.com/itsycal/) for a menubar calendar, [Meeting bar](https://meetingbar.app/) for meeting links, or [Dato](https://sindresorhus.com/dato) which can do both) to extend functionality. |
 | Time to Leave notifications using its native knowledge of your location. | Does show events on desktop widget, but this obviously usually hidden                                                                                                                                                                                            |
 
+{{< figure src="./images/apple_calendar.png" caption="Apple calendar app">}}
+
 {{< figure src="./images/itsycal.png" caption="Itsycal on the menubar">}}
 
 {{< figure src="./images/dato_menubar.png" caption="Dato on the menubar" >}}
@@ -56,6 +58,8 @@ This options needs no introduction. Purely as a tool for managing your events, i
 | Supports proprietary functionality for Google accounts (e.g., showing your working location). | On desktop, it’s just a browser tab, so no rich features such as meeting links or menubar access.                                                                                                                     |
 | Rich features on mobile apps (e.g., widgets)                                                  |                                                                                                                                                                                                                       |
 
+{{< figure src="./images/google_calendar.png" caption="Google calendar app">}}
+
 ### Notion Calendar
 
 This was formerly known as Cron before being bought by Notion. Unfortunately, development appears to have stagnated since then. For example, there is still no week view on the mobile app!
@@ -66,7 +70,10 @@ This was formerly known as Cron before being bought by Notion. Unfortunately, de
 | Great integration with any Notion database (projects, day-to-day tasks etc).       | Mobile app lacks feature parity - it doesn’t even have a week view yet!                               |
 | Includes a decent menubar calendar on Mac and handy conference call notifications. |                                                                                                       |
 
-{{< figure src="./images/notion_calendar.png" caption="Notion Calendar menubar" >}}
+{{< gallery >}}
+<img src="./images/notion_calendar.png" class="grid-w66" alt="Notion calendar app" />
+<img src="./images/notion_calendar_menubar.png" class="grid-w33" alt="Notion calender menubar" />
+{{< /gallery >}}
 
 ### Fantastical
 
@@ -79,7 +86,10 @@ This is widely regarded as the best calendar app for Apple devices. However, the
 | Syncs with many different services such as Google Tasks, Apple Reminders, or Todoist.                             |                                                                                                  |
 | The free tier still has a lot of features, making it highly usable without paying.                                |                                                                                                  |
 
-{{< figure src="./images/fantastical_menubar.png" caption="Fantastical menubar calendar" >}}
+{{< gallery >}}
+<img src="./images/fantastical.jpg" class="grid-w66" alt="Fantastical app" />
+<img src="./images/fantastical_menubar.png" class="grid-w33" alt="Fantastical menubar" />
+{{< /gallery >}}
 
 ### BusyCal
 
@@ -92,7 +102,10 @@ BusyCal is the main competitor to Fantastical. It has an up-front pricing model 
 | Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                  |
 | Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                        |
 
-{{< figure src="./images/busycal_menubar.png" caption="BusyCal menubar calendar" >}}
+{{< gallery >}}
+<img src="./images/busycal.png" class="grid-w66" alt="BusyCal app" />
+<img src="./images/busycal_menubar.png" class="grid-w33" alt="BusyCal menubar" />
+{{< /gallery >}}
 
 ## Why are there so few native calendar apps?
 
