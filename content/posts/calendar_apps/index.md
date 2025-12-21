@@ -111,7 +111,7 @@ One of my biggest frustrations during this search was realising just how many mo
 
 However, a web app is "trapped" in the browser so is inherentely limited. It cannot easily "leave" its tab to provide the deep system integration that makes a calendar most useful. For example, you can’t have things like widgets, or have to rely on less robust browser notifications. Multi-user support is also often lacking; even in 2025, the web version Google Calendar can only show you one calendar account! Compare this to the mobile app which can support multiple accounts, and has native widgets.
 
-## Picking the best of a "meh" bunch
+## Sticking to what you know
 
 So, after this deep dive, what did I go for?
 
