@@ -7,7 +7,7 @@ tags = ['apps']
 
 #
 
-In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of **digital noise** and constant distraction, it becomes the our most important tool for managing our time.
+In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of digital noise and constant distraction, it becomes the our most important tool for managing our time.
 
 I rely on recording _everything_, especially at work when I’m deep in concentration. My particular struggle is with events about a week or so in the future: too far to hold in memory, but not distant enough to be reliably pre-emptied by colleagues. For the habitually forgetful like me, a calendar app is not just a convenience; it's an essential external brain.
 
@@ -35,7 +35,7 @@ Note that I focussed only on apps for Macs and iOS since this is what I use dail
 
 | Pros                                                                     | Cons                                                                                                                                                                                                                                                             |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Free** and deeply integrated.                                          | Forces reliance on Apple services (Apple Maps, Apple Reminders).                                                                                                                                                                                                 |
+| Free and deeply integrated with OS.                                      | Forces reliance on Apple services (Apple Maps, Apple Reminders).                                                                                                                                                                                                 |
 | Native apps on all Apple devices, including widgets.                     | No-frills experience—does the fundamentals but lacks desktop features like a menu bar calendar.                                                                                                                                                                  |
 | Can show Reminders alongside your calendar since iOS 18/MacOS Seqioua.   | Can require additional third-party apps (e.g. [Itsycal](https://www.mowglii.com/itsycal/) for a menubar calendar, [Meeting bar](https://meetingbar.app/) for meeting links, or [Dato](https://sindresorhus.com/dato) which can do both) to extend functionality. |
 | Time to Leave notifications using its native knowledge of your location. | Does show events on desktop widget, but this obviously usually hidden                                                                                                                                                                                            |
@@ -72,12 +72,12 @@ This was formerly known as Cron before being bought by Notion. Unfortunately, de
 
 This is widely regarded as the best calendar app for Apple devices. However, they recently switched pricing models to an expensive subscription which has annoyed a lot of users.
 
-| Pros                                                                                                                  | Cons                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| Packed with rich features like the menu bar calendar and instant meeting links.                                       | **Expensive subscription** if you want all the premium features, though it is high-quality software. |
-| Excellent design, particularly the **Schedule view**. I don’t know why other apps haven’t copied this fluid timeline. |                                                                                                      |
-| Syncs with many different services such as Google Tasks, Apple Reminders, or Todoist.                                 |                                                                                                      |
-| The free tier still has a lot of features, making it highly usable without paying.                                    |                                                                                                      |
+| Pros                                                                                                              | Cons                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Packed with rich features like the menu bar calendar and instant meeting links.                                   | Expensive subscription if you want all the premium features, though it is high-quality software. |
+| Excellent design, particularly the Schedule view. I don’t know why other apps haven’t copied this fluid timeline. |                                                                                                  |
+| Syncs with many different services such as Google Tasks, Apple Reminders, or Todoist.                             |                                                                                                  |
+| The free tier still has a lot of features, making it highly usable without paying.                                |                                                                                                  |
 
 {{< figure src="./images/fantastical_menubar.png" caption="Fantastical menubar calendar" >}}
 
@@ -85,12 +85,12 @@ This is widely regarded as the best calendar app for Apple devices. However, the
 
 BusyCal is the main competitor to Fantastical. It has an up-front pricing model (with a limited widow of updates), but doesn’t quite have the same polish as Fantastical.
 
-| Pros                                                                                   | Cons                                                                                       |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **One-off purchase** (perpetual license) for the desktop app, avoiding subscriptions.  | Licensing only includes **18 months of free updates** [^1].                                |
-| Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more **functional** and less aesthetically polished than Fantastical. |
-| Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                      |
-| Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                            |
+| Pros                                                                                   | Cons                                                                                   |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| One-off purchase for bioth the desktop and mobile apps, avoiding subscriptions.        | MacOS licence only includes 18 months of free updates [^1].                            |
+| Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more functional and less aesthetically polished than Fantastical. |
+| Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                  |
+| Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                        |
 
 ## Why are there so few native calendar apps?
 
