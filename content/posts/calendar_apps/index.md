@@ -92,6 +92,8 @@ BusyCal is the main competitor to Fantastical. It has an up-front pricing model 
 | Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                  |
 | Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                        |
 
+{{< figure src="./images/busycal_menubar.png" caption="BusyCal menubar calendar" >}}
+
 ## Why are there so few native calendar apps?
 
 One of my biggest frustrations during this search was realising just how many modern calendar tools are moving towards being purely web-based; the obvious example being Google calendar, but Notion calendar is just an electron wrapper. The situation is even worse if you’re not on MacOS. Unfortantely, it seems that calendar apps [aren’t particularly profitable](https://talk.macpowerusers.com/t/exploring-busycal-vs-fantastical-in-2024/36673/11), so few developers are willing to build good calendar apps. If you’re a developer, it makes much more sense to focus on web apps since it’s cross-platform and maximises your potential user-base.
