@@ -47,7 +47,7 @@ To calculate the correct Device ID for F45:
 
 1. Convert the number from your Garmin device to **Hexadecimal**. **Example:** `863436` → `0xD2CCC`
 2. Drop the first 4 bits (the first hexadecimal character). **Example:** `0xD2CCC` → `0x2CCC`
-3. Convert back to **Decimal**.**Example:** `0x2CCC` → `11486`
+3. Convert back to **Decimal**. **Example:** `0x2CCC` → `11486`
 
 Once I entered `11486` into the F45 app, my Garmin HRM was recognised when I to my next class, and my heart rate data was displayed correctly on the screens. 🎯
 
