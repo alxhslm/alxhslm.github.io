@@ -40,11 +40,11 @@ Note that I focussed only on apps for MacOS since this is what I use daily. I di
 | Can show Reminders alongside your calendar since iOS 18/MacOS Seqioua.   | Can require additional third-party apps (e.g. [Itsycal](https://www.mowglii.com/itsycal/) for a menubar calendar, [Meeting bar](https://meetingbar.app/) for meeting links, or [Dato](https://sindresorhus.com/dato) which can do both) to extend functionality. |
 | Time to Leave notifications using its native knowledge of your location. | Does show events on desktop widget, but this obviously usually hidden                                                                                                                                                                                            |
 
-{{< figure src="./images/apple_calendar.png" caption="Apple calendar app">}}
-
-{{< figure src="./images/itsycal.png" caption="Itsycal on the menubar">}}
-
-{{< figure src="./images/dato_menubar.png" caption="Dato on the menubar" >}}
+{{< gallery >}}
+<img src="./images/apple_calendar.png" class="grid-w50" alt="Apple calendar app" />
+<img src="./images/itsycal.png" class="grid-w25" alt="Itsycal on the menubar" />
+<img src="./images/dato_menubar.png" class="grid-w25" alt="Dato on the menubar" />
+{{< /gallery >}}
 
 ### Google Calendar
 
