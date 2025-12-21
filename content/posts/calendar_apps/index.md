@@ -1,7 +1,6 @@
 +++
 title = 'The Quest for the perfect MacOS Calendar App'
 date = 2025-12-21T17:05:44Z
-draft = true
 tags = ['apps']
 +++
 
