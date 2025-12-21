@@ -1,11 +1,11 @@
 +++
-title = 'The Quest for the Perfect Calendar App for MacOS'
+title = 'The Quest for the perfect MacOS Calendar App'
 date = 2025-12-21T17:05:44Z
 draft = true
 tags = ['apps']
 +++
 
-In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of digital noise and constant distraction, it becomes the our most important tool for managing our time.
+In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of digital noise and constant distraction, it becomes the our most important tool for managing our time [^1].
 
 I rely on recording _everything_, especially at work when I’m deep in concentration. My particular struggle is with events about a week or so in the future: too far to hold in memory, but not distant enough to be reliably pre-emptied by colleagues. For the habitually forgetful like me, a calendar app is not just a convenience; it's an essential external brain.
 
@@ -15,15 +15,15 @@ While simple tasks like maintaining work-life balance and remembering anniversar
 - **Intelligent Reminders:** Telling you precisely when to leave, factoring in travel time.
 - **Video Call Integration:** Quick links to join meetings instantly.
 
-I was a long-time Fantastical 2 user, and was lucky enough to be grandfathered into some paid features of Fantastical 3. However, the constant pop-ups advertising premium-tier features eventually broke my resolve [^1], which led me to reassess the current landscape.
+I was a long-time Fantastical 2 user, and was lucky enough to be grandfathered into some paid features of Fantastical 3. However, the constant pop-ups advertising premium-tier features eventually broke my resolve [^2], which led me to reassess the current landscape.
 
 ## What do I want from a calendar app?
 
-Before diving in, I set clear criteria, specifically ruling out AI scheduling assistants (like Motion), as scheduling itself isn't my core problem.
+Before diving in, let me set our my criteria. I specifically ruled out AI scheduling assistants (like [Motion](https://www.usemotion.com/)), as scheduling itself isn't my core problem. Instead, I care about the following:
 
 1. **Multiple Account Support:** Seamlessly supporting both work and personal lives, as the two inevitably interact.
 2. **Task Integration:** Ability to show tasks (like Apple Reminders or Google Tasks) alongside events for better daily planning.
-3. **Meeting Utility:** Easy ways to see upcoming meetings and quickly join video calls.
+3. **Meetings:** Easy ways to see upcoming meetings and links to quickly join video calls.
 
 Note that I focussed only on apps for MacOS since this is what I use daily. I didn’t consider windows or android apps (although some of the options below are available on these platforms). At the same time, I want to be able to have the same interface on my iPhone, so I only consider apps available on iOS as well.
 
@@ -95,7 +95,7 @@ Note that I focussed only on apps for MacOS since this is what I use daily. I di
 
 | Pros                                                                                   | Cons                                                                                   |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| One-off purchase for bioth the desktop and mobile apps, avoiding subscriptions.        | MacOS licence only includes 18 months of free updates [^2].                            |
+| One-off purchase for bioth the desktop and mobile apps, avoiding subscriptions.        | MacOS licence only includes 18 months of free updates [^3].                            |
 | Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more functional and less aesthetically polished than Fantastical. |
 | Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                  |
 | Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                        |
@@ -117,10 +117,11 @@ So, after this deep dive, what did I go for?
 
 If you’re already embedded in the Notion ecosystem, Notion Calendar provides good task integration and a decent desktop app, all for free - although the mobile app is pretty poor. If you are budget-conscious and willing to piece together features, Apple Calendar + third-party helper apps is a surprisingly capable option, albeit less polished.
 
-However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view [^3]. It's just as good on iOS too.
+However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view [^4]. It's just as good on iOS too.
 
 I’ve decided to stop the endless search. While the subscription is a consideration, Fantastical still excels at my needs. Sometimes, the best solution is the one you already know. I just wish there were more options to choose from!
 
-[^1]: Why can't I just hide the paid options? 😫
-[^2]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
-[^3]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
+[^1]: You can read more about this topic in [Deep Work by Cal Newport](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/).
+[^2]: Of course there is no option to just hide the paid options 😫
+[^3]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
+[^4]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
