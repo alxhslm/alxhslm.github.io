@@ -5,8 +5,6 @@ draft = true
 tags = ['apps']
 +++
 
-#
-
 In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of digital noise and constant distraction, it becomes the our most important tool for managing our time.
 
 I rely on recording _everything_, especially at work when I’m deep in concentration. My particular struggle is with events about a week or so in the future: too far to hold in memory, but not distant enough to be reliably pre-emptied by colleagues. For the habitually forgetful like me, a calendar app is not just a convenience; it's an essential external brain.
@@ -17,7 +15,7 @@ While simple tasks like maintaining work-life balance and remembering anniversar
 - **Intelligent Reminders:** Telling you precisely when to leave, factoring in travel time.
 - **Video Call Integration:** Quick links to join meetings instantly.
 
-I was a long-time Fantastical 2 user, and was lucky enough to be grandfathered into some paid features of Fantastical 3. However, the constant pop-ups advertising premium-tier features eventually broke my resolve (why can't I just hide the paid options?), which led me to reassess the current landscape.
+I was a long-time Fantastical 2 user, and was lucky enough to be grandfathered into some paid features of Fantastical 3. However, the constant pop-ups advertising premium-tier features eventually broke my resolve [^1], which led me to reassess the current landscape.
 
 ## What do I want from a calendar app?
 
@@ -27,11 +25,13 @@ Before diving in, I set clear criteria, specifically ruling out AI scheduling as
 2. **Task Integration:** Ability to show tasks (like Apple Reminders or Google Tasks) alongside events for better daily planning.
 3. **Meeting Utility:** Easy ways to see upcoming meetings and quickly join video calls.
 
-Note that I focussed only on apps for Macs and iOS since this is what I use daily. I didn’t consider windows or android apps (although some of the options below are available on these platforms). I also didn’t consider the apple watch.
+Note that I focussed only on apps for MacOS since this is what I use daily. I didn’t consider windows or android apps (although some of the options below are available on these platforms). At the same time, I want to be able to have the same interface on my iPhone, so I only consider apps available on iOS as well.
 
 ## What options are there?
 
 ### Apple Calendar
+
+[Apple Calendar](https://apps.apple.com/us/app/calendar/id1108185179) is installed by default on all Apple devices, so is the easiest option. It's perfectly functional, but relatively bare bones.
 
 | Pros                                                                     | Cons                                                                                                                                                                                                                                                             |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -46,11 +46,9 @@ Note that I focussed only on apps for Macs and iOS since this is what I use dail
 
 {{< figure src="./images/dato_menubar.png" caption="Dato on the menubar" >}}
 
-Menubar with Dato
-
 ### Google Calendar
 
-This options needs no introduction. Purely as a tool for managing your events, it is very good. However, lack of multi-user support is a deal-breaker for me.
+[Google Calender](https://calendar.google.com/) needs no introduction. Purely as a tool for managing your events, it is very good. However, lack of multi-user support is a deal-breaker for me.
 
 | Pros                                                                                          | Cons                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -62,7 +60,7 @@ This options needs no introduction. Purely as a tool for managing your events, i
 
 ### Notion Calendar
 
-This was formerly known as Cron before being bought by Notion. Unfortunately, development appears to have stagnated since then. For example, there is still no week view on the mobile app!
+[Notion Calendar](https://www.notion.com/en-gb/product/calendar) was formerly known as Cron before being bought by Notion. Unfortunately, development appears to have stagnated since then. For example, there is still no week view on the mobile app!
 
 | Pros                                                                               | Cons                                                                                                  |
 | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -77,7 +75,7 @@ This was formerly known as Cron before being bought by Notion. Unfortunately, de
 
 ### Fantastical
 
-This is widely regarded as the best calendar app for Apple devices. However, they recently switched pricing models to an expensive subscription which has annoyed a lot of users.
+[Fantastical](https://flexibits.com/fantastical) is widely regarded as the best calendar app for Apple devices. However, they recently switched pricing models to an expensive subscription which has annoyed a lot of users.
 
 | Pros                                                                                                              | Cons                                                                                             |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -93,11 +91,11 @@ This is widely regarded as the best calendar app for Apple devices. However, the
 
 ### BusyCal
 
-BusyCal is the main competitor to Fantastical. It has an up-front pricing model (with a limited widow of updates), but doesn’t quite have the same polish as Fantastical.
+[BusyCal](https://www.busymac.com/) is the main competitor to Fantastical. It has an up-front pricing model (with a limited widow of updates), but doesn’t quite have the same polish as Fantastical.
 
 | Pros                                                                                   | Cons                                                                                   |
 | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| One-off purchase for bioth the desktop and mobile apps, avoiding subscriptions.        | MacOS licence only includes 18 months of free updates [^1].                            |
+| One-off purchase for bioth the desktop and mobile apps, avoiding subscriptions.        | MacOS licence only includes 18 months of free updates [^2].                            |
 | Excellent customisation: includes Smart Filters, Tags, and highly configurable views.  | The visual design is more functional and less aesthetically polished than Fantastical. |
 | Deep task integration, supporting multiple external task managers.                     | iOS app is a separate purchase (though also one-off).                                  |
 | Includes unique features like integrated weather forecasts, moon phases, and graphics. |                                                                                        |
@@ -119,9 +117,10 @@ So, after this deep dive, what did I go for?
 
 If you’re already embedded in the Notion ecosystem, Notion Calendar provides good task integration and a decent desktop app, all for free - although the mobile app is pretty poor. If you are budget-conscious and willing to piece together features, Apple Calendar + third-party helper apps is a surprisingly capable option, albeit less polished.
 
-However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view [^2]. It's just as good on iOS too.
+However, in my opinion, only Fantastical offers a seamless blend of multiple accounts, task display, and crucial quality-of-life features like menubar access and meeting join links. None of the alternatives quite matches its thoughtful design, especially the excellent Schedule view [^3]. It's just as good on iOS too.
 
 I’ve decided to stop the endless search. While the subscription is a consideration, Fantastical still excels at my needs. Sometimes, the best solution is the one you already know. I just wish there were more options to choose from!
 
-[^1]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
-[^2]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
+[^1]: Why can't I just hide the paid options? 😫
+[^2]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
+[^3]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
