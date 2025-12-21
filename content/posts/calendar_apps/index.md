@@ -40,11 +40,9 @@ Note that I focussed only on apps for Macs and iOS since this is what I use dail
 | Can show Reminders alongside your calendar since iOS 18/MacOS Seqioua.   | Can require additional third-party apps (e.g. [Itsycal](https://www.mowglii.com/itsycal/) for a menubar calendar, [Meeting bar](https://meetingbar.app/) for meeting links, or [Dato](https://sindresorhus.com/dato) which can do both) to extend functionality. |
 | Time to Leave notifications using its native knowledge of your location. | Does show events on desktop widget, but this obviously usually hidden                                                                                                                                                                                            |
 
-![Menubar with Itsycal](./images/itsycal.png)
+{{< figure src="./images/itsycal.png" caption="Itsycal on the menubar">}}
 
-Menubar with Itsycal
-
-![Menubar with Dato](./images/dato_menubar.png)
+{{< figure src="./images/dato_menubar.png" caption="Dato on the menubar" >}}
 
 Menubar with Dato
 
@@ -68,7 +66,7 @@ This was formerly known as Cron before being bought by Notion. Unfortunately, de
 | Great integration with any Notion database (projects, day-to-day tasks etc).       | Mobile app lacks feature parity - it doesn’t even have a week view yet!                                   |
 | Includes a decent menubar calendar on Mac and handy conference call notifications. |                                                                                                           |
 
-![Screenshot 2025-11-12 at 16.18.14.png](./images/notion_calendar.png)
+{{< figure src="./images/notion_calendar.png" caption="Notion Calendar menubar" >}}
 
 ### Fantastical
 
@@ -81,9 +79,7 @@ This is widely regarded as the best calendar app for Apple devices. However, the
 | Syncs with many different services such as Google Tasks, Apple Reminders, or Todoist.                                 |                                                                                                      |
 | The free tier still has a lot of features, making it highly usable without paying.                                    |                                                                                                      |
 
-![Fantastical menubar calendar](./images/fantastical_menubar.png)
-
-Fantastical menubar calendar
+{{< figure src="./images/fantastical_menubar.png" caption="Fantastical menubar calendar" >}}
 
 ### BusyCal
 
