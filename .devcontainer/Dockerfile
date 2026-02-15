@@ -6,14 +6,14 @@ ARG VARIANT=hugo
 ARG VERSION=latest
 
 # Install required system packages
-RUN apt-get update \
+RUN rm -f /etc/apt/sources.list.d/yarn.list /etc/apt/sources.list.d/*yarn* \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
-    direnv \
-    git \
-    curl \
-    expect \
+        direnv \
+        git \
+        curl \
+        expect \
     && rm -rf /var/lib/apt/lists/*
-
 # Download Hugo
 COPY scripts/*.sh /tmp/scripts/
 RUN /tmp/scripts/install_hugo.sh ${VARIANT} ${VERSION}
