@@ -14,6 +14,7 @@ RUN rm -f /etc/apt/sources.list.d/yarn.list /etc/apt/sources.list.d/*yarn* \
         curl \
         expect \
     && rm -rf /var/lib/apt/lists/*
+
 # Download Hugo
 COPY scripts/*.sh /tmp/scripts/
 RUN /tmp/scripts/install_hugo.sh ${VARIANT} ${VERSION}
