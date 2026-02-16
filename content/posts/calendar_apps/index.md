@@ -123,4 +123,4 @@ I’ve decided to stop the endless search. While the subscription is a considera
 [^1]: You can read more about this topic in [Deep Work by Cal Newport](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/).
 [^2]: Of course there is no option to just hide the paid options 😫
 [^3]: You keep the app forever, but pay a renewal fee for future feature/OS compatibility updates.
-[^4]: I’m not the only person who came to this conclusion [it seems](<(https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/)>).
+[^4]: I’m not the only person who came to this conclusion [it seems](https://sixcolors.com/post/2024/01/there-and-back-again-foregoing-fantastical/).
