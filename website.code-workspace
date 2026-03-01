@@ -31,7 +31,8 @@
 		"recommendations": [
 			"budparr.language-hugo-vscode",
 			"esbenp.prettier-vscode",
-			"tamasfe.even-better-toml"
+			"tamasfe.even-better-toml",
+			"google.gemini-cli-vscode-ide-companion"
 		]
 	}
 }

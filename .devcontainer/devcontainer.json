@@ -26,5 +26,10 @@
 		1313
 	],
 	"remoteUser": "vscode",
-	"features": {}
+	"features": {
+		"ghcr.io/stu-bell/devcontainer-features/gemini-cli:0": {}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached"
+	]
 }
