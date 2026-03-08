@@ -1,0 +1,31 @@
+name: Devcontainer Build Check
+
+on:
+  push:
+    paths:
+      - ".devcontainer/**"
+  pull_request:
+    paths:
+      - ".devcontainer/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Create .env file
+        run: cp .env.default .env
+
+      - name: Build Dev Container
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: devcontainer-build-check
+          push: never
+          configFile: .devcontainer/devcontainer.json
