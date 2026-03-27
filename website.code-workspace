@@ -32,7 +32,7 @@
 			"budparr.language-hugo-vscode",
 			"esbenp.prettier-vscode",
 			"tamasfe.even-better-toml",
-			"google.gemini-cli-vscode-ide-companion"
+			"anthropic.claude-code"
 		]
 	}
 }
