@@ -13,7 +13,8 @@
 			"extensions": [
 				"budparr.language-hugo-vscode",
 				"esbenp.prettier-vscode",
-				"tamasfe.even-better-toml"
+				"tamasfe.even-better-toml",
+				"anthropic.claude-code"
 			]
 		}
 	},
@@ -26,10 +27,13 @@
 		1313
 	],
 	"remoteUser": "vscode",
+	"remoteEnv": {
+		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+	},
 	"features": {
-		"ghcr.io/stu-bell/devcontainer-features/gemini-cli:0": {}
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
 	},
 	"mounts": [
-		"source=${localEnv:HOME}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached"
+		"source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
 	]
 }
