@@ -13,7 +13,7 @@ title = "Alex Haslam"
   [params.author]
     name = "Alex Haslam"
     image = "images/profile.png"
-    headline = "Optimisation and ML Engineer"
+    headline = "Machine Learning Engineer"
     bio = "I’m an engineer based in London, with expertise in optimisation, machine learning and simulation."
     links = [
       { github = "https://github.com/alxhslm" },
