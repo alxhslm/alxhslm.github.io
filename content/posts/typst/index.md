@@ -36,7 +36,7 @@ Want citations in LaTeX? You're compiling at least twice: once for the document 
 
 ## The broader point
 
-LaTeX became the default because academics learned it at university, taught it to the next generation, and journals standardised on it. That's network effects, not merit. For journal submissions or collaboration with LaTeX-only colleagues, you may not have a choice. For everything else, it's worth asking whether it's still the right tool.
+LaTeX became the default because academics learned it at university, taught it to the next generation, and journals standardised on it. That's down to network effects, not merit. For journal submissions or collaboration with LaTeX-only colleagues, you may not have a choice. For everything else, it's worth asking whether it's still the right tool.
 
 What made it easy to ask that question here was that **AI tools have collapsed the switching cost**. What used to mean weeks of manual rewriting now takes 30 minutes. The economics of trying something better have changed completely.
 
