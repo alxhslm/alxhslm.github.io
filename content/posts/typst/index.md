@@ -16,11 +16,11 @@ Rather than debug it, I decided to try [Typst](https://typst.app/), a modern alt
 
 ### Compilation is instant
 
-My CV was taking around 10 seconds to compile in LaTeX, not terrible, but enough to break flow. Typst is fast enough that you don't notice it. The live preview actually works, and iterating on formatting feels completely different when the feedback is immediate.
+My CV was taking around 10 seconds to compile in LaTeX; not terrible, but enough to break flow. Typst is fast enough that you don't notice it. The live preview actually works, and iterating on formatting feels completely different when the feedback is immediate.
 
 ### The tooling is modern
 
-LaTeX does have language servers, formatters, and linters, but they're niche and under-invested. Most LaTeX users are academics who don't care about this stuff, so the ecosystem reflects that. latexindent is a Perl script maintained by one person; language server support exists but is nowhere near the quality you'd get with a mainstream programming language.
+LaTeX does have language servers, formatters, and linters, but they're niche and under-invested. Most LaTeX users are academics who don't care about this stuff, so the ecosystem reflects that. `latexindent` is a Perl script maintained by one person; language server support exists but is nowhere near the quality you'd get with a mainstream programming language.
 
 Typst is built for people who do care. LSP support, linters, and helpful error messages are first-class. It feels like a tool built in the 2020s.
 
