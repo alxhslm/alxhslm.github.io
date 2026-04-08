@@ -8,7 +8,7 @@ I used LaTeX at university and loved how it let me focus on the _meaning_ of my 
 
 When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live had incremented versions and nothing would compile. Rather than debug it, I decided to try [Typst](https://typst.app/); a modern alternative I'd seen on my GitHub feed months ago.
 
-The migration took 30 minutes thanks to Claude Code. Within an hour, I was wondering why I'd spent so much time working around LaTeX's limitations.
+The migration took 30 minutes thanks to Gemini CLI. Within an hour, I was wondering why I'd spent so much time working around LaTeX's limitations.
 
 ## What's wrong with LaTeX?
 
@@ -87,17 +87,17 @@ For my CV? None of these applied. I just needed clean formatting and reproducibl
 
 Historically, migrating from LaTeX would have been painful. Manual rewriting, learning new syntax, recreating all your formatting.
 
-**But thanks to Claude Code, the switching cost is now tiny.**
+**But thanks to AI coding tools, the switching cost is now tiny.**
 
-I just:
+I used Gemini CLI for this. I just:
 
-1. Gave Claude my LaTeX CV
+1. Gave it my LaTeX CV
 2. Asked it to convert to Typst
 3. Iterated on the output
 
-The whole thing took maybe 30 minutes. Claude handled the syntax conversion and even suggested better ways to structure things in Typst.
+The whole thing took maybe 30 minutes. It handled the syntax conversion and even suggested better ways to structure things in Typst.
 
-This changes the economics completely. The barrier to trying a better tool is no longer "weeks of migration work"; it's "give Claude your files and see if the new tool is better."
+This changes the economics completely. The barrier to trying a better tool is no longer "weeks of migration work"; it's "give an AI tool your files and see if the new tool is better."
 
 ### What I gained
 
