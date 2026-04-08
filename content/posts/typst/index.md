@@ -10,7 +10,7 @@ I used LaTeX at university and loved how it let me focus on the _meaning_ of my 
 
 When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live cuts a new annual release and drops the old one from mirrors; my devcontainer was still trying to download the 2025 release, which was gone.
 
-Rather than debug it, I decided to try [Typst](https://typst.app/), a modern alternative I'd seen on my GitHub feed months ago. I gave Gemini CLI my LaTeX CV, asked it to convert it, and iterated on the output. The whole thing took 30 minutes. Within an hour of starting, I was wondering why I'd spent so much time working around LaTeX's limitations.
+Rather than debug it, I decided to try [Typst](https://typst.app/), a modern alternative I'd seen on my GitHub feed months ago. I was trialling Gemini CLI at the time, so I gave it this task: convert my LaTeX CV to Typst. I iterated on the output. The whole thing took 30 minutes. Within an hour of starting, I was wondering why I'd spent so much time working around LaTeX's limitations.
 
 ## Why Typst is better
 
