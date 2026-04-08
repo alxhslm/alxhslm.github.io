@@ -6,7 +6,7 @@ tags = ['development']
 
 ## The trigger: a new TeX Live release
 
-I used LaTeX at university and loved how it let me focus on the _meaning_ of my writing rather than fiddling with formatting. That principle still holds. But everything else about LaTeX has aged poorly.
+I used LaTeX at university and loved how it let me focus on the _meaning_ of my writing rather than fiddling with formatting. That principle still holds. But my software practices have grown since then; I've come to rely on things like formatters, linters, and proper package management, and LaTeX's equivalents don't really measure up.
 
 When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live cuts a new annual release and drops the old one from mirrors; my devcontainer was still trying to download the 2025 release, which was gone.
 
