@@ -20,13 +20,9 @@ Typst compiles fast enough that the live preview actually works. LaTeX compilati
 
 ### The tooling is modern
 
-LaTeX tooling feels ancient because it is:
+LaTeX does have language servers, formatters, and linters — but they're niche and under-invested. Most LaTeX users are academics who don't care about this stuff, so the ecosystem reflects that. latexindent is a Perl script maintained by one person; language server support exists but is nowhere near the quality you'd get with a mainstream programming language.
 
-- **latexindent is a Perl script** with no clear roadmap
-- Language server support is unreliable
-- Error messages are often cryptic
-
-Typst has proper LSP support, real linters, and error messages that actually tell you what went wrong. It feels like a tool built in the 2020s.
+Typst is built for people who do care. LSP support, linters, and helpful error messages are first-class. It feels like a tool built in the 2020s.
 
 ### Package management actually works
 
