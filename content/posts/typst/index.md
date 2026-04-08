@@ -6,7 +6,7 @@ tags = ['development']
 
 I used LaTeX at university and loved how it let me focus on the *meaning* of my writing rather than fiddling with formatting. That principle still holds. But everything else about LaTeX has aged poorly.
 
-When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. TeX Live had incremented versions and nothing would compile. Rather than debug it, I decided to try [Typst](https://typst.app/); a modern alternative I'd seen on my GitHub feed months ago.
+When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live had incremented versions and nothing would compile. Rather than debug it, I decided to try [Typst](https://typst.app/); a modern alternative I'd seen on my GitHub feed months ago.
 
 The migration took 30 minutes thanks to Claude Code. Within an hour, I was wondering why I'd spent so much time working around LaTeX's limitations.
 
