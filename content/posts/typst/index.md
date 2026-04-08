@@ -8,19 +8,19 @@ tags = ['development']
 
 I used LaTeX at university and loved how it let me focus on the _meaning_ of my writing rather than fiddling with formatting. That principle still holds. But everything else about LaTeX has aged poorly.
 
-When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live cuts a new annual release and drops the old one from mirrors — my devcontainer was still trying to download the 2025 release, which was gone.
+When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live cuts a new annual release and drops the old one from mirrors; my devcontainer was still trying to download the 2025 release, which was gone.
 
-Rather than debug it, I decided to try [Typst](https://typst.app/) — a modern alternative I'd seen on my GitHub feed months ago. I gave Gemini CLI my LaTeX CV, asked it to convert it, and iterated on the output. The whole thing took 30 minutes. Within an hour of starting, I was wondering why I'd spent so much time working around LaTeX's limitations.
+Rather than debug it, I decided to try [Typst](https://typst.app/), a modern alternative I'd seen on my GitHub feed months ago. I gave Gemini CLI my LaTeX CV, asked it to convert it, and iterated on the output. The whole thing took 30 minutes. Within an hour of starting, I was wondering why I'd spent so much time working around LaTeX's limitations.
 
 ## Why Typst is better
 
 ### Compilation is instant
 
-My CV was taking around 10 seconds to compile in LaTeX — not terrible, but enough to break flow. Typst is fast enough that you don't notice it. The live preview actually works, and iterating on formatting feels completely different when the feedback is immediate.
+My CV was taking around 10 seconds to compile in LaTeX, not terrible, but enough to break flow. Typst is fast enough that you don't notice it. The live preview actually works, and iterating on formatting feels completely different when the feedback is immediate.
 
 ### The tooling is modern
 
-LaTeX does have language servers, formatters, and linters — but they're niche and under-invested. Most LaTeX users are academics who don't care about this stuff, so the ecosystem reflects that. latexindent is a Perl script maintained by one person; language server support exists but is nowhere near the quality you'd get with a mainstream programming language.
+LaTeX does have language servers, formatters, and linters, but they're niche and under-invested. Most LaTeX users are academics who don't care about this stuff, so the ecosystem reflects that. latexindent is a Perl script maintained by one person; language server support exists but is nowhere near the quality you'd get with a mainstream programming language.
 
 Typst is built for people who do care. LSP support, linters, and helpful error messages are first-class. It feels like a tool built in the 2020s.
 
@@ -32,7 +32,7 @@ Typst has a proper dependency model with versioning. Reproducible builds work wi
 
 ### One compile pass
 
-Want citations in LaTeX? You're compiling at least twice — once for the document structure, once to resolve references. Typst handles everything in a single pass.
+Want citations in LaTeX? You're compiling at least twice: once for the document structure, once to resolve references. Typst handles everything in a single pass.
 
 ## The broader point
 
@@ -40,4 +40,4 @@ LaTeX became the default because academics learned it in grad school, taught it 
 
 What made it easy to ask that question here was that **AI tools have collapsed the switching cost**. What used to mean weeks of manual rewriting now takes 30 minutes. The economics of trying something better have changed completely.
 
-I saw Typst on my GitHub feed months before I tried it. The devcontainer breaking was the nudge I needed. If you're hitting friction with an incumbent tool, the bar for trying an alternative is lower than it used to be — it's probably worth it.
+I saw Typst on my GitHub feed months before I tried it. The devcontainer breaking was the nudge I needed. If you're hitting friction with an incumbent tool, the bar for trying an alternative is lower than it used to be; it's probably worth it.
