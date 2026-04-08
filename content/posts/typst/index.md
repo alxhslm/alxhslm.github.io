@@ -43,7 +43,7 @@ Want citations? Hope you enjoy compiling your document **three times**:
 2. Second pass to process references
 3. Third pass to resolve citations
 
-It's 2025. Why is this still a thing?
+It's 2026. Why is this still a thing?
 
 ## What Typst gets right
 
@@ -125,4 +125,4 @@ This is more feasible than ever because **AI tools have collapsed the switching 
 
 If you're setting up some new tool, even if it's as simple as a dev container, ask yourself: **am I solving the right problem?** Or am I working around the incumbent's limitations because I haven't challenged whether it's still the best choice?
 
-For me, the answer was clear. I'd been optimising the wrong thing with my LaTeX CI setup. For simple documents with modern workflows, Typst is demonstrably better than LaTeX on every dimension that mattered to me. Not just "good enough"; actually better.
+For me, the answer was clear. I'd been optimising the wrong thing with my LaTeX CI setup. For simple documents with modern workflows, Typst is demonstrably better than LaTeX on every dimension that mattered to me.
