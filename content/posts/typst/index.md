@@ -40,4 +40,4 @@ LaTeX became the default because academics learned it in grad school, taught it 
 
 What made it easy to ask that question here was that **AI tools have collapsed the switching cost**. What used to mean weeks of manual rewriting now takes 30 minutes. The economics of trying something better have changed completely.
 
-I saw Typst on my GitHub feed months before I tried it. The devcontainer breaking was the nudge I needed. If you're hitting friction with an incumbent tool, the bar for trying an alternative is lower than it used to be; it's probably worth it.
+I saw Typst on my GitHub feed months before I tried it. The devcontainer breaking was the nudge I needed. If you're hitting friction with an incumbent tool, the bar for trying an alternative is lower than it used to be; it's worth a try.
