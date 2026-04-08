@@ -16,7 +16,7 @@ Rather than debug it, I decided to try [Typst](https://typst.app/) — a modern 
 
 ### Compilation is instant
 
-Typst compiles fast enough that the live preview actually works. LaTeX compilation times didn't seem like a big deal until I experienced the alternative — the tight feedback loop when iterating on formatting makes a real difference.
+My CV was taking around 10 seconds to compile in LaTeX — not terrible, but enough to break flow. Typst is fast enough that you don't notice it. The live preview actually works, and iterating on formatting feels completely different when the feedback is immediate.
 
 ### The tooling is modern
 
