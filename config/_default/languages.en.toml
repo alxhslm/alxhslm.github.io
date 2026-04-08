@@ -18,4 +18,7 @@ title = "Alex Haslam"
     links = [
       { github = "https://github.com/alxhslm" },
       { linkedin = "https://www.linkedin.com/in/alexanderhaslam" },
+      { google-scholar = "https://scholar.google.com/citations?hl=en&user=XIvQ5NYAAAAJ" },
+      { strava = "https://www.strava.com/athletes/alexhaslam" },
+      { untappd = "https://untappd.com/user/alexhaslam" },
     ]
