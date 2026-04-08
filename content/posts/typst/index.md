@@ -4,7 +4,7 @@ date = 2026-04-08T00:00:00Z
 tags = ['development']
 +++
 
-I used LaTeX at university and loved how it let me focus on the *meaning* of my writing rather than fiddling with formatting. That principle still holds. But everything else about LaTeX has aged poorly.
+I used LaTeX at university and loved how it let me focus on the _meaning_ of my writing rather than fiddling with formatting. That principle still holds. But everything else about LaTeX has aged poorly.
 
 When I went to update my CV recently (just keeping it current, not job hunting!), my LaTeX devcontainer had broken. I'd previously written about [setting up CI for a LaTeX CV]({{< ref "/posts/latex" >}}), so this was a setup I'd invested real effort into. TeX Live had incremented versions and nothing would compile. Rather than debug it, I decided to try [Typst](https://typst.app/); a modern alternative I'd seen on my GitHub feed months ago.
 
