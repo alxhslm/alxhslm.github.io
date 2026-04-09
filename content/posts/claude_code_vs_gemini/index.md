@@ -78,9 +78,9 @@ There's clearly a fundamental model limitation, and not _just_ a tooling issue. 
 
 ### Lesson 2: Claude still has an advantage
 
-You can't get the same experience for less money. Not yet, anyway.
+Right now, you can't get the same experience for less money. The quality gap is real for systems work; it's not just about features, it's about problem understanding, reasoning, and finding the right solutions.
 
-The quality gap is real for systems work. It's not just about features; it's about problem understanding, reasoning, and finding the right solutions.
+That said, this space is moving fast. OpenCode with a stronger model choice might close the gap — I only tested it with Gemini. And the model landscape in 6 months will look very different. It's worth keeping an eye on.
 
 ### Lesson 3: The subscription threshold is lower than you think
 
