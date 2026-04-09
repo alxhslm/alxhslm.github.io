@@ -34,7 +34,9 @@ It also kept getting stuck in infinite loops, where I had to intervene.
 
 ## Tier 2: Adding a harness didn't help
 
-I thought that this was because the Gemini CLI harness wasn't very good. So tried using OpenCode (an agentic harness) with Gemini under the hood.
+I thought that this was because the Gemini CLI harness wasn't very good. So tried using [OpenCode](https://opencode.ai) (an agentic harness) with Gemini under the hood.
+
+What initially drew me to it was the polished product experience. Unlike raw CLI tools, OpenCode has a nice web GUI — you can code from the browser without setting up SSH at all. That's genuinely useful for homelab work, and honestly it felt close to the Claude Code experience in terms of polish.
 
 ### New harness, same results
 
