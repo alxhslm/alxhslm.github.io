@@ -76,7 +76,7 @@ Gemini CLI is fine for simple conversions like [LaTeX to Typst]({{< ref "/posts/
 
 There's clearly a fundamental model limitation, and not _just_ a tooling issue. Gemini kept taking shortcuts and ignoring my constraints, even with a better agentic harness.
 
-### Lesson 2: Claude still has an advantage
+### Lesson 2: Claude still has an advantage _right now_
 
 Right now, you can't get the same experience for less money. The quality gap is real for systems work; it's not just about features, it's about problem understanding, reasoning, and finding the right solutions.
 
