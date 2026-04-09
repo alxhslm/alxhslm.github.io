@@ -23,8 +23,8 @@ The real test came when I tried to set up a Samba share for Time Machine backups
 
 Gemini found two Docker images:
 
-- dperson/samba (old version)
-- crazy-max/docker-samba (new, but hard to configure)
+- [dperson/samba](https://github.com/dperson/samba) (old version)
+- [crazy-max/docker-samba](https://github.com/crazy-max/docker-samba) (new, but hard to configure)
 
 I explicitly told it: "I need modern Samba." This clearly rules out dperson.
 
@@ -57,7 +57,7 @@ At this point, I realised I should probably try what I know works: Claude Code.
 **Claude's approach to the same Samba problem:**
 
 - Stepped back and understood my actual requirements
-- Found mbentley/docker-timemachine (a purpose-built image)
+- Found [mbentley/docker-timemachine](https://github.com/mbentley/docker-timemachine) (a purpose-built image)
 - SSH'd into the homelab and tested from both sides
 - **Actually solved it**
 
