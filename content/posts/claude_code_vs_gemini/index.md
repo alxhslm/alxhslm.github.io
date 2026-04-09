@@ -36,11 +36,11 @@ It also kept getting stuck in infinite loops, where I had to intervene.
 
 I thought that this was because the Gemini CLI harness wasn't very good. So tried using [OpenCode](https://opencode.ai) (an agentic harness) with Gemini under the hood.
 
-What initially drew me to it was the polished product experience. Unlike raw CLI tools, OpenCode has a nice web GUI — you can code from the browser without setting up SSH at all. That's genuinely useful for homelab work, and honestly it felt close to the Claude Code experience in terms of polish.
+What initially drew me to it was the polished product experience. Unlike raw CLI tools, OpenCode has a nice web GUI; you can code from the browser without setting up SSH at all. That's genuinely useful for homelab work, and honestly it felt close to the Claude Code experience in terms of polish.
 
 ### New harness, same results
 
-However, the experience was very similar. It kept suggesting the "infeasible solution", except that it did give up and explain why it was stuck.
+Unfortunately, despite the fancy UI, the experience was very similar to Gemini CLI. It kept suggesting the "infeasible solution", except that it did give up and explain why it was stuck.
 
 Here's the key insight: **The agentic harness wasn't worse than raw Gemini CLI, but it wasn't better either.** This suggests the harness isn't the whole story. The model itself just isn't good at this kind of problem-solving.
 
@@ -87,6 +87,6 @@ Plus Claude Code is still a better overall experience IMO.
 
 This goes against the conventional rule of thumb that API pricing is cheaper for light usage.
 
-I spent **£5 in one evening** of hobbyist debugging. At that rate, the £18/month subscription pays for itself after just 4 evenings of work — and that's not counting the time lost fighting with Gemini.
+I spent **£5 in one evening** of hobbyist debugging. At that rate, the £18/month subscription pays for itself after just 4 evenings of work; and that's not counting the time lost fighting with Gemini.
 
 Developer time is expensive (even if it is just for your hobbies!). The subscription makes sense much earlier than I'd expected.
