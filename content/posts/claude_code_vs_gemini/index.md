@@ -71,13 +71,13 @@ After this, I bit the bullet on Claude Pro (£18/month). You get loads of usage 
 
 Gemini CLI is fine for simple conversions like [LaTeX to Typst]({{< ref "/posts/typst" >}}). However, it struggles severely when solving more complex tasks.
 
-The model's reasoning ability is the bottleneck. Gemini kept taking shortcuts and ignoring my constraints, even with a better agentic harness. That's a model limitation, not a tooling issue.
+There's clearly a fundamental model limitation, and not _just_ a tooling issue. Gemini kept taking shortcuts and ignoring my constraints, even with a better agentic harness.
 
 ### Lesson 2: Claude still has an advantage
 
 You can't get the same experience for less money. Not yet, anyway.
 
-The quality gap is real for systems work. It's not just about features; it's about reasoning, persistence, and understanding constraints.
+The quality gap is real for systems work. It's not just about features; it's about problem understanding, reasoning, and finding the right solutions.
 
 Plus Claude Code is still a better overall experience IMO.
 
@@ -85,8 +85,6 @@ Plus Claude Code is still a better overall experience IMO.
 
 This goes against the conventional rule of thumb that API pricing is cheaper for light usage.
 
-I spent **£5 in one evening.** Not a week. Not a month. One evening of hobbyist debugging.
+I spent **£5 in one evening** of hobbyist debugging. At that rate, the £18/month subscription pays for itself after just 4 evenings of work — and that's not counting the time lost fighting with Gemini.
 
-At that rate, the £18/month subscription pays for itself after just 4 evenings of work. And that's not counting the time lost fighting with Gemini.
-
-Developer time is expensive, even hobby time. The subscription makes sense way earlier than you'd expect.
+Developer time is expensive (even if it is just for your hobbies!). The subscription makes sense much earlier than I'd expected.
