@@ -1,7 +1,7 @@
 +++
 title = 'CI for your CV'
 date = 2024-08-12T08:46:08Z
-tags=['development']
+tags=['development', 'latex']
 +++
 
 I have recently started to use LaTeX again to write my CV after a long hiatus. A lot has changed since I wrote my PhD thesis using LaTeX back in 2020, both in terms of the available tooling and my knowledge of modern software development practices. Therefore I made some significant updates to my LaTeX workflow which I will describe below.
