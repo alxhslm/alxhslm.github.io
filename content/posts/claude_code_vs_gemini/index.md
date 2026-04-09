@@ -16,7 +16,7 @@ To be fair, raw Gemini CLI actually works well for straightforward conversions. 
 
 I thought: "If it can handle that, homelab debugging should be fine too."
 
-The real test came when I tried to set up a Samba share for Time Machine backups. I needed:
+The real test came when I tried to set up a Samba share for Time Machine backups. This felt like a fairly easy, well-scoped task; find a Docker image that meets two requirements:
 
 - Modern Samba version (more efficient streaming for virtual APFS)
 - Configurable Docker image (to build a runtipi app later)
