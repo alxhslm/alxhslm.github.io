@@ -1,6 +1,6 @@
 +++
 title = 'My LaTeX devcontainer broke. So I tried Typst instead.'
-date = 2025-03-08T23:55:00Z
+date = 2026-03-08T23:55:00Z
 tags = ['development']
 +++
 

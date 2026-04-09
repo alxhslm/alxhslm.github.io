@@ -1,6 +1,6 @@
 +++
 title = 'Tried to save £18/month on Claude Code, wasted £5 in one evening on Gemini'
-date = 2025-03-27T23:06:00Z
+date = 2026-03-27T23:06:00Z
 tags = ['development']
 +++
 
