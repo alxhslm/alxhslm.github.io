@@ -34,13 +34,13 @@ It also kept getting stuck in infinite loops, where I had to intervene.
 
 ## Attempt 2: Adding a harness didn't help
 
-I thought that this was because the Gemini CLI harness wasn't very good. So tried using [OpenCode](https://opencode.ai) (an agentic harness) and configured it to use Gemini under the hood.
+I thought that this was because the Gemini CLI harness wasn't very good. So I tried using [OpenCode](https://opencode.ai) (an agentic harness) and configured it to use Gemini under the hood.
 
 What initially drew me to it was that it's a genuinely sophisticated product. Unlike raw CLI tools, it has a web GUI so you can code from the browser without SSH, a dedicated thinking mode, and you can even configure different models for different roles; a cheaper model for small edits, a more powerful one for planning for example. On paper, it seemed like a step up in every way.
 
 ### New harness, same results
 
-Unfortunately, despite the fancy UI, the experience was very similar to Gemini CLI. It kept suggesting the "infeasible solution", except that it did give up and explain why it was stuck.
+Unfortunately, despite the fancy UI, the experience was very similar to Gemini CLI. It kept falling back to dperson/samba, which didn't meet my initial requirements. At least it didn't loop forever — it gave up and explained why it was stuck.
 
 Here's the key insight: **adding a more sophisticated harness made no difference.** That doesn't mean the harness is irrelevant; it might well be making things worse in ways that are hard to observe. But it's clearly not enough to compensate for a weak underlying model.
 
@@ -64,7 +64,7 @@ At this point, I realised I should probably try what I know works in my day job:
 - SSH'd into the homelab and tested from both sides
 - **Actually solved it**
 
-The rule of thumb is that for low usage, PAYG is cheaper. So I initially tried Claude via API, thinking it would be cheaper than the subscription. Whilst I did solve my problem, I spent another ~£5 in the process.
+The rule of thumb is that for low usage, PAYG is cheaper. So I initially tried Claude via API, thinking it would be cheaper than the subscription. While I did solve my problem, I spent another ~£5 in the process.
 
 After this result, I bit the bullet on Claude Pro (£18/month). It's a proper product rather than just API access; some features are paywalled even with an API key, such as remote control, which lets you kick off tasks from your phone while away from your desk.
 
@@ -72,7 +72,7 @@ After this result, I bit the bullet on Claude Pro (£18/month). It's a proper pr
 
 ### Lesson 1: A better harness can't fix a weaker model
 
-Simple agents like Gemini CLI is fine for simple conversions like [LaTeX to Typst]({{< ref "/posts/typst" >}}). However, it struggles severely when solving more complex tasks.
+Simple agents like Gemini CLI are fine for simple conversions like [LaTeX to Typst]({{< ref "/posts/typst" >}}). However, they struggle severely when solving more complex tasks.
 
 There's clearly a fundamental model limitation, and not _just_ a tooling issue. Gemini kept taking shortcuts and ignoring my constraints, even with a better agentic harness.
 
@@ -86,6 +86,6 @@ That said, this space is moving fast. OpenCode with a stronger model choice migh
 
 This goes against the conventional rule of thumb that API pricing is cheaper for light usage.
 
-I spent **£5 in one evening** of hobbyist debugging. At that rate, the £18/month subscription pays for itself after just 4 evenings of work; and that's not counting the time lost fighting with Gemini.
+I spent **£5 in one evening** of hobbyist debugging. At that rate, the £18/month subscription pays for itself after just 4 evenings of work — and that's not counting the time lost fighting with Gemini.
 
 Developer time is expensive (even if it is just for your hobbies!). The subscription makes sense much earlier than I'd expected.
