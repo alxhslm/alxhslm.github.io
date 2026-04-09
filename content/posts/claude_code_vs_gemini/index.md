@@ -4,13 +4,13 @@ date = 2025-03-27T23:06:00Z
 tags = ['development']
 +++
 
-I recently set up a new homelab; an old Dell PC running Ubuntu server. Multiple networking and permissions issues to debug. I thought an AI coding agent would massively speed this up.
+I recently set up a new homelab; an old Dell PC running Ubuntu server. It threw up the usual networking and permissions issues, and I thought an AI coding agent would massively speed up the debugging. I'll walk through one task as an example (setting up a Samba share for Time Machine backups), which ended up highlighting the difference in utility between the agents pretty starkly.
 
 Claude Code is £18/month. For hobby use, that felt expensive. I assumed Gemini would work just as well for less money. I had access via a Google AI trial, so why not?
 
 **Spoiler: I was wrong on multiple levels.**
 
-## Tier 1: Gemini CLI works fine... for simple tasks
+## Attempt 1: Gemini CLI works fine... for simple tasks
 
 To be fair, raw Gemini CLI actually works well for straightforward conversions. When I needed to [convert my LaTeX CV to Typst]({{< ref "/posts/typst" >}}), it handled it without issues.
 
@@ -32,7 +32,7 @@ I explicitly told it: "I need modern Samba." This clearly rules out dperson.
 
 It also kept getting stuck in infinite loops, where I had to intervene.
 
-## Tier 2: Adding a harness didn't help
+## Attempt 2: Adding a harness didn't help
 
 I thought that this was because the Gemini CLI harness wasn't very good. So tried using [OpenCode](https://opencode.ai) (an agentic harness) with Gemini under the hood.
 
@@ -52,7 +52,7 @@ I spent roughly **£5 in one evening** across various homelab debugging tasks (n
 
 That's 25% of a monthly Claude Code subscription. In one evening.
 
-## Tier 3: Claude Code actually solved it
+## Attempt 3: Claude Code actually solved it
 
 At this point, I realised I should probably try what I know works: Claude Code.
 
@@ -60,13 +60,13 @@ At this point, I realised I should probably try what I know works: Claude Code.
 
 - Planned before jumping in; actually understood what I was trying to achieve
 - Recognised that the two images I'd found weren't a good fit, and went looking for alternatives
-- Found [mbentley/docker-timemachine](https://github.com/mbentley/docker-timemachine); a purpose-built image I hadn't come across
+- Found [mbentley/docker-timemachine](https://github.com/mbentley/docker-timemachine) which is a purpose-built image I hadn't come across
 - SSH'd into the homelab and tested from both sides
 - **Actually solved it**
 
 The rule of thumb is that for low usage, PAYG is cheaper. So I initially tried Claude via API, thinking it would be cheaper than the subscription. Whilst I did solve my problem, I spent another ~£5 in the process.
 
-After this, I bit the bullet on Claude Pro (£18/month). You get loads of usage plus nice-to-haves like remote control feature (can spin up tasks from my phone), Claude Pro chat bundled in. It's a proper product, not just API access.
+After this, I bit the bullet on Claude Pro (£18/month). It's a proper product rather than just API access; some features are paywalled even with an API key, such as remote control, which lets you kick off tasks from your phone while away from your desk.
 
 ## The three lessons
 
