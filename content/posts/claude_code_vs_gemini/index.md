@@ -36,13 +36,13 @@ It also kept getting stuck in infinite loops, where I had to intervene.
 
 I thought that this was because the Gemini CLI harness wasn't very good. So tried using [OpenCode](https://opencode.ai) (an agentic harness) with Gemini under the hood.
 
-What initially drew me to it was that it's a genuinely sophisticated product. Unlike raw CLI tools, it has a web GUI so you can code from the browser without SSH, a dedicated thinking mode, and you can even configure different models for different roles — a cheaper model for small edits, a more powerful one for planning. On paper, it seemed like a step up in every way.
+What initially drew me to it was that it's a genuinely sophisticated product. Unlike raw CLI tools, it has a web GUI so you can code from the browser without SSH, a dedicated thinking mode, and you can even configure different models for different roles; a cheaper model for small edits, a more powerful one for planning. On paper, it seemed like a step up in every way.
 
 ### New harness, same results
 
 Unfortunately, despite the fancy UI, the experience was very similar to Gemini CLI. It kept suggesting the "infeasible solution", except that it did give up and explain why it was stuck.
 
-Here's the key insight: **adding a more sophisticated harness made no difference.** That doesn't mean the harness is irrelevant — it might well be making things worse in ways that are hard to observe. But it's clearly not enough to compensate for a weak underlying model.
+Here's the key insight: **adding a more sophisticated harness made no difference.** That doesn't mean the harness is irrelevant; it might well be making things worse in ways that are hard to observe. But it's clearly not enough to compensate for a weak underlying model.
 
 ### The API cost shock
 
@@ -60,7 +60,7 @@ At this point, I realised I should probably try what I know works: Claude Code.
 
 - Planned before jumping in; actually understood what I was trying to achieve
 - Recognised that the two images I'd found weren't a good fit, and went looking for alternatives
-- Found [mbentley/docker-timemachine](https://github.com/mbentley/docker-timemachine) — a purpose-built image I hadn't come across
+- Found [mbentley/docker-timemachine](https://github.com/mbentley/docker-timemachine); a purpose-built image I hadn't come across
 - SSH'd into the homelab and tested from both sides
 - **Actually solved it**
 
@@ -80,7 +80,7 @@ There's clearly a fundamental model limitation, and not _just_ a tooling issue. 
 
 Right now, you can't get the same experience for less money. The quality gap is real for systems work; it's not just about features, it's about problem understanding, reasoning, and finding the right solutions.
 
-That said, this space is moving fast. OpenCode with a stronger model choice might close the gap — I only tested it with Gemini. And the model landscape in 6 months will look very different. It's worth keeping an eye on.
+That said, this space is moving fast. OpenCode with a stronger model choice might close the gap; I only tested it with Gemini. And the model landscape in 6 months will look very different. It's worth keeping an eye on.
 
 ### Lesson 3: The subscription threshold is lower than you think
 
