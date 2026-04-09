@@ -12,7 +12,7 @@ Claude Code is £18/month. For hobby use, that felt expensive. I assumed Gemini 
 
 ## Tier 1: Gemini CLI works fine... for simple tasks
 
-To be fair, raw Gemini CLI actually works well for straightforward conversions. When I needed to convert my LaTeX CV to Typst, it handled it without issues.
+To be fair, raw Gemini CLI actually works well for straightforward conversions. When I needed to [convert my LaTeX CV to Typst]({{< ref "/posts/typst" >}}), it handled it without issues.
 
 I thought: "If it can handle that, homelab debugging should be fine too."
 
@@ -69,7 +69,7 @@ After this, I bit the bullet on Claude Pro (£18/month). You get loads of usage 
 
 ### Lesson 1: Both model AND harness matter
 
-Gemini CLI is fine for simple conversions like LaTeX to Typst. However, it struggles severely when solving more complex tasks.
+Gemini CLI is fine for simple conversions like [LaTeX to Typst]({{< ref "/posts/typst" >}}). However, it struggles severely when solving more complex tasks.
 
 The model's reasoning ability is the bottleneck. Gemini kept taking shortcuts and ignoring my constraints, even with a better agentic harness. That's a model limitation, not a tooling issue.
 
