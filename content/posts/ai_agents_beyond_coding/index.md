@@ -10,7 +10,7 @@ This turned out to be an example which reminded me of a lesson I've learnt from 
 
 ## Setting up Time Machine over SMB
 
-I wanted to set up an SMB network share on my Ubuntu homelab to use as a Time Machine backup destination. The requirements were:
+I wanted to set up an SMB network share on my Ubuntu homelab to use as a Time Machine backup destination (I wrote about the [model comparison side of this task]({{< ref "/posts/claude_code_vs_gemini" >}}) separately). The requirements were:
 
 - Containerised within Docker
 - Configurable enough to build a runtipi app later
