@@ -1,7 +1,7 @@
 +++
 title = 'Learning to Let Go: Using AI Agents Beyond Coding'
 date = 2026-04-12T20:00:00Z
-tags = ['ml', 'homelab', 'agents']
+tags = ['machine learning', 'homelab', 'agents']
 +++
 
 I recently set up an SMB share for Time Machine backups on my homelab. It's a fiddly task fighting networking and permissions issues, and Docker configuration. I thought an AI agent would help speed things up.
