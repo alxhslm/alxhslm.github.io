@@ -55,7 +55,7 @@ However, **this only worked because I had tight constraints beforehand.** I'd ex
 
 ## Building models is similar
 
-At work, I've started to use AI agents to iterate on machine learning models for time-series forecasting, and I've noticed the same pattern.
+At work, I've started to use AI agents to iterate on machine learning models for time-series forecasting[^2], and I've noticed the same pattern.
 
 If you give the agent free rein to optimise a forecasting model without a well-defined evaluation methodology, it will confidently report unbelievable metrics. This is because the agent can cheat.
 
@@ -104,3 +104,4 @@ If you define it correctly, the agent can move fast. If not, we're just automati
 I'm still not entirely sure what the best way to enforce these guardrails is. Is it through writing skills that the agent can reference? Is it just careful prompting? I suspect it's a mix of both, but I haven't figured out the right balance yet.
 
 [^1]: I also wrote about [my issues with Gemini on this task]({{< ref "/posts/claude_code_vs_gemini" >}}).
+[^2]: Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch).
