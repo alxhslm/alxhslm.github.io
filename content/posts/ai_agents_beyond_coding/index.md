@@ -28,7 +28,7 @@ This was slow. I had to:
 - Remember to test all functionality (I kept forgetting to check write access)
 - Go back and forth between machines
 
-I knew the agent could test the connection itself, and that it could SSH between the two machines. But I kept doing it manually anyway. Why? Partly because I'm used to being hands-on. But more fundamentally, it felt risky to give an agent full SSH access to both machines for something this simple; like using a sledgehammer to crack a nut.
+I knew the agent could test the connection itself, and that it could SSH between the two machines. But I kept doing it manually anyway. Partly because I'm used to being hands-on, but more fundamentally, it felt risky to give an agent full SSH access to both machines for something this simple; like using a sledgehammer to crack a nut.
 
 ### The shift: let the agent own everything
 
@@ -75,8 +75,8 @@ I think relinquishing control is psychologically hard, especially for technical 
 
 The key is knowing where our judgement still matters:
 
-- **Less valuable:** Knowing `smb.conf` syntax, or PyTorch architecture details, because the agent can do this well already.
-- **More valuable:** Knowing what "correct" looks like, and how to test for it, because this is where the agent can trip up.
+- **Less valuable:** Knowing specific `smb.conf` or PyTorch syntax, because the agent can do this well already.
+- **More valuable:** Defining what "correct" looks like, and how to test for it, because this is where the agent can trip up.
 
 {{< alert icon="lightbulb" >}}
 The paradox I've found: I need to be **more** rigorous about defining success precisely so I can be hands-off about how it gets achieved.
