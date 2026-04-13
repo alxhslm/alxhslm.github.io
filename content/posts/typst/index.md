@@ -1,7 +1,7 @@
 +++
 title = 'My LaTeX devcontainer broke. So I tried Typst instead.'
 date = 2026-03-08T23:55:00Z
-tags = ['development', 'latex']
+tags = ['tooling', 'typesetting']
 +++
 
 ## The trigger: a new TeX Live release

@@ -1,7 +1,7 @@
 +++
 title = 'Tried to save £18/month on Claude Code, wasted £5 in one evening on Gemini'
 date = 2026-03-27T23:06:00Z
-tags = ['development', 'homelab', 'agents']
+tags = ['tooling', 'homelab', 'agents']
 +++
 
 I recently set up an old Dell PC running Ubuntu server as my homelab. It threw up the usual networking and permissions issues, and I thought an AI coding agent would massively speed up the debugging. I'll walk through one task as an example (setting up a Samba share for Time Machine backups), which ended up highlighting the difference in utility between the agents pretty starkly.

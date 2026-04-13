@@ -1,7 +1,7 @@
 +++
 title = 'The Quest for the perfect MacOS Calendar App'
 date = 2025-12-21T17:05:44Z
-tags = ['apps']
+tags = ['productivity', 'review']
 +++
 
 In principle, a calendar app is nothing more than a digital list of events. It should be simple, yet in our age of digital noise and constant distraction, it becomes the our most important tool for managing our time [^1].

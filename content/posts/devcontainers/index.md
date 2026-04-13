@@ -1,7 +1,7 @@
 +++
 title = 'Dev containers are awesome'
 date = 2024-03-01T18:35:54Z
-tags = ['development']
+tags = ['devops']
 +++
 
 I personally love finding ways to reduce friction in my life easier and optimise my processes [^1]. The best tools are the ones which fit in easily to your workflow, and make you wonder how you worked without them before. Dev containers are one of those tools for me, and I’m going to explain why I like them so much.

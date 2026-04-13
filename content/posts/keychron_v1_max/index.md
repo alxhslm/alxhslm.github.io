@@ -1,7 +1,7 @@
 +++
 title = 'My Mechanical Keyboard Journey: Keychron V1 Max Review'
 date = 2025-03-06T21:41:20Z
-tags = ['review']
+tags = ['review', 'hardware']
 +++
 
 I’ve been using a Logitech MX Keys for a while now, and while it’s a solid keyboard, it’s a bit on the large side. I wanted something more compact, with a better typing experience—so I started looking into mechanical keyboards.
