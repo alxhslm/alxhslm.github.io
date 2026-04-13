@@ -10,7 +10,7 @@ It turned out to echo something I keep running into at work with ML models: to g
 
 ## Setting up Time Machine over SMB
 
-I wanted to set up an SMB network share on my Ubuntu homelab to use as a Time Machine backup destination (I wrote about the [model comparison side of this task]({{< ref "/posts/claude_code_vs_gemini" >}}) separately). The requirements were:
+I wanted to set up an SMB network share on my Ubuntu homelab to use as a Time Machine backup destination[^1]. The requirements were:
 
 - Containerised within Docker
 - Configurable enough to build a runtipi app later
@@ -102,3 +102,5 @@ For any technical work: "What are the failure modes I care about, and how do I d
 If you define it correctly, the agent can move fast. If not, we're just automating the production of plausible-looking slop.
 
 I'm still not entirely sure what the best way to enforce these guardrails is. Is it through writing skills that the agent can reference? Is it just careful prompting? I suspect it's a mix of both, but I haven't figured out the right balance yet.
+
+[^1]: I also wrote about [my issues with Gemini on this task]({{< ref "/posts/claude_code_vs_gemini" >}}).
