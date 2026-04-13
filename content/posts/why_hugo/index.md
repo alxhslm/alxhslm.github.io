@@ -1,7 +1,7 @@
 +++
 title = 'Why Hugo instead of Jekyll?'
 date = 2023-12-19T10:16:13Z
-tags = ['hugo', 'development']
+tags = ['website', 'devops']
 +++
 
 I built this website as a platform for giving updates on my projects and sharing my thoughts. As someone who builds software and interacts with GitHub on a daily basis, the natural choice for hosting a website was [GitHub Pages](https://pages.github.com/). It’s completely free and you don’t even have to create another account. The only limitation is that it can only host static sites, but that’s not really an issue for simple text-heavy websites such as blogs.
