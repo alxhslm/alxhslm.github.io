@@ -84,10 +84,10 @@ The paradox I've found: I need to be **more** rigorous about defining success pr
 
 For me, this has meant:
 
-1. **Defining requirements clearly beforehand** — otherwise the agent takes shortcuts around them
-2. **Making "done" testable** — giving the agent something it can verify itself
-3. **Giving it access to test its own work** — getting myself out of the iteration loop
-4. **Intervening when it gets stuck** — asking it to summarise root cause and suggest alternatives
+1. **Defining requirements clearly beforehand**: otherwise the agent takes shortcuts around them
+2. **Making "done" testable**: giving the agent something it can verify itself
+3. **Giving it access to test its own work**: getting myself out of the iteration loop
+4. **Intervening when it gets stuck**: asking it to summarise root cause and suggest alternatives
 
 ## Where I think domain expertise matters
 
