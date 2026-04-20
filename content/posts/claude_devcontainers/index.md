@@ -1,5 +1,5 @@
 +++
-title = 'Claude Code and devcontainers: the missing link'
+title = 'Claude should make friends with devcontainers'
 date = 2026-04-17T21:00:00Z
 tags = ['tooling', 'devops', 'agents']
 +++
@@ -51,7 +51,7 @@ What surprised me was how seamlessly it works in practice. Because it's a hook r
 
 The one genuinely unsolved piece is the container lifecycle. The devcontainer only spins up when VS Code opens it. I handled this through the `CLAUDE.md` file: Claude is instructed to check whether the container is running at the start of a session and ask the user to start it if not, but it's a bit brittle. A native integration could handle this transparently as part of initialisation: detect the `.devcontainer`, spin it up, manage the lifecycle.
 
-## Claude needs to make friends with devcontainers
+## The case for native integration
 
 The devcontainer spec was never really about VS Code. It's a _project-level environment definition_. It captures everything your project needs to run: the base image, installed tools, environment variables, port mappings, lifecycle hooks.
 
