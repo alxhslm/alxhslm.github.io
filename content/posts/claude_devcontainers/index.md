@@ -4,7 +4,7 @@ date = 2026-04-17T21:00:00Z
 tags = ['tooling', 'devops', 'agents']
 +++
 
-I've [written before]({{< ref "/posts/devcontainers" >}}) about how much I like devcontainers; they make your environment completely reproducible, and isolate your different projects. In my opinion, they are the right way to manage development environments.
+I've [written before]({{< ref "/posts/devcontainers" >}}) about how much I like devcontainers; they make your environment completely reproducible and keep projects isolated from each other.
 
 However, a new actor called Claude has entered the picture, which doesn't fit neatly into the model devcontainers were designed around.
 
@@ -39,7 +39,7 @@ Running Claude inside the container works, but it's not a particularly smooth se
 
 ### Approach 2: get Claude on the host to use the container
 
-The alternative is to keep Claude on the host but make it execute tasks inside the container's environment. This immediately solves the issues with credentials, session history, and Docker access. The question is whether you can route Claude's shell commands through the container without it needing to be installed inside the container.
+The alternative is to keep Claude on the host but make it execute tasks inside the container's environment. This immediately solves the issues with credentials, session history, and Docker access. The question is whether you can route Claude's commands through the container from the host.
 
 It turns out that Claude makes this quite easy with [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks-guide), which let you intercept tool calls including bash commands. By prefixing every shell command with `docker exec -it <container>`, Claude runs its commands inside the container while staying on the host.
 
@@ -47,13 +47,13 @@ I built a proof of concept that works by registering a Claude hook that forwards
 
 {{< github repo="alxhslm/claude-devcontainer" >}}
 
-What surprised me was how seamlessly it works in practice. Because it's a hook rather than a skill or prompt instruction, Claude cannot ignore it: every shell command is guaranteed to be routed through the container. This means Claude can interact with the container's installed tooling (like running unit tests), while retaining access to general tools on the host like `gh` CLI or the Docker daemon. For local development, this approach works well.
+What surprised me was how seamlessly it works in practice. Because it's a hook rather than a skill or prompt instruction, Claude cannot ignore it: every shell command is guaranteed to be routed through the container. This means Claude can interact with the container's installed tooling (like running unit tests), while retaining access to general tools on the host like `gh` CLI or the Docker daemon.
 
-The one genuinely unsolved piece is the container lifecycle. The devcontainer only spins up when VS Code opens it. I handled this through the `CLAUDE.md` file: Claude is instructed to check whether the container is running at the start of a session and ask the user to start it if not. This approach works well enough most of the time, but it's a bit brittle. A native integration could handle this transparently as part of initialisation: detect the `.devcontainer`, spin it up, manage the lifecycle.
+The one genuinely unsolved piece is the container lifecycle. The devcontainer only spins up when VS Code opens it. I handled this through the `CLAUDE.md` file: Claude is instructed to check whether the container is running at the start of a session and ask the user to start it if not, but it's a bit brittle. A native integration could handle this transparently as part of initialisation: detect the `.devcontainer`, spin it up, manage the lifecycle.
 
 ## Claude needs to make friends with devcontainers
 
-The devcontainer spec was never really about VS Code. The spec itself is a _project-level environment definition_. It describes what your project needs to run: the base image, installed tools, environment variables, port mappings, lifecycle hooks.
+The devcontainer spec was never really about VS Code. It's a _project-level environment definition_. It describes what your project needs to run: the base image, installed tools, environment variables, port mappings, lifecycle hooks.
 
 In my opinion, that definition applies equally well to a human developer and an AI agent. Right now, VS Code is the primary consumer and Claude Code isn't. However, if it were, the model becomes quite simple:
 
@@ -68,7 +68,7 @@ The containerisation problem is already solved. The only missing piece is the li
 
 The previous argument is about convenience. This one makes native devcontainer support feel necessary rather than nice-to-have.
 
-If you want to allow Claude Code to run autonomously in the cloud, then you need to define an execution environment. Right now, configuring that environment means writing a bespoke script or maintaining a separate Docker image. This is not tied in any way to your devcontainer definition.
+If you want to allow Claude Code to run autonomously in the cloud, then you need to define an execution environment. Right now, configuring that environment means writing a bespoke script or maintaining a separate Docker image with no relation to your devcontainer.
 
 GitHub Codespaces already solved this problem for human developers. Once you define your `.devcontainer.json`, you can get a fully reproducible cloud environment in Codespaces with no extra configuration. With native devcontainer support, Claude Code cloud tasks would work the same way. Your `.devcontainer.json` _is_ the cloud environment spec.
 
