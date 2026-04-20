@@ -18,7 +18,7 @@ These two mental models conflict. Claude Code has no awareness of devcontainers:
 
 ### Others are reinventing the wheel
 
-The community has noticed the problem, but I don't think anyone has found the right solution yet. Kevin Scott first wrote up a DIY approach[^1] running Claude Code inside a heavily customised Docker container with pre-installed tooling, a dedicated GitHub identity, and tmux + git worktrees for parallelism.
+The community has noticed the problem, but I don't think anyone has found the right solution yet. Kevin Scott first wrote up a DIY approach[^1] running Claude Code inside a heavily customised Docker container with pre-installed tooling, a dedicated GitHub identity, and `tmux` + `git worktrees` for parallelism.
 
 Docker Sandboxes[^2] later productised this idea, providing a microVM-based sandbox for Claude Code to run in. Both solve safety and isolation, but neither solves the reproducible environment problem. They ignore your devcontainer entirely and give you a fresh sandbox instead. Arcade did a hands-on review[^3] that captures the core issue well: setup is smooth for simple tasks, but falls apart fast with real workflows. For example, a sandbox restart wipes your Claude session. The irony is that both solutions are essentially hand-rolled devcontainers.
 
@@ -43,7 +43,7 @@ The alternative is to keep Claude on the host but make it execute tasks inside t
 
 It turns out that Claude makes this quite easy with [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks-guide), which let you intercept tool calls including bash commands. By prefixing every shell command with `docker exec -it <container>`, Claude runs its commands inside the container while staying on the host.
 
-I built a proof of concept that works by registering a Claude hook that forwards shell commands into the running container.
+I built a proof of concept at work that works by registering a Claude hook that forwards shell commands into the running container. You can see the example repo below.
 
 {{< github repo="alxhslm/claude-devcontainer" >}}
 
@@ -75,14 +75,14 @@ GitHub Codespaces already solved this problem for human developers. Once you def
 Since devcontainers relies on Docker, container builds are fast due to caching. Your local and cloud environments are kept in sync for both humans and agents.
 
 {{< alert icon="lightbulb" >}}
-One spec, four consumers: you locally, you in Codespaces, Claude locally, Claude in the cloud.
+**One spec, four consumers:** VS Code, Codespaces, Claude Code (local), Claude Code (cloud).
 {{< /alert >}}
 
 ## This is Anthropic's problem to fix
 
-The fix is actually really simple: Claude Code detecting a `.devcontainer` in the repo root and routing execution through it. I've already demonstrated it can work in principle. The only extra challenge is managing the container lifecycle, but that's surmountable.
+The fix is actually really simple. Claude Code just needs to detect a `.devcontainer` in the repo root and route execution through it. I've already demonstrated it can work in principle. The only extra challenge is managing the container lifecycle, but that's trivial for a company like Anthropic.
 
-Anthropic already solved the "how do tools talk to agents" problem with MCP. Right now, everyone building Claude Code workflows with containers is fumbling toward their own solution, but the devcontainer spec already exists and is widely adopted. Claude Code just needs to consume it.
+They've already solved the "how do tools talk to agents" problem with MCP. Right now, everyone building Claude Code workflows with containers is fumbling toward their own solution, but the devcontainer spec already exists and is widely adopted. Claude Code just needs to consume it.
 
 For now, I'm using the command prefix approach locally which _mostly_ works. However, the right answer is for Anthropic to add native devcontainer support. I've added this Claude Code issue on GitHub[^4]. If you agree, please show your support by adding a comment to the issue!
 
