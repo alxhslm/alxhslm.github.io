@@ -86,7 +86,7 @@ They've already solved the "how do tools talk to agents" problem with MCP. Right
 
 For now, I'm using the command prefix approach locally which _mostly_ works. However, the right answer is for Anthropic to add native devcontainer support. I've added this Claude Code issue on GitHub[^4]. If you agree, please show your support by adding a comment to the issue!
 
-[^1]: [Kevin Scott's DIY Claude Code sandbox](https://thekevinscott.com/sandbox-for-claude-code/)
-[^2]: [Docker Sandboxes announcement](https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/)
-[^3]: [Arcade hands-on review of Docker Sandboxes](https://www.arcade.dev/blog/using-docker-sandboxes-with-claude-code/)
-[^4]: [GitHub issue: native devcontainer support for Claude Code](https://github.com/anthropics/claude-code/issues/47856)
+[^1]: Kevin Scott's extensive [write-up](https://thekevinscott.com/sandbox-for-claude-code/) of his DIY Claude Code sandbox
+[^2]: See [this announcement](https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/) on Docker's blog.
+[^3]: Arcade did a [hands-on review](https://www.arcade.dev/blog/using-docker-sandboxes-with-claude-code/) of Docker Sandboxes
+[^4]: [GitHub issue](https://github.com/anthropics/claude-code/issues/47856) asking for native devcontainer support for Claude Code
