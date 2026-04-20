@@ -6,7 +6,7 @@ tags = ['tooling', 'devops', 'agents']
 
 I've [written before]({{< ref "/posts/devcontainers" >}}) about how much I like devcontainers; they make your environment completely reproducible and keep projects isolated from each other.
 
-However, a new actor called Claude has entered the picture, which doesn't fit neatly into the model devcontainers were designed around.
+However, Claude has entered the picture, and doesn't fit neatly into the model devcontainers were designed around.
 
 ## The two-body problem
 
@@ -30,8 +30,8 @@ This was the obvious starting point. If Claude needs to run commands in the cont
 
 This was very easy to implement, but is more painful than it sounds:
 
-- **Session history breaks.** Claude Code keys session history to the host path. If the path inside the container differs from the host (say, `/home/alex/project` vs `/workspace/project`), Claude doesn't know they're for the same project. This means a bind mount of the `.claude` directory is not sufficient.
-- **Credentials don't transfer.** Currently you can't pass Claude credentials from the host to the container like you can with Git credentials. This means you need to reauthenticate every time the container is rebuilt.
+- **Session history breaks.** Claude Code keys session history to the host path. If the path inside the container differs from the host (say, `/home/alex/project` vs `/workspace/project`), Claude doesn't know they're for the same project. A bind mount of `.claude` isn't enough.
+- **Credentials don't transfer.** Currently you can't pass Claude credentials from the host to the container like you can with Git credentials. You need to reauthenticate every time the container is rebuilt.
 - **It pollutes the project environment.** Claude Code has nothing to do with your project's actual dependencies, but it ends up baked into every contributor's container. Not everyone uses Claude Code, and those who do shouldn't need to maintain it as part of the project image.
 - **Docker access is limited.** Running `docker build` from inside a container means Docker-in-Docker (fragile) or Docker-from-Docker (better, but needs to be set up). In a typical `docker-compose` setup (app, database, cache), Claude can only reach the container it's running in. Claude on the host can reach all of them.
 
@@ -43,7 +43,7 @@ The alternative is to keep Claude on the host but make it execute tasks inside t
 
 It turns out that Claude makes this quite easy with [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks-guide), which let you intercept tool calls including bash commands. By prefixing every shell command with `docker exec -it <container>`, Claude runs its commands inside the container while staying on the host.
 
-I built a proof of concept at work that works by registering a Claude hook that forwards shell commands into the running container. You can see the example repo below.
+I'm actually using this in practice. The repo below is a minimal working example of the hook approach.
 
 {{< github repo="alxhslm/claude-devcontainer" >}}
 
@@ -53,7 +53,7 @@ The one genuinely unsolved piece is the container lifecycle. The devcontainer on
 
 ## Claude needs to make friends with devcontainers
 
-The devcontainer spec was never really about VS Code. It's a _project-level environment definition_. It describes what your project needs to run: the base image, installed tools, environment variables, port mappings, lifecycle hooks.
+The devcontainer spec was never really about VS Code. It's a _project-level environment definition_. It captures everything your project needs to run: the base image, installed tools, environment variables, port mappings, lifecycle hooks.
 
 In my opinion, that definition applies equally well to a human developer and an AI agent. Right now, VS Code is the primary consumer and Claude Code isn't. However, if it were, the model becomes quite simple:
 
@@ -68,11 +68,11 @@ The containerisation problem is already solved. The only missing piece is the li
 
 The previous argument is about convenience. This one makes native devcontainer support feel necessary rather than nice-to-have.
 
-If you want to allow Claude Code to run autonomously in the cloud, then you need to define an execution environment. Right now, configuring that environment means writing a bespoke script or maintaining a separate Docker image with no relation to your devcontainer.
+If you want Claude Code to run autonomously in the cloud, you need to define an execution environment. Right now that means a setup script ([custom Docker images aren't supported yet](https://code.claude.com/docs/en/claude-code-on-the-web#configure-your-environment)), with no relation to your devcontainer. Setup scripts are cached between sessions, which helps, but it's a hacky version of what Docker layer caching already gives you for free with devcontainers.
 
 GitHub Codespaces already solved this problem for human developers. Once you define your `.devcontainer.json`, you can get a fully reproducible cloud environment in Codespaces with no extra configuration. With native devcontainer support, Claude Code cloud tasks would work the same way. Your `.devcontainer.json` _is_ the cloud environment spec.
 
-Since devcontainers relies on Docker, container builds are fast due to caching. Your local and cloud environments are kept in sync for both humans and agents.
+Since devcontainers relies on Docker, container builds are fast due to caching, and your local and cloud environments stay in sync for both humans and agents.
 
 {{< alert icon="lightbulb" >}}
 **One spec, four consumers:** VS Code, Codespaces, Claude Code (local), Claude Code (cloud).
