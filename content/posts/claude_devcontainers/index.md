@@ -41,7 +41,7 @@ Running Claude inside the container works, but it's not a particularly smooth se
 
 The alternative is to keep Claude on the host but make it execute tasks inside the container's environment. This immediately solves the issues with credentials, session history, and Docker access. The question is whether you can route Claude's commands through the container from the host.
 
-It turns out that Claude makes this quite easy with [hooks](https://docs.anthropic.com/en/docs/claude-code/hooks-guide), which let you intercept tool calls including bash commands. By prefixing every shell command with `docker exec -it <container>`, Claude runs its commands inside the container while staying on the host.
+It turns out that Claude makes this quite easy with [hooks](https://code.claude.com/docs/en/hooks-guide), which let you intercept tool calls including bash commands. By prefixing every shell command with `docker exec -it <container>`, Claude runs its commands inside the container while staying on the host.
 
 I'm actually using this in practice. The repo below is a minimal working example of the hook approach.
 
