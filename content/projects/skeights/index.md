@@ -37,7 +37,7 @@ standard way to extract or restore it.
 We ended up solving this problem internally, by building our own
 serialization that decomposes a fitted estimator into JSON
 (hyperparameters) and safetensors (weights). Over time it grew
-to cover most of the sklearn ecosystem, plus LightGBM and
+to cover most of the sklearn ecosystem, including LightGBM and
 XGBoost.
 
 At some point we realised this was a generic serialisation layer
@@ -60,11 +60,12 @@ It works out of the box with most common sklearn-like estimators.
 
 The major bonus of this is that model configuration is now
 structured data. Hyperparameter sweeps become config-driven.
-Agents can inspect, modify, and create models without parsing
-binary blobs. When your model state is plain JSON, it is much easier
+Agents can inspect, modify, and create models very easily as
+it's all plaintext. When your model state is plain JSON, it is much easier
 to build useful tooling on top of it.
 
 We're now using skeights in production. It's easy to install with
-pip, and is MIT licensed. Contributions welcome.
+pip, and is MIT licensed. Contributions welcome, especially to
+widen the models we support.
 
 [^1]: Pronounced "skates".
