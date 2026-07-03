@@ -40,7 +40,7 @@ serialization that decomposes a fitted estimator into JSON
 to cover most of the sklearn ecosystem, including LightGBM and
 XGBoost.
 
-At some point we realised this was a generic serialisation layer
+At some point I realised this was a generic serialisation layer
 which could be useful to others. The serialization code already
 had no dependency on our domain code, so it was quick and easy
 to extract.
