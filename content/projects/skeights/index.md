@@ -1,7 +1,7 @@
 +++
 title = 'skeights'
 date = 2026-07-03T00:00:00Z
-tags = ['machine learning', 'python', 'open source']
+tags = ['machine learning', 'mlops', 'python', 'open source']
 summary = 'Extracting and open-sourcing our sklearn serialization library.'
 +++
 
