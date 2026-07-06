@@ -121,7 +121,7 @@ model/intercept_   ()    float64
 
 ## Models as config
 
-The real payoff is that a model is now just JSON, so you can
+The major advantage is that a model is now just JSON, so you can
 build and manipulate models as data rather than code. A
 hyperparameter sweep becomes a matter of generating configs
 instead of instantiating estimators in Python.
