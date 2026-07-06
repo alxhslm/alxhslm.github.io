@@ -135,9 +135,10 @@ on the side.
 
 We have to add support for each estimator by hand, so we only
 cover the ones we've done so far. Backwards compatibility is also
-tricky as the library grows, although neither pickle nor skops
-guarantee this either. On the other hand, file sizes are
-comparable to pickle for most models.
+tricky as the library grows. We have tests that aim to catch
+breakages, but it isn't guaranteed; then again, neither pickle
+nor skops guarantee this either. On the other hand, file sizes
+are comparable to pickle for most models.
 
 ## Try it out
 
