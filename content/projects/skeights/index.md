@@ -117,12 +117,17 @@ model/coef_        (3,)  float64
 model/intercept_   ()    float64
 ```
 
-## Configuration as data
+## Models as config
 
-The major bonus of this is that model configuration is now
-structured data. Hyperparameter sweeps become config-driven.
-When your model state is plain JSON, it is much easier
-to build useful tooling on top of it.
+The real payoff is that a model is now just JSON, so you can
+build and manipulate models as data rather than code. A
+hyperparameter sweep becomes a matter of generating configs
+instead of instantiating estimators in Python.
+
+It also composes nicely. We save the model config as just one
+field within a larger JSON object alongside the rest of our
+config, rather than having to handle a separate binary artefact
+on the side.
 
 ## Drawbacks
 
