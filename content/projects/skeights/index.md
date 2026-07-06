@@ -14,7 +14,7 @@ this is far from ideal.
 There is the obvious security concern: loading a pickle executes
 arbitrary code. It is also not stable across sklearn versions.
 You can't see what is inside the model as the binary blob is
-opaque. However, the biggest problem though was that we build wrapper
+opaque. However, the biggest problem was that we build wrapper
 classes around the sklearn estimators to add extra functionality
 we need, and these were also included in the pickle. This meant
 that any refactor of our code could break previously saved
@@ -61,8 +61,7 @@ people use, which is what we've covered so far.
 
 The major bonus of this is that model configuration is now
 structured data. Hyperparameter sweeps become config-driven.
-Agents can inspect, modify, and create models very easily as
-it's all plaintext. When your model state is plain JSON, it is much easier
+When your model state is plain JSON, it is much easier
 to build useful tooling on top of it.
 
 It's not without drawbacks. We have to add support for each
