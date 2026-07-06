@@ -136,12 +136,13 @@ on the side.
 We have to add support for each estimator by hand, so we only
 cover the ones we've done so far. Backwards compatibility is also
 tricky as the library grows, although neither pickle nor skops
-guarantee this either.
+guarantee this either. On the other hand, file sizes are
+comparable to pickle for most models.
 
 ## Try it out
 
-We're now using skeights in production. It's easy to install with
-pip, and is MIT licensed. Contributions welcome, especially to
-widen the models we support.
+We're now using skeights in production. It's MIT licensed and you
+can install it with `pip install skeights`. Contributions welcome,
+especially to widen the models we support.
 
 [^1]: Pronounced "skates".
