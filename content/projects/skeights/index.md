@@ -21,6 +21,8 @@ that any refactor of our code could break previously saved
 models, so backwards compatibility was a constant pain. This
 wasn't workable in the long term.
 
+## Existing tools don't cut it
+
 Hugging Face make [skops](https://github.com/skops-dev/skops),
 an existing library for saving sklearn models in a safe binary
 format. This solves the security issue but the output is still
@@ -33,6 +35,8 @@ Separating weights from structure is part of PyTorch's design,
 but unfortunately this is not the case for sklearn. The fitted
 state is scattered across various private attributes with no
 standard way to extract or restore it.
+
+## Rolling our own
 
 We ended up solving this problem internally, by building our own
 serialization that decomposes a fitted estimator into JSON
@@ -59,15 +63,73 @@ loaded = skeights.load("model.safetensors", "model.json")
 It works out of the box with the sklearn-like estimators most
 people use, which is what we've covered so far.
 
+## A worked example
+
+Say you train a simple pipeline; a Ridge regression with some
+scaling on top:
+
+```python
+from sklearn.linear_model import Ridge
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+import skeights
+
+pipe = Pipeline([
+    ("scaler", StandardScaler()),
+    ("model", Ridge(alpha=0.1)),
+])
+pipe.fit(X_train, y_train)
+
+skeights.save(pipe, "model.safetensors", "model.json")
+```
+
+The hyperparameters and structure end up in `model.json`, which
+you can read at a glance:
+
+```json
+{
+  "model_params": {
+    "steps": {
+      "scaler": {
+        "copy": true,
+        "with_mean": true,
+        "with_std": true,
+        "type": "sklearn.preprocessing.StandardScaler"
+      },
+      "model": {
+        "alpha": 0.1,
+        "fit_intercept": true,
+        "solver": "auto",
+        "type": "sklearn.linear_model.Ridge"
+      }
+    },
+    "type": "sklearn.pipeline.Pipeline"
+  }
+}
+```
+
+while the fitted arrays go into `model.safetensors`:
+
+```
+scaler/mean_       (3,)  float64
+scaler/scale_      (3,)  float64
+model/coef_        (3,)  float64
+model/intercept_   ()    float64
+```
+
+## Configuration as data
+
 The major bonus of this is that model configuration is now
 structured data. Hyperparameter sweeps become config-driven.
 When your model state is plain JSON, it is much easier
 to build useful tooling on top of it.
 
-It's not without drawbacks. We have to add support for each
-estimator by hand, so we only cover the ones we've done so far.
-Backwards compatibility is also tricky as the library grows,
-although neither pickle nor skops guarantee this either.
+## Drawbacks
+
+We have to add support for each estimator by hand, so we only
+cover the ones we've done so far. Backwards compatibility is also
+tricky as the library grows, although neither pickle nor skops
+guarantee this either.
 
 We're now using skeights in production. It's easy to install with
 pip, and is MIT licensed. Contributions welcome, especially to
