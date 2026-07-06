@@ -136,6 +136,8 @@ cover the ones we've done so far. Backwards compatibility is also
 tricky as the library grows, although neither pickle nor skops
 guarantee this either.
 
+## Try it out
+
 We're now using skeights in production. It's easy to install with
 pip, and is MIT licensed. Contributions welcome, especially to
 widen the models we support.
