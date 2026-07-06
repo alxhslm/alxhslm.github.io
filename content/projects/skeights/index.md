@@ -56,13 +56,19 @@ skeights.save(fitted_pipeline, "model.safetensors", "model.json")
 loaded = skeights.load("model.safetensors", "model.json")
 ```
 
-It works out of the box with most common sklearn-like estimators.
+It works out of the box with the sklearn-like estimators most
+people use, which is what we've covered so far.
 
 The major bonus of this is that model configuration is now
 structured data. Hyperparameter sweeps become config-driven.
 Agents can inspect, modify, and create models very easily as
 it's all plaintext. When your model state is plain JSON, it is much easier
 to build useful tooling on top of it.
+
+It's not without drawbacks. We have to add support for each
+estimator by hand, so we only cover the ones we've done so far.
+Backwards compatibility is also tricky as the library grows,
+although neither pickle nor skops guarantee this either.
 
 We're now using skeights in production. It's easy to install with
 pip, and is MIT licensed. Contributions welcome, especially to
