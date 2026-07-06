@@ -42,7 +42,9 @@ We ended up solving this problem internally, by building our own
 serialization that decomposes a fitted estimator into JSON
 (hyperparameters) and safetensors (weights). Over time it grew
 to cover most of the sklearn ecosystem, including LightGBM and
-XGBoost.
+XGBoost. Those two were the easy part, since they already
+serialise to JSON natively; most of the effort went into the
+sklearn estimators, which don't.
 
 At some point I realised this was a generic serialisation layer
 which could be useful to others. The serialization code already
