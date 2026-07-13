@@ -41,8 +41,8 @@ standard way to extract or restore it.
 We ended up solving this problem internally, by building our own
 serialization that decomposes a fitted estimator into JSON
 (hyperparameters) and safetensors (weights). Over time it grew
-to cover most of the sklearn ecosystem, including LightGBM and
-XGBoost. Those two were the easy part, since they already
+to cover most of the sklearn ecosystem, including `lightgbm` and
+`xgboost`. Those two were the easy part, since they already
 serialise to JSON natively; most of the effort went into the
 sklearn estimators, which don't.
 
@@ -135,7 +135,7 @@ on the side.
 
 ## Columnar tree serialization
 
-While LightGBM and XGBoost natively serialize to text or JSON, storing the entire model structure this way has drawbacks. The resulting files are huge and unreadable, defeating the benefit of having a human-readable config. For example, a native XGBoost JSON export contains a massive string representing all of its trees:
+While `lightgbm` and `xgboost` natively serialize to text or JSON, storing the entire model structure this way has drawbacks. The resulting files are huge and unreadable, defeating the benefit of having a human-readable config. For example, a native `xgboost` JSON export contains a massive string representing all of its trees:
 
 ```json
 {
@@ -170,8 +170,8 @@ model/trees/right_children     (1200,)  int32
 
 This reduces file sizes significantly compared to native formats or pickle. For a model with 100 trees and 20 features:
 
-- XGBoost: 85% total reduction, with the JSON dropping from 1.8MB to 19KB.
-- LightGBM: 30-43% total reduction, with the JSON dropping from 129-193KB to 6KB.
+- `xgboost`: 85% total reduction, with the JSON dropping from 1.8MB to 19KB.
+- `lightgbm`: 30-43% total reduction, with the JSON dropping from 129-193KB to 6KB.
 
 The native format is still available as a fallback by passing `format="native"`, and legacy artifacts load transparently.
 
