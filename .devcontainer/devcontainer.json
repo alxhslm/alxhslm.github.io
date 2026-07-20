@@ -32,7 +32,8 @@
 		"GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
 	},
 	"features": {
-		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {},
+		"ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1": {}
 	},
 	"mounts": [
 		"source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
