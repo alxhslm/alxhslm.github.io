@@ -1,14 +1,17 @@
 # Agent Instructions & Project Guidelines
 
 ## Overview
+
 This repository contains the source code for the personal website built with **Hugo**.
 
 ## Common Commands
+
 - **Start Hugo Development Server**: `hugo server -D` (available on port 1313)
 - **Build Production Site**: `hugo --gc --minify`
 - **Lint / Pre-commit Hooks**: `pre-commit run --all-files`
 
 ## Creating a New Blog Post
+
 Posts use Hugo Page Bundles inside `content/posts/<post-slug>/index.md`:
 
 1. **Generate New Post**:
@@ -27,6 +30,7 @@ Posts use Hugo Page Bundles inside `content/posts/<post-slug>/index.md`:
 3. **Assets**: Store images and media specific to the post inside `content/posts/<post-slug>/`.
 
 ## Codebase Organization
+
 - `content/posts/`: Blog posts written in Markdown with Hugo frontmatter.
 - `layouts/`: Custom HTML templates.
 - `assets/`: Global CSS/JS assets.
