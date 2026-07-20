@@ -20,10 +20,13 @@ if [ -z "${CODESPACES:+x}" ]; then
         # Macs only add keys to agent on demand (no-op if already loaded)
         ssh-add --apple-load-keychain 2> /dev/null || true
     elif [[ "$OSTYPE" == "linux"* ]]; then
-        # Ensure ssh-agent is running on host
-        if [ -z "${SSH_AUTH_SOCK:-}" ]; then
-            eval "$(ssh-agent -s)" > /dev/null 2>&1 || true
+        mkdir -p "${HOME}/.ssh"
+        # Ensure ssh-agent is running at fixed socket location ~/.ssh/agent.sock
+        if [ ! -S "${HOME}/.ssh/agent.sock" ]; then
+            rm -f "${HOME}/.ssh/agent.sock"
+            eval "$(ssh-agent -a "${HOME}/.ssh/agent.sock")" > /dev/null 2>&1 || true
         fi
+        export SSH_AUTH_SOCK="${HOME}/.ssh/agent.sock"
         # Add default host SSH keys if no identities are loaded
         if ! ssh-add -l > /dev/null 2>&1; then
             for key in ~/.ssh/id_ed25519 ~/.ssh/id_rsa ~/.ssh/id_ecdsa; do
