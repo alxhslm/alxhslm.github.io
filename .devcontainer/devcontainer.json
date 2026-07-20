@@ -28,12 +28,14 @@
 	],
 	"remoteUser": "vscode",
 	"remoteEnv": {
-		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}",
+		"GEMINI_API_KEY": "${localEnv:GEMINI_API_KEY}"
 	},
 	"features": {
 		"ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
 	},
 	"mounts": [
-		"source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+		"source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.gemini,target=/home/vscode/.gemini,type=bind,consistency=cached"
 	]
 }

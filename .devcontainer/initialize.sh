@@ -19,3 +19,7 @@ if [ -z "${CODESPACES:+x}" ] && [[ "$OSTYPE" == "darwin"* ]] ; then
     # Macs only add keys to agent on demand (no-op if already loaded)
     ssh-add --apple-load-keychain 2> /dev/null
 fi
+
+# Pre-create host directories for AI agents to ensure bind mounts succeed
+mkdir -p "${HOME}/.claude" "${HOME}/.gemini"
+
