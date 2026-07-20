@@ -27,14 +27,7 @@ if [ -z "${CODESPACES:+x}" ]; then
             eval "$(ssh-agent -a "${HOME}/.ssh/agent.sock")" > /dev/null 2>&1 || true
         fi
         export SSH_AUTH_SOCK="${HOME}/.ssh/agent.sock"
-        # Add default host SSH keys if no identities are loaded
-        if ! ssh-add -l > /dev/null 2>&1; then
-            for key in ~/.ssh/id_ed25519 ~/.ssh/id_rsa ~/.ssh/id_ecdsa; do
-                if [ -f "$key" ]; then
-                    ssh-add "$key" 2> /dev/null || true
-                fi
-            done
-        fi
+        ssh-add 2> /dev/null || true
     fi
 fi
 
