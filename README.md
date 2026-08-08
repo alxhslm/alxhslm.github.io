@@ -1,4 +1,4 @@
-# [Alex Haslam's Personal Website](https://alxhslm.github.io/)
+# [Alex Haslam's Personal Website](https://alexhaslam.dev/)
 
 ## Getting started
 
