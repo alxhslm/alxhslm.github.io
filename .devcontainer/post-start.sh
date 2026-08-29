@@ -18,3 +18,22 @@ if [[ ! `git config --global --get-all safe.directory | grep '^/workspace$'` ]];
   # Adding only when not added already
   git config --global --add safe.directory /workspace
 fi
+
+# Ensure /workspace maps to alxhslm-github-io in ~/.gemini/projects.json for shared AGY conversation history
+PROJECTS_FILE="/home/vscode/.gemini/projects.json"
+if [ -f "$PROJECTS_FILE" ]; then
+  python3 -c "
+import json
+p = '$PROJECTS_FILE'
+try:
+    with open(p, 'r') as f:
+        data = json.load(f)
+    if 'projects' in data:
+        data['projects']['/workspace'] = 'alxhslm-github-io'
+        with open(p, 'w') as f:
+            json.dump(data, f, indent=2)
+except Exception:
+    pass
+" || true
+fi
+

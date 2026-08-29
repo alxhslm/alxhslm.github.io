@@ -31,6 +31,6 @@ if [ -z "${CODESPACES:+x}" ]; then
     fi
 fi
 
-# Pre-create host directories for AI agents to ensure bind mounts succeed
-mkdir -p "${HOME}/.claude" "${HOME}/.gemini"
+# Pre-create host directories for AI agents and GitHub CLI to ensure bind mounts succeed
+mkdir -p "${HOME}/.claude" "${HOME}/.gemini" "${HOME}/.config/gh"
 
