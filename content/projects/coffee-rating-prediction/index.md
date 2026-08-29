@@ -5,7 +5,7 @@ tags = ['machine learning', 'modelling', 'deployment', 'aws']
 summary = 'Predicting specialty coffee review ratings from roaster, origin, and flavour data, deployed via AWS Lambda and Streamlit.'
 subtitle = 'Predictive rating model and serverless deployment'
 showSummary = true
-group = 'tier-2'
+group = 'experiments'
 weight = 3
 +++
 

@@ -5,7 +5,7 @@ tags = ['machine learning', 'deep learning', 'pytorch', 'generative ai']
 summary = 'Semi-supervised Variational Autoencoder in PyTorch to classify characters and synthesize handwriting in learned styles.'
 subtitle = 'Semi-supervised Variational Autoencoder for handwriting style synthesis'
 showSummary = true
-group = 'tier-2'
+group = 'experiments'
 weight = 1
 +++
 

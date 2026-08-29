@@ -5,7 +5,7 @@ tags = ['simulation', 'numerical methods', 'dynamics', 'matlab']
 summary = 'MATLAB library implementing the Harmonic Balance method for numerical analysis of nonlinear dynamic systems.'
 subtitle = 'MATLAB harmonic balance solver for nonlinear dynamics'
 showSummary = true
-group = 'tier-1'
+group = 'core'
 weight = 2
 +++
 
