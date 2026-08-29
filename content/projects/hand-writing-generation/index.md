@@ -1,12 +1,17 @@
 +++
-title = 'Hand Writing Generation'
+title = 'Handwriting Generation'
 date = 2023-12-01T21:28:11Z
-tags = ['machine learning', 'deep learning','modelling']
+tags = ['machine learning', 'deep learning', 'pytorch', 'generative ai']
+summary = 'Semi-supervised Variational Autoencoder (VAE) in PyTorch to classify characters and synthesize handwriting in learned styles.'
+subtitle = 'Semi-supervised Variational Autoencoder (VAE) for handwriting style synthesis'
+showSummary = true
+group = 'Experiments & demos'
+weight = 1
 +++
 
 {{< katex >}}
 
-This was another personal ML project, in which I wanted to gain some experience working with unstructured data. With all of the recent advancements in generative AI, also thought it would be interesting to use some form of generative model. The source code is available on GitHub.
+This project explores style conditioning and latent space representations in deep generative models. The goal was to build a system that can learn a person's unique handwriting style from just a few sample strokes and synthesize new alphanumeric characters matching that learned style. The source code is available on GitHub.
 
 {{< github repo="alxhslm/hand-writing-generation" >}}
 

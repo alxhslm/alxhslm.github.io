@@ -1,0 +1,59 @@
+{{ define "main" }} {{ .Scratch.Set "scope" "list" }} {{/* Header */}}
+<header>
+  {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs |
+  default false) }} {{ partial "breadcrumbs.html" . }} {{ end }}
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+    {{ .Title | emojify }}
+  </h1>
+  <div
+    class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden"
+  >
+    {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+  </div>
+</header>
+
+{{/* Intro Description */}} {{ with .Content }}
+<section
+  class="mt-0 prose flex max-w-full flex-col dark:prose-invert lg:flex-row mb-10"
+>
+  <div class="min-w-0 min-h-0 max-w-prose w-full">{{ . }}</div>
+</section>
+{{ end }}
+
+<div class="w-full">
+  {{ if .Params.groups }} {{ range .Params.groups }} {{ $groupId := .id }} {{
+  $groupPages := where $.Pages ".Params.group" $groupId }} {{ if gt (len
+  $groupPages) 0 }}
+  <section class="w-full mt-16 first:mt-0">
+    <div class="mb-3">
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        {{ .title }}
+      </h2>
+      {{ with .description }}
+      <p class="text-neutral-500 dark:text-neutral-400 text-base mt-1">
+        {{ . }}
+      </p>
+      {{ end }}
+    </div>
+
+    <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {{ range $groupPages.ByWeight }} {{ partial "article-link/card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }} {{ end }} {{ else }} {{ range .Pages.GroupByParam "group" }}
+  <section class="w-full mt-16 first:mt-0">
+    <div class="mb-3">
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        {{ .Key }}
+      </h2>
+    </div>
+    <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      {{ range .Pages.ByWeight }} {{ partial "article-link/card.html" . }} {{
+      end }}
+    </div>
+  </section>
+  {{ end }} {{ end }}
+</div>
+
+{{ end }}
