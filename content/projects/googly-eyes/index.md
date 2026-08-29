@@ -1,8 +1,8 @@
 +++
 title = 'Googly Eyes'
 date = 2024-02-08T14:00:00Z
-tags = ['machine learning', 'deep learning', 'computer vision', 'deployment']
-summary = 'Computer vision pipeline using RetinaFace and TensorFlow Lite to detect faces and render googly eyes, deployed on Streamlit.'
+tags = ['machine learning', 'deep learning', 'computer vision', 'pytorch', 'onnx', 'deployment']
+summary = 'Computer vision pipeline using PyTorch RetinaFace exported to ONNX Runtime to detect faces and render googly eyes, deployed on Streamlit.'
 subtitle = 'Face detection and googly eye overlay with Streamlit'
 showSummary = true
 group = 'Experiments & Generative Demos'
@@ -11,7 +11,7 @@ weight = 2
 
 {{< katex >}}
 
-I wanted to build something fun: an automated system to stick googly eyes onto people's faces in photos for a laugh. Beyond the silliness, it was a great excuse to play with modern open-source vision models (like RetinaFace), optimize the facial landmark inference pipeline with TensorFlow Lite, and package the whole thing into a snappy deployed application.
+I wanted to build something fun: an automated system to stick googly eyes onto people's faces in photos for a laugh. Beyond the silliness, it was a great excuse to play with modern open-source vision models (like RetinaFace), optimize the facial landmark inference pipeline with PyTorch and ONNX Runtime, and package the whole thing into a snappy deployed application.
 
 You can try out the deployed dashboard [here](https://googly-eyes.streamlit.app/) or check out the code on [GitHub](https://github.com/alxhslm/googly-eyes).
 
@@ -82,10 +82,10 @@ RetinaFace generally performs _slightly_ better, likely because it was trained w
 
 I chose to make use of the existing RetinaFace model, since this model would likely be much more accurate than any model I could train, without spending a lot of time on data processing and model training. This also allowed me to focus my time on the other aspects of the system.
 
-I converted the Tensorflow model to use the Tensorflow-lite runtime instead. This required updating the model and pre-processing steps to use fixed image dimensions. This has two main advantages:
+I exported the PyTorch RetinaFace model to ONNX format to execute with ONNX Runtime. This required updating the model export and pre-processing steps to use fixed image dimensions. This has two main advantages:
 
-- It significantly reduces the size of the docker images
-- It reduces execution time
+- It significantly reduces execution overhead and container image size
+- It enables fast, cross-platform CPU inference
 
 ## Googly-eye generation
 
