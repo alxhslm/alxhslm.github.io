@@ -18,13 +18,14 @@
 >
   <div class="min-w-0 min-h-0 max-w-prose w-full">{{ . }}</div>
 </section>
-{{ end }} {{/* Dynamic Groups from _index.md frontmatter */}}
-<div class="space-y-14 w-full">
+{{ end }}
+
+<div class="w-full">
   {{ if .Params.groups }} {{ range .Params.groups }} {{ $groupId := .id }} {{
   $groupPages := where $.Pages ".Params.group" $groupId }} {{ if gt (len
   $groupPages) 0 }}
-  <section class="w-full">
-    <div class="mb-4">
+  <section class="w-full mt-16 first:mt-0">
+    <div class="mb-3">
       <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
         {{ .title }}
       </h2>
@@ -35,21 +36,19 @@
       {{ end }}
     </div>
 
-    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+    <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {{ range $groupPages.ByWeight }} {{ partial "article-link/card.html" . }}
       {{ end }}
     </div>
   </section>
-  {{ end }} {{ end }} {{ else }} {{/* Fallback to automatic GroupByParam if
-  groups are not defined in _index.md */}} {{ range .Pages.GroupByParam "group"
-  }}
-  <section class="w-full">
-    <div class="mb-4">
+  {{ end }} {{ end }} {{ else }} {{ range .Pages.GroupByParam "group" }}
+  <section class="w-full mt-16 first:mt-0">
+    <div class="mb-3">
       <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
         {{ .Key }}
       </h2>
     </div>
-    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+    <div class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
       {{ range .Pages.ByWeight }} {{ partial "article-link/card.html" . }} {{
       end }}
     </div>

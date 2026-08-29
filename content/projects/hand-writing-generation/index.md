@@ -1,11 +1,11 @@
 +++
-title = 'Handwriting Generation (VAE)'
+title = 'Handwriting Generation'
 date = 2023-12-01T21:28:11Z
 tags = ['machine learning', 'deep learning', 'pytorch', 'generative ai']
-summary = 'Semi-supervised Variational Autoencoder in PyTorch to classify characters and synthesize handwriting in learned styles.'
-subtitle = 'Semi-supervised Variational Autoencoder for handwriting style synthesis'
+summary = 'Semi-supervised Variational Autoencoder (VAE) in PyTorch to classify characters and synthesize handwriting in learned styles.'
+subtitle = 'Semi-supervised Variational Autoencoder (VAE) for handwriting style synthesis'
 showSummary = true
-group = 'experiments'
+group = 'Experiments & Generative Demos'
 weight = 1
 +++
 
