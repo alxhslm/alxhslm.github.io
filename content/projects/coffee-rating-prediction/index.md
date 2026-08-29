@@ -7,6 +7,14 @@ subtitle = 'Predictive rating model and serverless deployment'
 showSummary = true
 group = 'Experiments & demos'
 weight = 3
+aliases = [
+  '/projects/coffee-rating-prediction/eda',
+  '/projects/coffee-rating-prediction/eda/',
+  '/projects/coffee-rating-prediction/model',
+  '/projects/coffee-rating-prediction/model/',
+  '/projects/coffee-rating-prediction/deployment',
+  '/projects/coffee-rating-prediction/deployment/',
+]
 +++
 
 I enjoy drinking good coffee, but buying specialty coffee can be a bit of a gamble. With so many variables like origin geography, roast level, price, and subjective tasting notes, it's hard to tell how good a coffee will actually be before buying it. I wondered if a data-driven approach could help predict coffee quality and help me pick better beans.
