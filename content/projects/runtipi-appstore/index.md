@@ -1,7 +1,12 @@
 +++
 title = 'Runtipi App Store'
 date = 2026-04-13T00:00:00Z
-tags = ['homelab']
+tags = ['homelab', 'docker', 'infrastructure']
+summary = 'Custom app store repository for the Runtipi self-hosted platform to deploy Docker Compose services.'
+subtitle = 'Custom app store for self-hosted Docker services'
+showSummary = true
+tier = 3
+tier_order = 2
 +++
 
 I've been setting up a homelab using [Runtipi](https://runtipi.io/). This is a self-hosted app platform which makes it easy to spin up containerised services using Docker Compose. The UI is simple and I'm already comfortable with containers, so it was a natural fit.

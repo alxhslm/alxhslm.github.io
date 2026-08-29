@@ -2,7 +2,11 @@
 title = 'skeights'
 date = 2026-07-03T00:00:00Z
 tags = ['machine learning', 'mlops', 'python', 'open source']
-summary = 'Extracting and open-sourcing our sklearn serialization library.'
+summary = 'Open-source Python serialization library for scikit-learn that decomposes fitted estimators into JSON and safetensors.'
+subtitle = 'Scikit-learn serialization library using JSON and safetensors'
+showSummary = true
+tier = 1
+tier_order = 1
 +++
 
 At work we build various sklearn models in production to solve

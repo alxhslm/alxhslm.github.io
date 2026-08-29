@@ -1,0 +1,51 @@
+{{ define "main" }} {{ .Scratch.Set "scope" "list" }} {{/* Header */}}
+<header>
+  {{ if .Params.showBreadcrumbs | default (site.Params.list.showBreadcrumbs |
+  default false) }} {{ partial "breadcrumbs.html" . }} {{ end }}
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+    {{ .Title | emojify }}
+  </h1>
+  <div
+    class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden"
+  >
+    {{ partial "article-meta/list.html" (dict "context" . "scope" "single") }}
+  </div>
+</header>
+
+{{/* Description (markdown content) */}} {{ with .Content }}
+<section
+  class="mt-0 prose flex max-w-full flex-col dark:prose-invert lg:flex-row mb-10"
+>
+  <div class="min-w-0 min-h-0 max-w-prose w-full">{{ . }}</div>
+</section>
+{{ end }} {{/* Tiers */}} {{ $tiers := slice (dict "tier" 1 "title" "Tier 1:
+Core Engineering & Systems" "description" "High-leverage open-source tooling,
+numerical solvers, and core infrastructure.") (dict "tier" 2 "title" "Tier 2:
+Experiments & Generative Demos" "description" "Exploratory deep learning, latent
+space modeling, and computer vision.") (dict "tier" 3 "title" "Tier 3: Utilities
+& Infrastructure" "description" "Self-hosted setups, workflow tools, and
+automation scripts.") }}
+
+<div class="space-y-14 w-full">
+  {{ range $tiers }} {{ $tierNum := .tier }} {{ $tierTitle := .title }} {{
+  $tierDesc := .description }} {{ $tierPages := where $.Pages ".Params.tier"
+  $tierNum }} {{ $tierPages = sort $tierPages ".Params.tier_order" "asc" }} {{
+  if gt (len $tierPages) 0 }}
+  <section class="w-full">
+    <div class="mb-4">
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        {{ $tierTitle }}
+      </h2>
+      <p class="text-neutral-500 dark:text-neutral-400 text-base mt-1">
+        {{ $tierDesc }}
+      </p>
+    </div>
+
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      {{ range $tierPages }} {{ partial "article-link/card.html" . }} {{ end }}
+    </div>
+  </section>
+  {{ end }} {{ end }}
+</div>
+
+{{ end }}

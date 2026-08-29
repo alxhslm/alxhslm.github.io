@@ -1,7 +1,12 @@
 +++
 title = 'Wealthypy'
 date = 2025-03-18T13:10:32Z
-tags = ['investing']
+tags = ['investing', 'simulation', 'python', 'finance']
+summary = 'Streamlit simulation tool for modeling investment portfolio growth and pension contributions using Monte Carlo simulation.'
+subtitle = 'Investment and pension portfolio simulation tool'
+showSummary = true
+tier = 3
+tier_order = 1
 +++
 
 For a long time, I put off sorting out my pension because the whole concept felt overwhelming. It sounded quite complicated, filled with technical jargon, and I wasn't sure where to start. But as I dug into it, I discovered that a pension is really just a **tax-efficient investment wrapper**, and not something fundamentally different from investing in general. Once I understood that, it became much less intimidating. Once I chose a suitable (and cheap) SIPP platform [^1], "all" I need to do was decide what to invest in.
