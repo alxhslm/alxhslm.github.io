@@ -5,8 +5,8 @@ tags = ['machine learning', 'modelling', 'deployment', 'aws']
 summary = 'Predicting specialty coffee review ratings from roaster, origin, and flavour data, deployed via AWS Lambda and Streamlit.'
 subtitle = 'Predictive rating model and serverless deployment'
 showSummary = true
-tier = 2
-tier_order = 3
+group = 'tier-2'
+weight = 3
 +++
 
 Buying specialty coffee often involves navigating subjective tasting notes, varied roasting styles, and premium pricing with little upfront certainty about quality. As a coffee enthusiast, I wanted to see if I could build a data-driven system to objectively evaluate and predict coffee quality before buying based purely on observable attributes (origin terroir, roaster reputation, roast style, price, and flavour notes).

@@ -5,8 +5,8 @@ tags = ['machine learning', 'deep learning', 'computer vision', 'deployment']
 summary = 'Computer vision pipeline using RetinaFace and TensorFlow Lite to detect faces and render googly eyes, deployed on Streamlit.'
 subtitle = 'Face detection and googly eye overlay with Streamlit'
 showSummary = true
-tier = 2
-tier_order = 2
+group = 'tier-2'
+weight = 2
 +++
 
 {{< katex >}}

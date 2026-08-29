@@ -12,37 +12,46 @@
   </div>
 </header>
 
-{{/* Description (markdown content) */}} {{ with .Content }}
+{{/* Intro Description */}} {{ with .Content }}
 <section
   class="mt-0 prose flex max-w-full flex-col dark:prose-invert lg:flex-row mb-10"
 >
   <div class="min-w-0 min-h-0 max-w-prose w-full">{{ . }}</div>
 </section>
-{{ end }} {{/* Tiers */}} {{ $tiers := slice (dict "tier" 1 "title" "Tier 1:
-Core Engineering & Systems" "description" "High-leverage open-source tooling,
-numerical solvers, and core infrastructure.") (dict "tier" 2 "title" "Tier 2:
-Experiments & Generative Demos" "description" "Exploratory deep learning, latent
-space modeling, and computer vision.") (dict "tier" 3 "title" "Tier 3: Utilities
-& Infrastructure" "description" "Self-hosted setups, workflow tools, and
-automation scripts.") }}
-
+{{ end }} {{/* Dynamic Groups from _index.md frontmatter */}}
 <div class="space-y-14 w-full">
-  {{ range $tiers }} {{ $tierNum := .tier }} {{ $tierTitle := .title }} {{
-  $tierDesc := .description }} {{ $tierPages := where $.Pages ".Params.tier"
-  $tierNum }} {{ $tierPages = sort $tierPages ".Params.tier_order" "asc" }} {{
-  if gt (len $tierPages) 0 }}
+  {{ if .Params.groups }} {{ range .Params.groups }} {{ $groupId := .id }} {{
+  $groupPages := where $.Pages ".Params.group" $groupId }} {{ if gt (len
+  $groupPages) 0 }}
   <section class="w-full">
     <div class="mb-4">
       <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
-        {{ $tierTitle }}
+        {{ .title }}
       </h2>
+      {{ with .description }}
       <p class="text-neutral-500 dark:text-neutral-400 text-base mt-1">
-        {{ $tierDesc }}
+        {{ . }}
       </p>
+      {{ end }}
     </div>
 
     <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-      {{ range $tierPages }} {{ partial "article-link/card.html" . }} {{ end }}
+      {{ range $groupPages.ByWeight }} {{ partial "article-link/card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }} {{ end }} {{ else }} {{/* Fallback to automatic GroupByParam if
+  groups are not defined in _index.md */}} {{ range .Pages.GroupByParam "group"
+  }}
+  <section class="w-full">
+    <div class="mb-4">
+      <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        {{ .Key }}
+      </h2>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      {{ range .Pages.ByWeight }} {{ partial "article-link/card.html" . }} {{
+      end }}
     </div>
   </section>
   {{ end }} {{ end }}

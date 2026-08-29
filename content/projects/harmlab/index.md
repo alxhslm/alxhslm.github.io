@@ -5,8 +5,8 @@ tags = ['simulation', 'numerical methods', 'dynamics', 'matlab']
 summary = 'MATLAB library implementing the Harmonic Balance method for numerical analysis of nonlinear dynamic systems.'
 subtitle = 'MATLAB harmonic balance solver for nonlinear dynamics'
 showSummary = true
-tier = 1
-tier_order = 2
+group = 'tier-1'
+weight = 2
 +++
 
 {{< github repo="alxhslm/HarmLAB" >}}

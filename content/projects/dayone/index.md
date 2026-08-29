@@ -5,8 +5,8 @@ tags = ['python', 'open source', 'data migration']
 summary = 'Python script to migrate journal entries from Journey to Day One by converting their JSON export formats.'
 subtitle = 'Automated journal migration from Journey to Day One'
 showSummary = true
-tier = 3
-tier_order = 3
+group = 'tier-3'
+weight = 3
 +++
 
 A few years ago, I started a daily journal habit. I found that preferred to do this digitally because my hand-writing is terrible, and it is easier to look back when compared to a paper notebook. Initially I used the [Journey](https://journey.cloud/) app because:
