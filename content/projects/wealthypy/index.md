@@ -5,7 +5,7 @@ tags = ['investing', 'simulation', 'python', 'finance']
 summary = 'Streamlit simulation tool for modeling investment portfolio growth and pension contributions using Monte Carlo simulation.'
 subtitle = 'Investment and pension portfolio simulation tool'
 showSummary = true
-group = 'Utilities & Infrastructure'
+group = 'Utilities'
 weight = 1
 +++
 

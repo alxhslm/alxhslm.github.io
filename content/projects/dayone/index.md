@@ -5,7 +5,7 @@ tags = ['python', 'open source', 'data migration']
 summary = 'Python script to migrate journal entries from Journey to Day One by converting their JSON export formats.'
 subtitle = 'Automated journal migration from Journey to Day One'
 showSummary = true
-group = 'Utilities & Infrastructure'
+group = 'Utilities'
 weight = 3
 +++
 

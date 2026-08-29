@@ -5,7 +5,7 @@ tags = ['machine learning', 'deep learning', 'computer vision', 'pytorch', 'onnx
 summary = 'Computer vision pipeline using PyTorch RetinaFace exported to ONNX Runtime to detect faces and render googly eyes, deployed on Streamlit.'
 subtitle = 'Face detection and googly eye overlay with Streamlit'
 showSummary = true
-group = 'Experiments & Generative Demos'
+group = 'Experiments & demos'
 weight = 2
 +++
 

@@ -5,7 +5,7 @@ tags = ['machine learning', 'deep learning', 'pytorch', 'generative ai']
 summary = 'Semi-supervised Variational Autoencoder (VAE) in PyTorch to classify characters and synthesize handwriting in learned styles.'
 subtitle = 'Semi-supervised Variational Autoencoder (VAE) for handwriting style synthesis'
 showSummary = true
-group = 'Experiments & Generative Demos'
+group = 'Experiments & demos'
 weight = 1
 +++
 

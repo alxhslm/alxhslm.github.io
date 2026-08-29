@@ -5,7 +5,7 @@ tags = ['homelab', 'docker', 'infrastructure']
 summary = 'Custom app store repository for the Runtipi self-hosted platform to deploy Docker Compose services.'
 subtitle = 'Custom app store for self-hosted Docker services'
 showSummary = true
-group = 'Utilities & Infrastructure'
+group = 'Utilities'
 weight = 2
 +++
 

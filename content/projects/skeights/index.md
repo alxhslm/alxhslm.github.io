@@ -5,7 +5,7 @@ tags = ['machine learning', 'mlops', 'python', 'open source']
 summary = 'Open-source Python serialization library for scikit-learn that decomposes fitted estimators into JSON and safetensors.'
 subtitle = 'Scikit-learn serialization library using JSON and safetensors'
 showSummary = true
-group = 'Libraries & Toolboxes'
+group = 'Libraries & toolboxes'
 weight = 1
 +++
 
