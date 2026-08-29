@@ -9,9 +9,9 @@ group = 'Experiments & Generative Demos'
 weight = 3
 +++
 
-Buying specialty coffee often involves navigating subjective tasting notes, varied roasting styles, and premium pricing with little upfront certainty about quality. As a coffee enthusiast, I wanted to see if I could build a data-driven system to objectively evaluate and predict coffee quality before buying based purely on observable attributes (origin terroir, roaster reputation, roast style, price, and flavour notes).
+I enjoy drinking good coffee, but buying specialty coffee can be a bit of a gamble. With so many variables like origin geography, roast level, price, and subjective tasting notes, it's hard to tell how good a coffee will actually be before buying it. I wondered if a data-driven approach could help predict coffee quality and help me pick better beans.
 
-To solve this, I built an end-to-end regression and deployment pipeline using [XGBoost](https://xgboost.readthedocs.io/en/stable/) and containerized serverless inference on [AWS Lambda](https://aws.amazon.com/lambda/), connected to an interactive [Streamlit dashboard](https://coffee-rating-prediction.streamlit.app/). The source code is available on [GitHub](https://github.com/alxhslm/coffee-rating-prediction).
+To test this out, I built an end-to-end regression model and deployment pipeline using [XGBoost](https://xgboost.readthedocs.io/en/stable/) and containerized serverless inference on [AWS Lambda](https://aws.amazon.com/lambda/), connected to an interactive [Streamlit dashboard](https://coffee-rating-prediction.streamlit.app/). The source code is available on [GitHub](https://github.com/alxhslm/coffee-rating-prediction).
 
 {{< github repo="alxhslm/coffee-rating-prediction" >}}
 
@@ -102,3 +102,7 @@ B---D
 - **Streamlit Web Dashboard**: Built an interactive UI where users can adjust roast, origin, price, and flavour notes to receive real-time score predictions.
 
 ![Streamlit app](images/streamlit_app.png)
+
+## Try It Out
+
+You can try out the deployed dashboard [here](https://coffee-rating-prediction.streamlit.app/) next time you're buying coffee to see how different origins, roasts, and flavour notes score!
